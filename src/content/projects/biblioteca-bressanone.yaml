@@ -1,0 +1,35 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=24&lang=it, https://www.stanislaofierro.com/index.php?p=36&lang=it
+title:
+  it: Nuova biblioteca civica
+  de: Neue Stadtbibliothek
+  en: New public library
+year: 2010
+place:
+  it: Bressanone
+  de: Brixen
+  en: Bressanone
+typology: edifici-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2010
+partners:
+  - José Luís Daroca Bruño
+cover: ../../assets/originali/pagine/foto/129_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/128_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=24&lang=it
+  - https://www.stanislaofierro.com/index.php?p=36&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/128_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/129_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/130_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/131_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/132_immagine.jpg
+    type: immagine

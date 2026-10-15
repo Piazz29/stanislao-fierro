@@ -1,0 +1,37 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=44&lang=it
+title:
+  it: Parcheggio interrato e piazza
+  de: Tiefgarage und Platz
+  en: Underground car park and square
+year: 2008
+place:
+  it: Arnedo, Spagna
+  de: Arnedo, Spanien
+  en: Arnedo, Spain
+typology: edifici-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2008
+partners:
+  - Nadine Saul
+excerpt:
+  lang: es
+  text: "El proyecto del nuevo aparcamiento subterráneo da ocasión para conferir orden y unidad a la parcela entera. Este nuevo proyecto se presenta como un basamento delimitado por las calles existentes y el pórtico de la calle Huerta. Dicho basamento resuelve las varias necesidades: el garaje subterráneo y la plaza, que se convierte en el elemento expresivo de todo el proyecto. La nueva plaza se extenderá en un solo nivel apropiándose también del pórtico que se asoma sobre la calle Huertas. En las calles León Gentico y Aragón el desnivel natural se resuelve con escalinatas de carácter urbano."
+  source: https://www.stanislaofierro.com/index.php?p=44&lang=it
+cover: ../../assets/originali/pagine/foto/190_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=44&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/190_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/191_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/192_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/193_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/194_immagine.jpg
+    type: disegno

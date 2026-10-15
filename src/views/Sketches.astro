@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Photo from '../components/Photo.astro';
+import Lightbox from '../components/Lightbox.astro';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { path, ui, type Lang } from '../i18n';
+import { getProjects } from '../lib/projects';
+import loose from '../assets/originali/premi/5_immagine.jpg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const projects = await getProjects();
+
+type Item = { image: ImageMetadata; title: string; meta: string; href?: string; alt: string };
+const items: Item[] = [];
+for (const p of projects) {
+  for (const g of p.data.gallery.filter((x) => x.type === 'schizzo')) {
+    items.push({
+      image: g.image,
+      title: p.data.title[lang],
+      meta: `${p.data.place[lang]} · ${p.data.year}`,
+      href: path(lang, 'works', p.id),
+      alt: `${ui.imageTypes.schizzo[lang]}: ${p.data.title[lang]}, ${p.data.place[lang]}`,
+    });
+  }
+}
+// schizzo del sito senza progetto dichiarato: resta in galleria, senza attribuzione
+items.push({ image: loose, title: ui.archive[lang], meta: ui.studioName[lang], alt: `${ui.imageTypes.schizzo[lang]}, ${ui.archive[lang].toLowerCase()}` });
+
+const full = await Promise.all(items.map((it) => getImage({ src: it.image, width: it.image.width, format: 'webp', quality: 82 })));
+const lead = {
+  it: `${ui.sketchLead.it} ${items.length} schizzi da ${new Set(items.map((i) => i.href).filter(Boolean)).size} progetti.`,
+  de: `${ui.sketchLead.de} ${items.length} Skizzen aus ${new Set(items.map((i) => i.href).filter(Boolean)).size} Projekten.`,
+  en: `${ui.sketchLead.en} ${items.length} sketches from ${new Set(items.map((i) => i.href).filter(Boolean)).size} projects.`,
+}[lang];
+---
+<Base lang={lang} title={ui.sketchTitle[lang]} description={ui.sketchDescription[lang]} route="sketches" ogImage={items[0].image}>
+  <PageHead lang={lang} title={ui.sketchTitle[lang]} lead={lead} />
+
+  <section class="frame" aria-label={ui.sketchTitle[lang]}>
+    <ul class="sketch-grid">
+      {items.map((it, i) => (
+        <li class="sketch-item">
+          <figure>
+            <button type="button" class="block w-full text-left cursor-zoom-in group" data-lb
+              data-src={full[i].src} data-w={full[i].attributes.width} data-h={full[i].attributes.height}
+              data-alt={it.alt} data-caption={`${it.title} · ${it.meta}`} aria-label={`${ui.enlarge[lang]}: ${it.alt}`}>
+              <Photo src={it.image} alt={it.alt} sizes={`(min-width: 1100px) ${Math.min(it.image.width, 420)}px, (min-width: 768px) 45vw, calc(100vw - 2rem)`}
+                imgClass="mix-blend-multiply transition-opacity duration-700 group-hover:opacity-80" />
+            </button>
+            <figcaption class="mt-3 flex justify-between gap-3 t-data">
+              {it.href ? <a href={it.href} class="hover:text-porfido transition-colors duration-500">{it.title}</a> : <span>{it.title}</span>}
+              <span class="text-grigio whitespace-nowrap">{it.meta.split(' · ').pop()}</span>
+            </figcaption>
+          </figure>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <Lightbox lang={lang} label={ui.lightboxLabel[lang]} blend />
+</Base>
+
+<style>
+  .sketch-grid { columns: 1; column-gap: var(--gutter); }
+  @media (min-width: 768px) { .sketch-grid { columns: 2; } }
+  @media (min-width: 1100px) { .sketch-grid { columns: 3; } }
+  .sketch-item { break-inside: avoid; padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+</style>

@@ -1,0 +1,41 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=37&lang=it
+title:
+  it: Casa per anziani
+  de: Seniorenheim
+  en: Care home for the elderly
+year: 2010
+place:
+  it: San Gimignano (SI)
+  de: San Gimignano (SI)
+  en: San Gimignano (SI)
+typology: edifici-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2010
+excerpt:
+  lang: it
+  text: Le scelte progettuali vengono basamentate da una attenta lettura dei caratteri dei luoghi, sintesi del dialogo, secolare e stratificato, tra il paesaggio ed il manufatto storico. La necessità di riqualificare il presidio socio-sanitario di Santa Fina, offre, unitamente alla modernizzazione delle attuali spazi, una starordinaria occasione di recupero edlizio , urbanistico e paesaggistico. Con la suddetta premessa, l’intervento avrà un atteggiamento conservativo, recuperando e riqualificando, rispettando l’attuale destinazione. L’intervento si muoverà ,tutelando le parti storiche, nella riconoscibilità dell’intervento contemporaneo.
+  source: https://www.stanislaofierro.com/index.php?p=37&lang=it
+cover: ../../assets/originali/pagine/foto/149_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=37&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/148_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/153_immagine.jpg
+    type: disegno
+    caption:
+      it: Sezione
+      de: Schnitt
+      en: Section
+  - image: ../../assets/originali/pagine/foto/149_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/150_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/151_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/152_immagine.jpg
+    type: disegno

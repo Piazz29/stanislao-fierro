@@ -1,0 +1,45 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=38&lang=it
+title:
+  it: Sistemazione del centro
+  de: Gestaltung des Ortszentrums
+  en: Village centre
+year: 2010
+place:
+  it: Tires
+  de: Tiers
+  en: Tires
+typology: spazi-pubblici
+status: progetto
+international: false
+featured: false
+order: 100
+client:
+  it: Comune di Tires
+  de: Gemeinde Tiers
+  en: Municipality of Tires
+partners:
+  - Wolfgang Simmerle
+excerpt:
+  lang: it
+  text: Un progetto di riqualificazione urbana finalizzato al conferimento di un carattere unitario all’intero paese. La nuova Piazza unisce due parti di paese prima scollegate, oltre a liberare il prospetto del vecchio Gasthof Krone, che ora prospetterà direttamente sulla stessa Piazza. Il nuovo invaso permette la visione, prima preclusa, del muro di cinta del cimitero e e della sovrastante Chiesa. Si è previsto uno studio generale dei materiali per le pavimentazioni e per l’illuminazione pubblica. Questi interventi contribuiranno a rendere ancora più unitario l’intervento.
+  source: https://www.stanislaofierro.com/index.php?p=38&lang=it
+cover: ../../assets/originali/pagine/foto/156_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=38&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/154_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/155_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/156_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/157_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/158_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/159_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/160_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/161_immagine.jpg
+    type: immagine

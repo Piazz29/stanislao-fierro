@@ -1,0 +1,54 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=73&lang=it
+title:
+  it: 9 alloggi IPES
+  de: 9 WOBI-Wohnungen
+  en: 9 IPES housing units
+year: 2012
+place:
+  it: Soprabolzano
+  de: Oberbozen
+  en: Soprabolzano
+typology: residenziale
+status: progetto
+international: false
+featured: false
+order: 6
+competition:
+  year: 2012
+  result:
+    it: 1° premio
+    de: 1. Preis
+    en: 1st prize
+client:
+  it: IPES Bolzano
+  de: WOBI Bozen
+  en: IPES Bolzano
+text:
+  it:
+    - Concorso 2012, primo premio. Nove alloggi di edilizia sociale su un terreno in pendio.
+  de:
+    - Wettbewerb 2012, erster Preis. Neun Sozialwohnungen an einem Hang.
+  en:
+    - Competition 2012, first prize. Nine social housing units on a sloping site.
+cover: ../../assets/originali/pagine/foto/411_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=73&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/411_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/412_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/413_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/414_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/415_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/416_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/417_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/418_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/419_immagine.jpg
+    type: rendering

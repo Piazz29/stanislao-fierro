@@ -1,0 +1,61 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=22&lang=it, https://www.stanislaofierro.com/index.php?p=34&lang=it
+title:
+  it: "Ex fornace: scuola, uffici, teatro"
+  de: "Ehemalige Ziegelei: Schule, Büros, Theater"
+  en: "Former brickworks: school, offices, theatre"
+year: 2010
+place:
+  it: Riccione (RN)
+  de: Riccione (RN)
+  en: Riccione (RN)
+typology: edifici-pubblici
+status: progetto
+international: false
+featured: false
+order: 100
+client:
+  it: Carpentedil S.r.l.
+  de: Carpentedil S.r.l.
+  en: Carpentedil S.r.l.
+excerpt:
+  lang: it
+  text: "Il progetto riguarda la riconversione di una struttura industriale (una Fornace con forno Hoffmann per la produzione a ciclo continuo di laterizi, costruita nel 1908, e dismessa nel 1970) in un centro scolastico e culturale. Per la precisione le nuove necessità saranno: - Scuola media 6 cicli, 18 classi , 450 alunni., Palestra di tipo normale, Teatro per 700 posti;- Uffici ( restauro edificio esistente);- parchiggi (6000 mq); siatemazioni esterne ( Piazze, piste ciclo-pedonali). L’idea progettuale e tesa a formare un intervento unitario e riconoscibile."
+  source: https://www.stanislaofierro.com/index.php?p=22&lang=it
+cover: ../../assets/originali/pagine/foto/114_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/111_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=22&lang=it
+  - https://www.stanislaofierro.com/index.php?p=34&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/111_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/112_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/113_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/114_immagine.jpg
+    type: immagine
+    caption:
+      it: Vista
+      de: Ansicht
+      en: View
+  - image: ../../assets/originali/pagine/foto/115_immagine.jpg
+    type: disegno
+    caption:
+      it: Piante
+      de: Grundrisse
+      en: Plans
+  - image: ../../assets/originali/pagine/foto/116_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/117_immagine.jpg
+    type: immagine
+    caption:
+      it: Vista
+      de: Ansicht
+      en: View
+  - image: ../../assets/originali/pagine/foto/118_immagine.jpg
+    type: immagine
+    caption:
+      it: Vista
+      de: Ansicht
+      en: View

@@ -1,0 +1,47 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=51&lang=it
+title:
+  it: Centro multiservizi
+  de: Dienstleistungszentrum
+  en: Multi-service centre
+year: 2008
+place:
+  it: Merano
+  de: Meran
+  en: Merano
+typology: edifici-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2008
+  result:
+    it: Finalista
+    de: Finalist
+    en: Finalist
+partners:
+  - Nadine Saul
+excerpt:
+  lang: it
+  text: Il nuovo edificio si presenta con una forma compatta ed unitaria, assecondando il senso longitudinale del lotto. L’ingresso principale avviene da Via Scuderie, attraverso un taglio a tutt’altezza che incide in profondità la semplicità del volume. Questo taglio, estremamente espressivo, accoglie tutti gli ingressi rappresentativi (front office, uffici ecc.) ed al contempo cattura la luce solare facendola percepire, con matematica precisione , fino al cuore distributivo dell’edificio. L’edificio nel suo sviluppo si caratterizza per la sua chiusura verso Nord-Est-Ovest, aprendosi invece verso Sud.
+  source: https://www.stanislaofierro.com/index.php?p=51&lang=it
+cover: ../../assets/originali/pagine/foto/222_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=51&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/220_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/221_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/222_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/224_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/225_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/226_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/227_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/228_immagine.jpg
+    type: disegno

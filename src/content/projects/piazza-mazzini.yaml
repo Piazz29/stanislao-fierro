@@ -1,0 +1,31 @@
+# Fonte: brief del cliente (nessuna scheda sul sito attuale)
+title:
+  it: Piazza Mazzini
+  de: Mazziniplatz
+  en: Piazza Mazzini
+year: 2000
+place:
+  it: Bolzano
+  de: Bozen
+  en: Bolzano
+typology: spazi-pubblici
+status: realizzato
+international: false
+featured: false
+order: 4
+awards:
+  - it: Premio Architettura Città di Oderzo 2000
+    de: Architekturpreis Città di Oderzo 2000
+    en: Città di Oderzo Architecture Prize 2000
+  - it: Premio Europeo di Architettura «Luigi Cosenza» 2000, menzione speciale
+    de: Europäischer Architekturpreis „Luigi Cosenza“ 2000, besondere Erwähnung
+    en: European Architecture Prize “Luigi Cosenza” 2000, special mention
+text:
+  it:
+    - Piazza realizzata a Bolzano. Nel 2000 ha ricevuto il Premio Architettura Città di Oderzo e una menzione speciale al Premio Europeo di Architettura «Luigi Cosenza».
+  de:
+    - Ein realisierter Platz in Bozen. 2000 erhielt er den Architekturpreis Città di Oderzo und eine besondere Erwähnung beim Europäischen Architekturpreis „Luigi Cosenza“.
+  en:
+    - A completed square in Bolzano. In 2000 it received the Città di Oderzo Architecture Prize and a special mention at the European Architecture Prize “Luigi Cosenza”.
+sourcePages: []
+gallery: []

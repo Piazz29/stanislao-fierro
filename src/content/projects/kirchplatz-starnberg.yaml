@@ -1,0 +1,41 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=50&lang=it
+title:
+  it: Kirchplatz
+  de: Kirchplatz
+  en: Kirchplatz
+year: 2008
+place:
+  it: Starnberg, Germania
+  de: Starnberg, Deutschland
+  en: Starnberg, Germany
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2008
+  result:
+    it: Finalista
+    de: Finalist
+    en: Finalist
+partners:
+  - Nadine Saul
+excerpt:
+  lang: de
+  text: "Die Entwicklung des Kirchplatzes zu einem attraktiven, urbanen Ort der Stadt an der ablesbaren Schnittstelle zwischen Stadtzentrum und Seeanbindung orientiert sich an folgenden Leitsätzen: - Neugestaltung des Platzes und der städtischer Raumbezüge unter Referenzierung historischer Schichten des Ortes. - Wiederaufbau einer fehlenden Stadtmitte durch eine harmonische einheitliche Verbindung der fragmentierten einzelnen Stadtelemente - Zusammenführung des Platzraumes zu einer (be-)nutzbaren, aufenthaltsfreundlichen Platzoberfläche, unter Integration der verkehrlichen Raum- und Nutzungsansprüche."
+  source: https://www.stanislaofierro.com/index.php?p=50&lang=it
+cover: ../../assets/originali/pagine/foto/219_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=50&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/219_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/215_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/216_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/217_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/218_immagine.jpg
+    type: disegno

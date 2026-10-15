@@ -1,0 +1,38 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=65&lang=it
+title:
+  it: Abitazioni
+  de: Wohnhäuser
+  en: Housing
+year: 2005
+place:
+  it: Funes
+  de: Villnöß
+  en: Funes
+typology: residenziale
+status: progetto
+international: false
+featured: false
+order: 100
+cover: ../../assets/originali/pagine/foto/339_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/339_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=65&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/339_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/340_immagine.jpg
+    type: tavola
+  - image: ../../assets/originali/pagine/foto/341_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/342_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/343_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/344_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/345_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/347_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/348_immagine.jpg
+    type: plastico

@@ -1,0 +1,27 @@
+---
+// Spazio video: con `video` mostra il filmato muto in loop, altrimenti l'immagine.
+// L'immagine riempie lo spazio (object-fit: cover) perché qui fa le veci di un video.
+import { getImage } from 'astro:assets';
+import type { VideoSlot } from '../data/media';
+
+interface Props { slot: VideoSlot; alt: string; class?: string; eager?: boolean; sizes?: string }
+const { slot, alt, class: cls, eager = false, sizes = '100vw' } = Astro.props;
+const { poster, video } = slot;
+const steps = [480, 750, 1040, 1240, 1640, 2048].filter((w) => w < poster.width);
+const widths = [...steps, poster.width];
+const imgs = await Promise.all(widths.map((w) => getImage({ src: poster, width: w, format: 'webp', quality: 80 })));
+const srcset = imgs.map((im, i) => `${im.src} ${widths[i]}w`).join(', ');
+const fallback = imgs[imgs.length - 1].src;
+---
+{video ? (
+  <video class:list={['slot-media', cls]} autoplay muted loop playsinline preload={eager ? 'auto' : 'metadata'} poster={fallback} aria-label={alt} data-video>
+    <source src={video} type={video.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+  </video>
+) : (
+  <img class:list={['slot-media', cls]} src={fallback} srcset={srcset} sizes={sizes} alt={alt}
+    width={poster.width} height={poster.height} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" data-video-placeholder />
+)}
+
+<style>
+  .slot-media { width: 100%; height: 100%; object-fit: cover; display: block; }
+</style>

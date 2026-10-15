@@ -1,0 +1,44 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=16&lang=it, https://www.stanislaofierro.com/index.php?p=29&lang=it
+title:
+  it: Riqualificazione di Viale Mazzini
+  de: Neugestaltung des Viale Mazzini
+  en: Redesign of Viale Mazzini
+year: 2011
+place:
+  it: Chiari (BS)
+  de: Chiari (BS)
+  en: Chiari (BS)
+typology: spazi-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2011
+area: 19.000 m²
+client:
+  it: Comune di Chiari
+  de: Gemeinde Chiari
+  en: Municipality of Chiari
+partners:
+  - Nadine Saul
+excerpt:
+  lang: it
+  text: "storico. Il Viale si caratterizza per avere un’alberatura non simmetrica: il lato Sud con un doppio filare ed il lato Nord quasi totalmente sprovvisto d’alberi pubblici. Il Nord, trova nel tema del muro una chiara espressività architettonica. Il verde privato, in ogni modo, porta i propri benefici sul Viale. E’ vero che il Viale non è utilizzato come Viale urbano, ma è pur vero che in rapporto alla sua lunghezza le intersezioni trasversali non sono numerosissime, semplificando lo stesso intervento di riqualificazione."
+  source: https://www.stanislaofierro.com/index.php?p=16&lang=it
+cover: ../../assets/originali/pagine/foto/470_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/146_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=16&lang=it
+  - https://www.stanislaofierro.com/index.php?p=29&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/470_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/59_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/60_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/61_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/146_immagine.jpg
+    type: schizzo

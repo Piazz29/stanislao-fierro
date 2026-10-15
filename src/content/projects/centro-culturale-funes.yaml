@@ -1,0 +1,37 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=71&lang=it
+title:
+  it: Centro culturale e scuola materna
+  de: Kulturzentrum und Kindergarten
+  en: Cultural centre and nursery school
+year: 2005
+place:
+  it: Funes
+  de: Villnöß
+  en: Funes
+typology: scuole
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2005
+client:
+  it: Provincia autonoma di Bolzano
+  de: Autonome Provinz Bozen
+  en: Autonomous Province of Bolzano
+cover: ../../assets/originali/pagine/foto/396_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=71&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/392_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/393_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/394_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/395_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/396_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/397_immagine.jpg
+    type: immagine

@@ -1,0 +1,49 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=62&lang=it
+title:
+  it: Piazza e parcheggi al Divino Amore
+  de: Platz und Parkplätze am Divino Amore
+  en: Square and parking at Divino Amore
+year: 2006
+place:
+  it: Roma
+  de: Rom
+  en: Rome
+typology: spazi-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2006
+  result:
+    it: 3° premio
+    de: 3. Preis
+    en: 3rd prize
+client:
+  it: Comune di Roma
+  de: Stadt Rom
+  en: City of Rome
+partners:
+  - Nadine Saul
+cover: ../../assets/originali/pagine/foto/303_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=62&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/303_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/304_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/305_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/306_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/307_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/308_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/310_immagine.jpg
+    type: plastico
+    caption:
+      it: Foto del plastico
+      de: Modellfoto
+      en: Model photograph

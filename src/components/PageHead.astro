@@ -1,0 +1,21 @@
+---
+// Testata di pagina: titolo grande sulla griglia, uno schizzo come sinopia sullo sfondo.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { Lang } from '../i18n';
+
+interface Props { lang: Lang; title: string; lead?: string; sketch?: ImageMetadata; kicker?: string }
+const { title, lead, sketch, kicker } = Astro.props;
+---
+<section class="frame relative overflow-hidden">
+  {sketch && (
+    <Image src={sketch} alt="" width={sketch.width} loading="eager" aria-hidden="true"
+      class="sketch-mark absolute right-[calc(var(--margin)*-0.5)] top-[8%] w-[min(70vw,760px)] h-auto opacity-[0.15]" />
+  )}
+  <div class="grid-plan relative pt-[clamp(3rem,8vw,7rem)] pb-[clamp(2.5rem,5vw,4.5rem)] gap-y-6">
+    {kicker && <p class="col-span-4 md:col-span-8 lg:col-span-12 t-data text-grigio">{kicker}</p>}
+    <h1 class="col-span-4 md:col-span-8 lg:col-span-9 t-display text-[clamp(3rem,1.5rem+6vw,7.5rem)]">{title}</h1>
+    {lead && <p class="col-span-4 md:col-span-6 lg:col-span-5 lg:col-start-4 t-lead text-pretty">{lead}</p>}
+    <slot />
+  </div>
+</section>

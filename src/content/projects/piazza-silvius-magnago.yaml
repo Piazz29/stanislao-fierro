@@ -1,0 +1,100 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=76&lang=it, https://www.stanislaofierro.com/index.php?p=78&lang=it
+title:
+  it: Piazza Silvius Magnago
+  de: Silvius-Magnago-Platz
+  en: Piazza Silvius Magnago
+year: 2017
+place:
+  it: Bolzano
+  de: Bozen
+  en: Bolzano
+typology: spazi-pubblici
+status: realizzato
+international: false
+featured: true
+order: 1
+competition:
+  year: 2012
+  result:
+    it: 1° premio
+    de: 1. Preis
+    en: 1st prize
+built: "2017"
+client:
+  it: Comune di Bolzano
+  de: Gemeinde Bozen
+  en: Municipality of Bolzano
+partners:
+  - Nadine Saul
+awards:
+  - it: Premio Architettura Alto Adige 2019, categoria Spazi aperti e infrastrutture
+    de: Architekturpreis Südtirol 2019, Kategorie Freiräume und Infrastrukturen
+    en: South Tyrol Architecture Award 2019, Open Spaces and Infrastructure category
+  - it: Premio Architettura Alto Adige 2019, premio del pubblico
+    de: Architekturpreis Südtirol 2019, Publikumspreis
+    en: South Tyrol Architecture Award 2019, Public Choice award
+text:
+  it:
+    - La piazza davanti al Palazzo della Provincia è trattata come un unico piano continuo. Pochi elementi in pietra, monoliti e sedute, ne misurano lo spazio.
+    - "Le tavole di progetto accostano i materiali al paesaggio dell’Alto Adige: rocce delle Dolomiti, ghiaie di fiume, pietre di valle."
+    - Nel 2019 la piazza ha ricevuto il Premio Architettura Alto Adige nella categoria Spazi aperti e infrastrutture e il premio del pubblico.
+  de:
+    - Der Platz vor dem Landhaus wird als eine einzige, durchgehende Fläche behandelt. Wenige Elemente aus Stein, Monolithe und Sitzblöcke, geben ihm sein Maß.
+    - "Die Projekttafeln setzen die Materialien in Beziehung zur Südtiroler Landschaft: Dolomitenfels, Flusskies, Gestein der Täler."
+    - 2019 wurde der Platz mit dem Architekturpreis Südtirol in der Kategorie Freiräume und Infrastrukturen sowie mit dem Publikumspreis ausgezeichnet.
+  en:
+    - The square in front of the provincial government building is treated as a single continuous plane. A few stone elements, monoliths and seats, give it measure.
+    - "The design boards relate the materials to the South Tyrolean landscape: Dolomite rock, river gravel, valley stone."
+    - In 2019 the square received the South Tyrol Architecture Award in the Open Spaces and Infrastructure category, together with the Public Choice award.
+cover: ../../assets/originali/home/1494000674_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/453_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=76&lang=it
+  - https://www.stanislaofierro.com/index.php?p=78&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/454_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/455_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/456_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/457_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/458_immagine.jpg
+    type: disegno
+    caption:
+      it: Sezione longitudinale
+      de: Längsschnitt
+      en: Longitudinal section
+  - image: ../../assets/originali/pagine/foto/459_immagine.jpg
+    type: disegno
+    caption:
+      it: Sezione trasversale
+      de: Querschnitt
+      en: Cross section
+  - image: ../../assets/originali/pagine/foto/460_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/461_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/462_immagine.jpg
+    type: tavola
+  - image: ../../assets/originali/pagine/foto/463_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/464_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/home/1494000674_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/466_immagine.jpg
+    type: foto
+    alt:
+      it: "Campioni dei materiali: bordo in pietra, pavimentazione, ghiaia"
+      de: "Materialmuster: Steinkante, Belag, Kies"
+      en: "Material samples: stone edging, paving, gravel"
+  - image: ../../assets/originali/pagine/foto/467_immagine.jpg
+    type: tavola
+  - image: ../../assets/originali/pagine/foto/468_immagine.jpg
+    type: tavola
+  - image: ../../assets/originali/pagine/foto/469_immagine.jpg
+    type: tavola
+  - image: ../../assets/originali/pagine/foto/453_immagine.jpg
+    type: schizzo

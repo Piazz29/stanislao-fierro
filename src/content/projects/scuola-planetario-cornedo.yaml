@@ -1,0 +1,44 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=17&lang=it, https://www.stanislaofierro.com/index.php?p=30&lang=it
+title:
+  it: Scuola elementare e planetario
+  de: Grundschule und Planetarium
+  en: Primary school and planetarium
+year: 2010
+place:
+  it: San Valentino, Cornedo
+  de: St. Valentin, Karneid
+  en: San Valentino, Cornedo
+typology: scuole
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2010
+  result:
+    it: 3° premio
+    de: 3. Preis
+    en: 3rd prize
+area: 1.500 m²
+client:
+  it: Provincia autonoma di Bolzano
+  de: Autonome Provinz Bozen
+  en: Autonomous Province of Bolzano
+partners:
+  - Wolfgang Simmerle
+excerpt:
+  lang: it
+  text: Il nuovo edificio si “addiziona” alla scuola esistente, generando un nuovo ordine urbano. Il nuovo progetto si relazione con forza ad un basamento esistente, ove si sviluppa il planetario. Al di sopra del basamento un primo piano , leggero, sopra il quale si organizzano due piani molto compatti. Qui le aperture, oltre a garantire un’adeguata illuminazione, sono disposte in modo tale da relazionarsi con lo straordinario paesaggio circostante
+  source: https://www.stanislaofierro.com/index.php?p=17&lang=it
+cover: ../../assets/originali/pagine/foto/63_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/63_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=17&lang=it
+  - https://www.stanislaofierro.com/index.php?p=30&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/63_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/73_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/104_immagine.jpg
+    type: tavola

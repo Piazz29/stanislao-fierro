@@ -1,0 +1,38 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=43&lang=it
+title:
+  it: Riqualificazione del centro
+  de: Neugestaltung des Zentrums
+  en: Town centre redesign
+year: 2009
+place:
+  it: Noventa di Piave (VE)
+  de: Noventa di Piave (VE)
+  en: Noventa di Piave (VE)
+typology: spazi-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2009
+  result:
+    it: 3° premio
+    de: 3. Preis
+    en: 3rd prize
+partners:
+  - Nadine Saul
+  - Stefania Maggio
+excerpt:
+  lang: it
+  text: "Un progetto di riqualificazione urbanistico complessivo, che tiene conto delle frammentarietà esistente e delle problematiche viabilistiche. L’idea da risposta all’attuale ambiguità tra percorsi pedonali e viabilistici attraverso una soluzione valida per l’intero centro. Le soluzioni diventono puntuali nei punti topici: La parte antistante al Municipio; il nuovo sagrato della Chiesa ; una nuova Piazza; un nuovo percorso pedonale lungo il Fiume ; una nuova soluzione nella parte antistante al Parco."
+  source: https://www.stanislaofierro.com/index.php?p=43&lang=it
+cover: ../../assets/originali/pagine/foto/179_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=43&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/178_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/179_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/180_immagine.jpg
+    type: immagine

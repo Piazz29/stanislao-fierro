@@ -1,0 +1,59 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=69&lang=it
+title:
+  it: Ampliamento del Museo Civico
+  de: Erweiterung des Stadtmuseums
+  en: Extension of the City Museum
+year: 2005
+place:
+  it: Bolzano
+  de: Bozen
+  en: Bolzano
+typology: edifici-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2005
+  result:
+    it: 3° premio
+    de: 3. Preis
+    en: 3rd prize
+client:
+  it: Comune di Bolzano
+  de: Gemeinde Bozen
+  en: Municipality of Bolzano
+partners:
+  - Ulrich Weger
+excerpt:
+  lang: de
+  text: "Museumsgarten und neuer Haupteingang: Der Abbruch der bestehenden Stromkabine und der anliegenden Nebenbauten erlauben eine großzügige Öffnung des Hofes und der Westseite des Museums zur Stadt hin und die Schaffung eines besucherfreundlichen neuen Haupteinganges an der stark frequentierten Museumsstraße. Unser Projektvorschlag sieht ein neues Eingangsgebäude in paralleler Richtung zum benachbarten INA“-Gebäude (Sitz der Städtischen Bibliothek) vor, mit einer Anbindung an die Fassade des als Tor zur Altstadt konzipierten Gebäudes aus den 30er Jahren."
+  source: https://www.stanislaofierro.com/index.php?p=69&lang=it
+cover: ../../assets/originali/pagine/foto/379_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=69&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/370_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/371_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/372_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/373_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/374_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/375_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/376_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/377_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/378_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/379_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/380_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/381_immagine.jpg
+    type: immagine

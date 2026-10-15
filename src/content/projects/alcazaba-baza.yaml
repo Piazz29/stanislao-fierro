@@ -1,0 +1,54 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=55&lang=it
+title:
+  it: Riqualificazione dell’Alcazaba
+  de: Neugestaltung der Alcazaba
+  en: Redevelopment of the Alcazaba
+year: 2007
+place:
+  it: Baza, Spagna
+  de: Baza, Spanien
+  en: Baza, Spain
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 12
+competition:
+  year: 2007
+  result:
+    it: 1° premio
+    de: 1. Preis
+    en: 1st prize
+  name:
+    it: Concorso internazionale
+    de: Internationaler Wettbewerb
+    en: International competition
+client:
+  it: EPSA, Siviglia
+  de: EPSA, Sevilla
+  en: EPSA, Seville
+partners:
+  - José Luís Daroca Bruño
+collaborators:
+  - Nadine Saul
+  - Adrián López Fernández
+excerpt:
+  lang: it
+  text: "Il progetto riguarda una complessa riqualificazione urbana dell'antico Alcazar della città di Baza. Si progettano, inoltre, tutti i sistemi di collegamento meccanici verticali tra l'Alcazar e il centro storico, e tutti gli spazi aperti (piazze, strade, rampe, slarghi) di connessione. Inoltre, sul limite dell'area, si inserisce un edificio pubblico a destinazione socio-sanitaria del quale la caratteristica fondamentale è di essere un autentico collegamento pubblico tra la parte alta e bassa della città. Si progettano anche le attrezzature pubbliche come: bar, ristoranti, bagni, arredo urbano e illuminazione pubblica."
+  source: https://www.stanislaofierro.com/index.php?p=55&lang=it
+cover: ../../assets/originali/pagine/foto/269_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=55&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/268_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/269_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/270_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/271_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/272_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/273_immagine.jpg
+    type: disegno

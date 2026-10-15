@@ -1,0 +1,273 @@
+---
+import { langs, path, ui, type Lang, type RouteKey } from '../i18n';
+import { h } from '../i18n/home';
+import { studio } from '../data/site';
+
+interface Props { lang: Lang; route: RouteKey; slug?: string }
+const { lang, route, slug } = Astro.props;
+const items = (['works', 'competitions', 'sketches', 'studio', 'contact'] as const);
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+<header class="site-header frame" data-header data-at-top>
+  <div class="header-row grid grid-cols-[1fr_auto_1fr] items-center" style="height: var(--header-h)">
+    <div class="flex items-center">
+      <button type="button" class="menu-btn t-data" aria-expanded="false" aria-controls="menu-panel" data-menu-toggle>
+        <span data-label-open>{h.menu[lang]}</span><span data-label-close hidden>{h.close[lang]}</span>
+        <span class="menu-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </button>
+    </div>
+
+    <a href={path(lang, 'home')} class="wordmark" aria-label={`${ui.studioName[lang]}, home`}>
+      <span class="wordmark-sign" aria-hidden="true"></span>
+      <span>Stanislao Fierro</span>
+    </a>
+
+    <div class="flex justify-end items-center gap-5">
+      <ul class="header-extra hidden lg:flex gap-2.5" aria-label={ui.langLabel[lang]}>
+        {langs.map((l) => (
+          <li>
+            <a href={path(l, route, slug)} hreflang={l} lang={l} aria-current={l === lang ? 'true' : undefined}
+              class:list={['t-data px-1 py-2 inline-block transition-opacity duration-500', l === lang ? 'opacity-100' : 'opacity-55 hover:opacity-100']}>
+              {l.toUpperCase()}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href={path(lang, 'contact')} class="header-extra header-cta hidden md:inline-flex btn btn-ghost">{h.contactCta[lang]}</a>
+    </div>
+  </div>
+</header>
+
+<div id="menu-panel" class="menu-panel" role="dialog" aria-modal="true" aria-label={h.menuLabel[lang]} inert data-menu>
+  <div class="frame menu-inner">
+    <nav aria-label={ui.mainNav[lang]} class="menu-nav">
+      <ul class="menu-list">
+        {items.map((key, i) => (
+          <li class="menu-item" style={`--i:${i}`}>
+            <a href={path(lang, key)} aria-current={route === key ? 'page' : undefined} class="menu-link">
+              <span class="t-tag text-grigio">{pad(i + 1)}</span>
+              <span class="t-display">{ui.nav[key][lang]}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <div class="menu-aside menu-item" style={`--i:${items.length}`}>
+      <address class="not-italic t-body text-carbone">
+        {studio.street[lang]}<br />{studio.postal} {studio.city[lang]}<br />
+        <a class="link" href={`tel:${studio.phoneIntl}`}>{studio.phoneDisplay}</a><br />
+        <a class="link" href={`mailto:${studio.email}`}>{studio.email}</a>
+      </address>
+      <ul class="flex gap-5 mt-6" aria-label={ui.langLabel[lang]}>
+        {langs.map((l) => (
+          <li>
+            <a href={path(l, route, slug)} hreflang={l} lang={l} aria-current={l === lang ? 'true' : undefined}
+              class:list={['t-data py-2 inline-block', l === lang ? 'text-carbone border-b border-carbone' : 'text-grigio hover:text-carbone']}>
+              {l === 'it' ? 'Italiano' : l === 'de' ? 'Deutsch' : 'English'}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="menu-backdrop" aria-hidden="true" data-menu-backdrop></div>
+
+<style>
+  .site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    color: var(--color-carbone);
+    transition: transform 0.7s var(--ease-out-quint), background-color 0.5s var(--ease-out-quint), color 0.5s var(--ease-out-quint), border-color 0.5s;
+    border-bottom: 1px solid transparent;
+  }
+  /* staccata dalla cima: fondo calce, filo sottile */
+  .site-header:not([data-at-top]) { background: color-mix(in oklch, var(--color-calce) 92%, transparent); border-bottom-color: var(--color-linea); backdrop-filter: blur(6px); }
+  /* sopra una sezione scura o una foto: testo chiaro, nessun fondo */
+  .site-header[data-on-dark] { color: var(--color-calce); background: transparent; border-bottom-color: transparent; backdrop-filter: none; }
+  .site-header[data-hidden] { transform: translateY(-100%); }
+  .site-header[data-intro] { background: transparent; border-bottom-color: transparent; backdrop-filter: none; }
+  /* durante l'apertura della home si vede solo il nome */
+  .site-header[data-intro] .menu-btn, .site-header[data-intro] .header-extra { opacity: 0; pointer-events: none; }
+  .menu-btn, .header-extra { transition: opacity 0.6s var(--ease-out-quint); }
+  /* a menu aperto la testata diventa piena e il pannello ne è il prolungamento */
+  .site-header[data-menu-open] { color: var(--color-carbone); background: var(--color-calce); border-bottom-color: transparent; transform: none; backdrop-filter: none; }
+  .site-header[data-menu-open] .menu-btn,
+  .site-header[data-menu-open] .header-extra { opacity: 1; pointer-events: auto; }
+  .site-header[data-menu-open] .header-cta:hover { background: var(--color-carbone); color: var(--color-calce); border-color: var(--color-carbone); }
+
+  .menu-btn {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    min-height: 2.25rem; padding: 0.45rem 0.8rem;
+    background: color-mix(in oklch, currentColor 9%, transparent);
+  }
+  .menu-dots { display: grid; grid-template-columns: repeat(2, 3px); gap: 3px; }
+  .menu-dots i { width: 3px; height: 3px; background: currentColor; border-radius: 50%; }
+  .menu-btn[aria-expanded='true'] .menu-dots { transform: rotate(45deg); }
+  .menu-dots { transition: transform 0.5s var(--ease-out-quint); }
+
+  .wordmark {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 0.95rem + 0.9vw, 1.85rem);
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  /* segno: una pianta quadrata con il suo vuoto, come una piazza */
+  .wordmark-sign {
+    width: 0.62em; height: 0.62em;
+    border: 1.5px solid currentColor;
+    box-shadow: inset 0 0 0 0.12em transparent, inset 0 0 0 0.2em currentColor;
+    flex: none;
+  }
+
+  .header-cta { min-height: 2.35rem; padding: 0.55rem 1.2rem; }
+  .site-header[data-on-dark] .header-cta:hover { color: var(--color-carbone); }
+
+  /* il pannello si srotola dal bordo inferiore della testata, alto quanto le sue voci;
+     la chiusura ripercorre lo stesso movimento al contrario */
+  .menu-panel {
+    --menu-ease: cubic-bezier(0.77, 0, 0.18, 1);
+    --menu-t: 0.85s;
+    position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 45;
+    max-height: calc(100svh - var(--header-h));
+    background: var(--color-calce);
+    border-bottom: 1px solid var(--color-linea);
+    overflow-y: auto;
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+    transition: clip-path var(--menu-t) var(--menu-ease), visibility 0s linear var(--menu-t);
+  }
+  .menu-panel[data-open] {
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+    transition: clip-path var(--menu-t) var(--menu-ease), visibility 0s;
+  }
+  .menu-backdrop {
+    position: fixed; inset: 0; z-index: 44;
+    background: oklch(0.2 0.01 60 / 0.42);
+    opacity: 0; pointer-events: none;
+    transition: opacity var(--menu-t, 0.85s) cubic-bezier(0.77, 0, 0.18, 1);
+  }
+  .menu-backdrop[data-open] { opacity: 1; pointer-events: auto; }
+
+  .menu-inner {
+    display: grid; gap: 1.75rem; align-content: start;
+    padding-top: 0.25rem;
+    padding-bottom: clamp(1.25rem, 3vh, 2rem);
+  }
+  @media (min-width: 1100px) {
+    .menu-inner { grid-template-columns: 2fr 1fr; align-items: end; gap: 4rem; }
+  }
+  .menu-list { border-top: 1px solid var(--color-linea); }
+  .menu-list li { border-bottom: 1px solid var(--color-linea); }
+  .menu-link {
+    display: flex; align-items: baseline; gap: clamp(1rem, 3vw, 2.5rem);
+    padding-block: clamp(0.35rem, 1.1vh, 0.8rem);
+  }
+  .menu-link .t-display {
+    font-size: clamp(2rem, 1rem + 2.6vw, 3.6rem);
+    transition: transform 0.7s var(--ease-out-quint);
+  }
+  .menu-link:hover .t-display { transform: translateX(0.5rem); }
+  /* pagina corrente: la voce in corsivo e il numero scuro */
+  .menu-link[aria-current='page'] .t-display { font-style: italic; }
+  .menu-link[aria-current='page'] .t-tag { color: var(--color-carbone); }
+
+  /* le voci salgono una dopo l'altra in apertura e ridiscendono in ordine inverso in chiusura */
+  .menu-item {
+    opacity: 0;
+    transform: translateY(1.4rem);
+    transition: opacity 0.5s var(--ease-out-quint), transform 0.6s var(--menu-ease);
+    transition-delay: calc((5 - var(--i)) * 35ms);
+  }
+  .menu-panel[data-open] .menu-item {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(0.28s + var(--i) * 55ms);
+  }
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]')!;
+  const btn = header.querySelector<HTMLButtonElement>('[data-menu-toggle]')!;
+  const panel = document.querySelector<HTMLElement>('[data-menu]')!;
+  const lenis = () => (window as unknown as { lenis?: { stop(): void; start(): void } }).lenis;
+
+  const backdrop = document.querySelector<HTMLElement>('[data-menu-backdrop]')!;
+  const isOpen = () => panel.hasAttribute('data-open');
+  let headerTimer = 0;
+  const setOpen = (open: boolean, focus = true) => {
+    btn.setAttribute('aria-expanded', String(open));
+    panel.toggleAttribute('data-open', open);
+    backdrop.toggleAttribute('data-open', open);
+    // in chiusura la testata resta piena finché il pannello non è rientrato sotto di lei
+    window.clearTimeout(headerTimer);
+    if (open) header.setAttribute('data-menu-open', '');
+    else headerTimer = window.setTimeout(() => { if (!isOpen()) header.removeAttribute('data-menu-open'); }, 820);
+    panel.inert = !open;
+    btn.querySelector('[data-label-open]')!.toggleAttribute('hidden', open);
+    btn.querySelector('[data-label-close]')!.toggleAttribute('hidden', !open);
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    if (open) {
+      header.removeAttribute('data-hidden');
+      lenis()?.stop();
+      if (focus) window.setTimeout(() => panel.querySelector<HTMLAnchorElement>('a')?.focus({ preventScroll: true }), 350);
+    } else { pinned = false; lenis()?.start(); }
+  };
+
+  // con il mouse il menu si apre al passaggio sul bottone e si richiude uscendo da testata e pannello;
+  // un clic lo blocca aperto, un secondo clic lo chiude
+  const hover = window.matchMedia('(hover: hover) and (pointer: fine)');
+  let pinned = false;
+  let closeTimer = 0;
+  const inside = (el: EventTarget | null) => el instanceof Node && (header.contains(el) || panel.contains(el));
+  btn.addEventListener('pointerenter', () => {
+    if (!hover.matches || header.hasAttribute('data-intro')) return;
+    window.clearTimeout(closeTimer);
+    if (!isOpen()) setOpen(true, false);
+  });
+  const leave = (e: PointerEvent) => {
+    if (!hover.matches || pinned || !isOpen() || inside(e.relatedTarget)) return;
+    closeTimer = window.setTimeout(() => setOpen(false), 220);
+  };
+  const stay = () => window.clearTimeout(closeTimer);
+  header.addEventListener('pointerleave', leave);
+  panel.addEventListener('pointerleave', leave);
+  header.addEventListener('pointerenter', stay);
+  panel.addEventListener('pointerenter', stay);
+
+  btn.addEventListener('click', () => {
+    if (!isOpen()) { setOpen(true); pinned = true; return; }
+    if (hover.matches && !pinned) { pinned = true; return; }
+    setOpen(false);
+  });
+  backdrop.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen()) { setOpen(false); btn.focus(); }
+  });
+
+  // nascosta scorrendo in giù, di nuovo visibile scorrendo in su
+  let last = window.scrollY;
+  const darks = [...document.querySelectorAll<HTMLElement>('[data-tone="dark"]')];
+  const update = () => {
+    const y = window.scrollY;
+    header.toggleAttribute('data-at-top', y < 8);
+    if (!isOpen() && !header.hasAttribute('data-intro')) header.toggleAttribute('data-hidden', y > last && y > 240);
+    last = y;
+    // la riga centrale della testata cade su una sezione scura?
+    const mid = header.offsetHeight / 2;
+    const onDark = darks.some((d) => {
+      const r = d.getBoundingClientRect();
+      return r.top <= mid && r.bottom >= mid && d.dataset.toneActive !== 'false';
+    });
+    header.toggleAttribute('data-on-dark', onDark);
+  };
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  (window as unknown as { updateHeader?: () => void }).updateHeader = update;
+</script>

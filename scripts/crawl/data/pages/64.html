@@ -1,0 +1,262 @@
+
+<html>
+    <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <script src="jquery-1.10.2.min.js"></script>
+        
+        <!-- Includo il link al css -->
+        <link rel="stylesheet" href="style.css" />
+        
+        <script>
+            $(window).resize(function() {
+                width = $(window).width();
+                if (width < 1100) {
+                    $("#pagina").css("left", "0px");
+                    $("#pagina").css("margin-left", "10px");
+                } else {
+                    $("#pagina").css("left", "50%");
+                    $("#pagina").css("margin-left", "-525px");
+                }
+
+                height = $(window).height();
+                if (height < 750) {
+                    $("#pagina").css("top", "0px");
+                    $("#pagina").css("margin-top", "10px");
+                } else {
+                    $("#pagina").css("top", "50%");
+                    $("#pagina").css("margin-top", "-375px");
+                }
+            });
+
+            $(document).ready(function() {
+
+                width = $(window).width();
+                if (width < 1100) {
+                    $("#pagina").css("left", "0px");
+                    $("#pagina").css("margin-left", "10px");
+                } else {
+                    $("#pagina").css("left", "50%");
+                    $("#pagina").css("margin-left", "-525px");
+                }
+
+                height = $(window).height();
+                if (height < 750) {
+                    $("#pagina").css("top", "0px");
+                    $("#pagina").css("margin-top", "10px");
+                } else {
+                    $("#pagina").css("top", "50%");
+                    $("#pagina").css("margin-top", "-375px");
+                }
+
+                $("#menu a").hover(function() {
+                    color = $(this).css("color");
+                    $(this).css("color", "#111");
+                }, function() {
+                    $(this).css("color", color);
+                });
+            });
+        </script>
+        
+        
+        <!-- Script per analytics -->
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-46289673-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </head>
+    <body onselectstart="return(false);">
+        <div id="pagina">
+
+            <!--TITOLO-->
+            <div id="titolo">
+                STANISLAO FIERRO ARCHITETTO
+            </div>
+
+            <!--MENU-->
+            <div id="menu">
+                <div id="lingua">
+                    <a style="color: #111" href="/index.php?p=64&lang=it&lang=it">it</a> |
+                    <a style="color: #888" href="/index.php?p=64&lang=it&lang=en">en</a> |
+                    <a style="color: #888" href="/index.php?p=64&lang=it&lang=de">de</a>
+                </div>
+                <div id="menu1">
+                    <ul>
+                        <li><a href="?p=Home" style="color: #888;">Home</a></li>
+                        <li><a href="?p=News" style="color: #888;">News</a></li>
+                        <li><a href="?p=Lista" style="color: #111;">Progetti</a></li>
+                        <li><a href="?p=Studio" style="color: #888;">Studio</a></li>
+                        <li><a href="?p=Contatti" style="color: #888;">Contatti</a></li>
+                        <li><a href="?p=Biografia" style="color: #888;">Info</a></li>
+                    </ul>
+                </div>
+                <div id="menu2">
+                    <ul class="progetti"  style="display: block;">
+                        <li><a href="?p=Lista" style="color: #888;">Lista</a></li>
+                        <li><a href="?p=Opere selezionate" style="color: #888;">Opere selezionate</a></li>
+                        <li><a href="?p=In corso" style="color: #888;">In corso</a></li>
+                        <li><a href="?p=Allestimenti" style="color: #888;">Tipo</a></li>
+                        <li><a href="?p=Regesto Schizzi" style="color: #888;">Regesto Schizzi</a></li>
+                    </ul>
+                    <ul class="info"  style="display: none;">
+                        <li><a href="?p=Biografia" style="color: #888;">Biografia</a></li>
+                        <li><a href="?p=Pubblicazioni" style="color: #888;">Pubblicazioni</a></li>
+                        <li><a href="?p=Premi" style="color: #888;">Premi</a></li>
+                        <li><a href="?p=Conferenze" style="color: #888;">Conferenze</a></li>
+                    </ul>
+                </div>
+                <div id="menu3"  style="display: none;">
+                    <ul>
+                        <li><a href="?p=Allestimenti" style="color: #888;">Allestimenti</a></li>
+                        <li><a href="?p=Riqualificazione Urbana" style="color: #888;">Riqualificazione Urbana</a></li>
+                        <li><a href="?p=Edifici Pubblici" style="color: #888;">Edifici Pubblici</a></li>
+                        <li><a href="?p=Residenziali" style="color: #888;">Residenziali</a></li>
+                        <li><a href="?p=Scolastici" style="color: #888;">Scolastici</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--CONTENUTO-->
+            <div id="contenuto">
+                <div id="immagini">    <div id="slide">        <div id="pag">            <div  id="a152" class="1">  <img src="public/pagine/foto/319_immagine.jpg">            </div><div class="2">  <img src="public/pagine/foto/320_immagine.jpg">            </div><div class="3">  <img src="public/pagine/foto/321_immagine.jpg">            </div><div class="4">  <img src="public/pagine/foto/322_immagine.jpg">            </div><div class="5">  <img src="public/pagine/foto/323_immagine.jpg">            </div><div class="6">  <img src="public/pagine/foto/324_immagine.jpg">            </div><div class="7">  <img src="public/pagine/foto/325_immagine.jpg">            </div><div class="8">  <img src="public/pagine/foto/326_immagine.jpg">            </div><div class="9">  <img src="public/pagine/foto/327_immagine.jpg">            </div><div class="10">  <img src="public/pagine/foto/328_immagine.jpg">            </div><div class="11">  <img src="public/pagine/foto/329_immagine.jpg">            </div><div class="12">  <img src="public/pagine/foto/330_immagine.jpg">            </div><div class="13">  <img src="public/pagine/foto/331_immagine.jpg">            </div><div class="14">  <img src="public/pagine/foto/332_immagine.jpg">            </div><div class="15">  <img src="public/pagine/foto/333_immagine.jpg">            </div><div class="16">  <img src="public/pagine/foto/334_immagine.jpg">            </div><div class="17">  <img src="public/pagine/foto/335_immagine.jpg">            </div><div class="18">  <img src="public/pagine/foto/336_immagine.jpg">            </div><div class="19">  <img src="public/pagine/foto/337_immagine.jpg">            </div><div class="20">  <img src="public/pagine/foto/338_immagine.jpg">            </div>            <!--<span class="left">                <div class="left"><img src="left-arrow.png"></div>            </span>            <span class="right">                <div class="right"><img src="right-arrow.png"></div>            </span>-->        </div>        <div id="lista15">            <div id="lista151">                <div class="1" style="left: 0px;";>                        <img src="public/pagine/foto/319_immagine.jpg">                    </div><div class="2" style="left: 108px;";>                        <img src="public/pagine/foto/320_immagine.jpg">                    </div><div class="3" style="left: 216px;";>                        <img src="public/pagine/foto/321_immagine.jpg">                    </div><div class="4" style="left: 324px;";>                        <img src="public/pagine/foto/322_immagine.jpg">                    </div><div class="5" style="left: 432px;";>                        <img src="public/pagine/foto/323_immagine.jpg">                    </div><div class="6" style="left: 540px;";>                        <img src="public/pagine/foto/324_immagine.jpg">                    </div><div class="7" style="left: 648px;";>                        <img src="public/pagine/foto/325_immagine.jpg">                    </div><div class="8" style="left: 756px;";>                        <img src="public/pagine/foto/326_immagine.jpg">                    </div><div class="9" style="left: 864px;";>                        <img src="public/pagine/foto/327_immagine.jpg">                    </div><div class="10" style="left: 972px;";>                        <img src="public/pagine/foto/328_immagine.jpg">                    </div><div class="11" style="left: 1080px;";>                        <img src="public/pagine/foto/329_immagine.jpg">                    </div><div class="12" style="left: 1188px;";>                        <img src="public/pagine/foto/330_immagine.jpg">                    </div><div class="13" style="left: 1296px;";>                        <img src="public/pagine/foto/331_immagine.jpg">                    </div><div class="14" style="left: 1404px;";>                        <img src="public/pagine/foto/332_immagine.jpg">                    </div><div class="15" style="left: 1512px;";>                        <img src="public/pagine/foto/333_immagine.jpg">                    </div><div class="16" style="left: 1620px;";>                        <img src="public/pagine/foto/334_immagine.jpg">                    </div><div class="17" style="left: 1728px;";>                        <img src="public/pagine/foto/335_immagine.jpg">                    </div><div class="18" style="left: 1836px;";>                        <img src="public/pagine/foto/336_immagine.jpg">                    </div><div class="19" style="left: 1944px;";>                        <img src="public/pagine/foto/337_immagine.jpg">                    </div><div class="20" style="left: 2052px;";>                        <img src="public/pagine/foto/338_immagine.jpg">                    </div>            </div>            <div class="left">&#9668</div>   <div class="right">&#9658</div>        </div>    </div></div><div id="descrizione" onselectstart="return(true);">    <div id="titoletto">        2006 - Riqualificazione del Mausoleo di Augusto e di Piazza Augusto Imperatore , Roma (Italia)    </div>    <div class="des" id="d0" style="display: block"><p>Concorso di progettazione a preselezione</p><p>
+Finalista</p><p>
+2006</p><p>
+Committente:</p><p>
+Comune di Roma</p><p>
+Architetti:</p><p>
+Stanislao Fierro   J.I. Linazasoro</p><p>
+Collaboratori:</p><p>
+Nadine Saul  Ricardo Sánchez  González </p><p>
+Consulenti:</p><p>
+Dr. Paola Palazzo (Archeologa)</p><p>
+Dr.Lorenza M.G. DAlessandro (Storica dellarte)</p><p>
+Dr. Giorgio Capriotti (Esperto in restauro)</p><p>
+Sig. Gildo Spagnolli ( esperto del verde)</p><p>
+</p></div><div class="des" id="d1"><p>OBIETTIVI</p><p>
+Le seguenze e le prospettive che caratterizzano gli spazi di Roma sono sempre con sapienza interrotte da elementi monumentali (fontane, obelisci, colonne ecc.), formando richiami ottici, che hanno lo scopo di tenere uniti spazi a volte molto distanti tra loro. Questa strategia consolidata, è giunta fino ai nostri giorni con forza e chiarezza.</p><p>
+Questo principio urbanistico che inizia allepoca di Sisto V con il suo Architetto Carlo Fontana, lo troviamo con evidenza anche in Campo Marzio. La Piazza di Augusto Imperatore, invece, sembra uno spazio isolato ai margini, e non influenzato da questa strategia urbanistica.</p><p>
+Risulta, quindi, assolutamente necessario trovare un integrazione con il tessuto urbano antico.</p><p>
+Ci è parso fondamentale intrecciare questa marginalità con gli accessi e con gli assi visivi trasversali che partono da Piazza Spagna e che giungono fino al lungotevere.</p><p>
+</p></div><div class="des" id="d2"><p>Idea, questa, già contenuta nel Piano Regolatore del 1909 e nella successiva variante del 1925-26, antecedente, quindi, alla costruzione della Piazza.</p><p>
+Lattuale spazio manca di unità con il Musoleo, che resta isolato e difficilmente accessibile.</p><p>
+La proposta, di conseguenza, vorrà conferire la massima fluibilità di passaggio tra i due livelli della Piazza, intendendo entrambi gli ambiti parte di un unico spazio urbano.</p><p>
+Si vuole rendere compatibili, i previsti scavi archeologici, con lutilità urbana dello spazio, evitando</p><p>
+al massimo le interferenze, in modo da far convivere la costruzione della nuova Piazza con lesecuzione degli scavi.</p><p>
+Il progetto è predisposto in modo tale che, in futuro, gli scavi stessi possano essere visitati ed inglobati nei percorsi complessivi, arricchendoli ulteriormente.</p></div><div class="des" id="d3"><p>Risulta fondamentale sostituire lattuale sistema di scale, e relazionare i nuovi percorsi (scale e rampe) con Via del Corso e Piazza di Spagna .</p><p>
+Affichè questa relazione possa innescarsi, consideriamo fondamentale, rivedere ,in particolare, la posizione, e di conseguenza, lorientamento dellattuale scala principale che contraddice ed impedisce questa volontà.</p><p>
+Lattuale Piazza ,inoltre, ci risulta come uno spazio enfatico a cui manca carattere e scala, e soprattutto relazioni gerarchiche, con il ricco tessuto urbano circostante.</p><p>
+Si vuole legare e relazionare con forza il progetto con gli edifici del Morpurgo che ora non riescono a proiettare la propria indubbia qualità Architettonica.</p><p>
+Si vogliono recupere, con il nuovo intervento: la scala ed il carattere presente nel consolidato tessuto urbano romano.</p></div><div class="des" id="d4"><p>E sufficiente analizzare la storia costruttiva delle Piazze romane per individuare con chiarezza</p><p>
+che questi spazi sono il risultato di un processo dilatato nel tempo, che rispondono ad un principio</p><p>
+comune, una sorta di decisione generatrice: a volte è stato sufficiente lo spostamento di una</p><p>
+Fontana, di un Obelisco o di una preesistenza; che si metteva in movimento un processo che si</p><p>
+cristallizzava e si condesava in una Piazza. Gli elementi, attraverso il controllo dellocchio</p><p>
+univano e rimandavano trasformando lo stato dei luoghi.</p><p>
+Così successe, per esempio, con la costruzione della Piazza del Popolo. Nellattuale Piazza</p><p>
+Augusto Imperatore mancano questi elementi .In fase di esecuzione della Piazza, vengono messi</p><p>
+in atto accorgimenti tecnici affinchè questa strategia possa essere messa in atto.</p></div><div class="des" id="d5"><p>Si considera la presenza del Mausoleo elemento eccezionale della nuova Piazza. La prosposta è</p><p>
+tesa a considerare questa eccezionalità unitamente a tutti gli elementi del progetto.</p><p>
+Con questo importante presupposto si è resa possibile la leggibilità sia del frammento che della</p><p>
+rovina romantica. Per questo motivo, ed in relazione alla Piazza, il Monumento non dovrà essere</p><p>
+alieno al carattere dellintorno, prendendo come riferimento la seguenza di trasformazioni di</p><p>
+monumenti analoghi, come per esempio il vicino Mausoleo di Adriano.</p><p>
+Lintervento allinterno nel Mausoleo potrebbe comunque realizzarsi in una fase successiva o</p><p>
+durante la realizzazione della Piazza, senza che la fruibilità della piazza antistante ne venga</p><p>
+penalizzata. Urgono alcune premesse che sono alla base degli obiettivi che il nuovo intervento si</p><p>
+pone in merito al Mausoleo:</p><p>
+</p></div><div class="des" id="d6"><p>1)In primo luogo considerare irreversibili i processi iniziati negli anni trenta che permisero, con la distruzione delle realizzazioni medievali e moderne, leliminazione della storia accumulata, cercando di rivalutare e di riconoscere il primitivo stato. Questo ha portato alla riscoperta, tra le altre cose, del livello originario, ma ci ha lascianto una rovina informe, carente di utilità e di legibilità. Si considera, per tanto, che il Mausoleo, non può convertirsi in uno spazio ludico come lo era al tempo del Correa o dellAugusteo dal momento che ciò comporterebbe il disfacimento del processo intrapreso. Inoltre lattuale normativa riferita allaccessilità ai luoghi pubblici, obbligherebbe ad una tale quantità di aperture e trasformazioni, che sarebbero incompatibili con gli elementari principi di conservazione archeologica. Roma,inoltre, conta oggi e potrà contare nel prossimo futuro, in spazi adeguati per questo tipo di attività. </p></div><div class="des" id="d7"><p>2)Nonostante ciò risulta necessario, al contempo, evidenziare i differenti strati storici presenti nel Monumento, recuperando la sua legibilità. In questa maniera si intende estrapolare i resti del Giardino Soderini, a Nord e quelli dellAugusteo e allinterno dellintercapedine.</p><p>
+3)I resti lapidei verranno opportunamente esposti allinterno di questi schema di leggibilità.</p></div><div class="des" id="d8"><p>Tutte le parti aggiunte o sostituite,si dovranno chiaramente distinguere dalle parti originali, senza</p><p>
+un forzato contrasto, ma con delicatezza ed armonia.</p><p>
+Il contrasto produce un effetto immediato, la somiglianza ci soddisfa solo col tempo. Il contrasto è</p><p>
+un elemento di varietà ma disperde latenzione; la somiglianza nasce invece da una tendenza</p><p>
+allunità Igor Strawinsky - La poetica della Musica .</p></div><div class="des" id="d9"><p>Si sceglieranno materiali la cui apparenza e textura ci aiuteranno a perseguire questo obiettivo.</p><p>
+Allinterno di questo sentimento si proporranno interventi di restauro tesi a rafforzare la geometria</p><p>
+e la chiarezza architettonica delledificio ,superando lattuale condizione di rovina romantica.</p><p>
+Per quanto riguarda la fruizione del Mausoleo , si è deciso di portare il visitatore da quota +2.65 a</p><p>
+quota +6.52 con una rampa con pendenza del 9% e con una scala gradonata. Giunti a quota</p><p>
++6.52 si utilizza litercapedine per raggiungere quota +13.00 attraverso una rampa e con il</p><p>
+ripristino della scala a chiocciola esistente.</p><p>
+Questo fluido sistema di collegamenti vuole legare il sistema di percorsi delle Piazze esterne con</p><p>
+quelli del Mausoleo.</p><p>
+La quota +13.00 , quella più alta, corre continua su tutto il piano , da questo livello è possibile</p><p>
+apprezzare le parti sottostanti già scavate e lesterno.</p></div><div class="des" id="d10"><p>Questo livello è collegato ,con una nuova scala di sicurezza ed ad un ascensore, al piano</p><p>
+dingresso. Questi piccoli interventi permettono di usare il Mausoleo in modo diversificato, anche</p><p>
+se ci sembra che una destinazione allestitiva sia la più appropriata, anche perché si legherebbe</p><p>
+con facilità con gli spazi esterni e con un possibile lapidarium sotterraneo nelle parti ancora da</p><p>
+scavare.</p></div><div class="des" id="d11"><p>IL DOPPIO MURO E GLI SPAZI INTERSTIZIALI</p><p>
+Il problema di integrare il Mausoleo con la Piazza è stato risolto cercando di accedere in maniera continua e fluida dal livello attuale della Piazza al livello di accesso originale del Mausoleo, creando una scala adeguata con lintorno, in modo da rinforzare la sua monumentalità.</p><p>
+- Il primo luogo si organizzerà un buon sistema di accessi dellattuale Piazza con lantico assetto urbano che inevitabilmente si devono sovrapporre.</p><p>
+- La seconda questione è introdotta dalla relazione tra una adeguata geometria e la forma del monumento, da noi risolta con la composizione cerchio-quadrato.</p><p>
+Entrambi i problemi hanno avuto soluzione mediate luso della struttura del doppio muro nella cui intercapedine si inseriranno le rampe e le scale gradonate.Il doppio muro introduce nella nuova Piazza, anche una scala intermedia tra la monumentalità del Mausoleo e la forza degli edifici di Ballio-Morpurgo, recuperando la complessità spaziale della Città storica.</p></div><div class="des" id="d12"><p>LA CELLA</p><p>
+Il nucleo centrale del Mausoleo è lunico spazio che evoca lorigine del monumento.</p><p>
+Anche se lattuale forma rispecchia quella originale, ciò che ci è giunto è frutto di una</p><p>
+ricostruzione moderna ,tranne una parte basamentale in travertino ed il nucleo centrale.</p><p>
+Il nuovo progetto desidera, attarverso luso della stessa forma, il cilindro , e la conservazione dei</p><p>
+frammenti basamentali e ciò che rimane del nucleo centrale , mettere in atto nuove strategie.</p><p>
+La nuova Cella , assume, sui frammenti sostruttivi ed intorno al nucleo centrale, un carettere</p><p>
+fortemente verticale.</p><p>
+Viene finalizzata con estremo rigore la volontà di comporre su di un asse verticale e, su di esso ,</p><p>
+catturare gli agenti atmosferici.</p><p>
+Questasse unisce il cielo e la terra attraverso un foro quadrato praticato nel solaio di copertura a</p><p>
+cui corrisponde una grande cisterna sotterranea scavata nel terreno, atta a raccogliere lacqua piovana.Questo spazio è regolato da una geometria semplice e rigorosa.</p></div><div class="des" id="d13"><p>il sole è catturato</p><p>
+matemeticamente nella sua amplacabile ciclicità.</p><p>
+Per la costruzione si useranno mattoni nuovi uniti a quelli antichi con malta come legante ma</p><p>
+affiorante.</p><p>
+La parte basamentale interna sarà caratterizzata da grandi lastre di travertino con forte slancio</p><p>
+verticale.</p><p>
+Laltezza del basamento si relaziona con le misure umane ,a contrastare uno spazio quasi</p><p>
+mistico.</p></div><div class="des" id="d14"><p>Crediamo non casuale che nel diritto Romano per definire la proprietà si usasse il termine</p><p>
+ Usque ad infera usque ad coelum  . Questa definizione la troviamopietrificata nelluso</p><p>
+domestico dellimpluvium della casa pompeiana , come nella divina sfera del Pantheon.</p><p>
+Ci è sembrato opportuno raccogliere il messaggio di G. Ungaretti,  ..non ci resta che innalzare</p><p>
+alla luce equilibrati edifici.</p><p>
+Il senso che accomuna la casa pompeiana alla magnifica rotonda , abbiamo pensato che potesse</p><p>
+essere esteso per evocare la tomba di Augusto e sostenere un cambio duso.</p><p>
+Un procedimento classico : trasferire relazioni strutturali e funzionali in forma.</p></div><div class="des" id="d15"><p>Il nuovo ingresso, leggermente ribbassato e decentrato, ruota intorno al perno centrale ,il cui</p><p>
+interno viene inizialmente solo percepito, e raggiunto, attraverso lantica apertura, solo dopo aver</p><p>
+percorso lintera circonferenza.</p><p>
+Un sistema di accesso analogo lo si ritrova a San Pietro in montorio, con le stretta scala che porta</p><p>
+al piano interrato.</p><p>
+</p></div><div class="des" id="d16"><p>Il nuovo spazio, diverrà un lapidario , si disporranno frammenti lapidei , ricomposti in una nuova</p><p>
+fissità , messi in tensione da un nuovo modo dell accedere.</p></div><div class="des" id="d17"><p>Lintorno del Mausoleo non resta limitato agli spazi che generano la sua contrapposizione al</p><p>
+doppio muro, a Sud, davanti allentrata, si sviluppa un ampio spazio che andrà a costituire il</p><p>
+nucleo della nuova Piazza .</p><p>
+Questo nuova Piazza si genera per due ragioni:</p><p>
+- in primo luogo la costruzione della nuova scala culmina gli assi ed i percorsi che provengono</p><p>
+da Piazza di Spagna e che continuano fino al lungotevere, unendo i livelli diversi delle Piazze</p><p>
+conferendo continuità e fluidità ai percorsi;</p><p>
+- davanti allingresso del Mausoleo si crea una nuova centralità spaziale, generando, con gli</p><p>
+elementi preesistenti, nuove gerarchie.</p><p>
+Attualmente lunico spazio pubblico si trova al livello superiore, ed è relazionato , anche se in</p><p>
+maniera frammentata, ai porticati degli edifici di Ballio-Morpurgo.</p></div><div class="des" id="d18"><p>Questi elementi , nuovi ed esistenti, danno una scala umana allintervento, e sono di grande</p><p>
+utilità compositiva. Posizionati adeguatamente creano rimandi visivi , ed aiutano a tenere unito la</p><p>
+complessità e lampiezza dellintervento .</p></div><div class="des" id="d19"><p>- Nella parte bassa, sul disimpegno allinterno del doppio muro, ove si incontrano le scale</p><p>
+gradonate, sul lato Est e Nord, vengono incastonate due fontane di acqua potabile.</p><p>
+Dalla ralazione geometrica tra il quadrato e la circonferenza, nascono, negli angoli a Nord-Est e</p><p>
+Nord-Ovest , ampi spazi di sosta caratterizzati dalla presenza del Mausoleo e del doppio muro.</p><p>
+Questi particolari spazi vengono ulteriormente arricchiti con il posizionamento di panche e</p><p>
+fontane di acqua potabile e di alberi di ulivi, dimorati puntualmente.</p><p>
+- La pedonalizzazione della Piazza superiore permette di valorizzare alcuni elementi degli edifici</p><p>
+degli anni Trenta, come per esempio la fontana in porfido sul lato Nord.</p><p>
+- Su Largo degli Schiavoni il nuovo progetto prevede un piccolo elemento di sosta composto da</p><p>
+una panca ed una piccola fontana cilindrica di acqua potabile.</p></div></div><script>    max = 20;    maxRight = (max - 6) * 150;    maxRight *= -1;    $("#pag div.right").click(function() {        $("#pag div.left").show();        a = $("#a152").attr("class");        a = parseInt(a);        if (a < max) {            a += 1;            if (a === max)                $("#pag div.right").hide();            $("#a152").animate({left: "-100%"});            $("#pag div." + a).animate({left: "0px"});            $("#lista151 div").css("border", " solid 1px #999");            $("#lista151 div." + a).css("border", " solid 3px #999");            $("#a152").attr("id", "");            $("#pag div." + a).attr("id", "a152");            left = a * 150 - 450;            left *= -1;            $("#lista15 div.right").show();            $("#lista15 div.left").show();            if (left < maxRight) {                left = maxRight;                $("#lista15 div.right").hide();            }            if (left > 0) {                left = 0;                $("#lista15 div.left").hide();            }            left += "px";            $("#lista151").animate({left: left});        }    });    $("#pag div.left").click(function() {        $("#pag div.right").show();        a = $("#a152").attr("class");        a = parseInt(a);        if (a > 1) {            a -= 1;            if (a === 1)                $("#pag div.left").hide();            $("#a152").animate({left: "100%"});            $("#pag div." + a).animate({left: "0px"});            $("#lista151 div").css("border", " solid 1px #999");            $("#lista151 div." + a).css("border", " solid 3px #999");            $("#a152").attr("id", "");            $("#pag div." + a).attr("id", "a152");            left = a * 150 - 450;            left *= -1;            $("#lista15 div.right").show();            $("#lista15 div.left").show();            if (left < maxRight) {                left = maxRight;                $("#lista15 div.right").hide();            }            if (left > 0) {                left = 0;                $("#lista15 div.left").hide();            }            left += "px";            $("#lista151").animate({left: left});        }    });    $("#lista151 div").click(function() {        //CAMBIO L'IMMAGINE        a = $(this).attr("class");        b = $("#a152").attr("class");        if (a !== b) {            $("#pag div.right").show();            $("#pag div.left").show();            a = parseInt(a);            if (a === 1)                $("#pag div.left").hide();            if (a === max)                $("#pag div.right").hide();            if (a > b) {                for (i = b; i < a; i++) {                    $("#pag div." + i).animate({left: "-100%"});                }            }            else {                for (i = b; i > a; i--) {                    $("#pag div." + i).animate({left: "100%"});                }            }            $("#pag div." + a).animate({left: "0px"});            $("#lista151 div").css("border", " solid 1px #999");            $("#lista151 div." + a).css("border", " solid 3px #999");            $("#a152").attr("id", "");            $("#pag div." + a).attr("id", "a152");            //CAMBIO LA DESCRIZIONE            r = a - 1;            $("div.des").css("display", "none");            $("#d" + r).css("display", "block");            //POSIZIONO LA LISTA DI IMMAGINI            left = a * 108 - 324;            left *= -1;            $("#lista15 div.right").show();            $("#lista15 div.left").show();            if (left < maxRight) {                left = maxRight;                $("#lista15 div.right").hide();            }            if (left > 0) {                left = 0;                $("#lista15 div.left").hide();            }            left += "px";            $("#lista151").animate({left: left});        }    });    okRight = true;    $("#lista15 div.right").click(function() {        if (okRight) {            $("#lista15 div.left").show();            okRight = false;            left = parseInt($("#lista151").css("left"));            if (left - 400 <= maxRight) {                $("#lista151").animate({left: maxRight}, function() {                    $("#lista15 div.right").hide();                    okRight = true;                });            }            else {                $("#lista151").animate({left: "-=400"}, function() {                    okRight = true;                });            }        }    });    okLeft = true;    $("#lista15 div.left").click(function() {        if (okLeft) {            $("#lista15 div.right").show();            okLeft = false;            left = $("#lista151").css("left");            left = parseInt(left);            if (left + 400 >= 0) {                $("#lista151").animate({left: "0px"}, function() {                    $("#lista15 div.left").hide();                    okLeft = true;                });            }            else {                $("#lista151").animate({left: "+=400"}, function() {                    okLeft = true;                });            }        }    });    /*$("#pag span.right").hover( function () {     $("#pag span.right div.right").animate({opacity: "0.2"});     }, function () {     if(ok)     $("#pag span.right div.right").animate({opacity: "0.05"});     alert(ok);     });*/    $("#pag span.right div.right").hover(function() {        $(this).css("opacity", "0.5");    }, function() {        $(this).css("opacity", "0.2");    });    /*$("#pag span.left").hover( function () {     $("#pag span.left div.left").animate({opacity: "0.2"});     }, function () {     $("#pag span.left div.left").animate({opacity: "0.05"});     });*/    $("#pag span.left div.left").hover(function() {        $(this).css("opacity", "0.5");    }, function() {        $(this).css("opacity", "0.2");    });</script><style>    #slide{        position: absolute;        top: 0px;        left: 0px;        right: 10px;        bottom: 0px;    }    #pag{        position: absolute;        top: 0px;        left: 0px;        right: 0px;        bottom: 110px;        overflow: hidden;    }    #pag div{        width: 100%;        position: absolute;        top: 0px;        left: 100%;    }    #pag div img {        max-width: 100%;        max-height: 100%;        position: relative;        margin: 0px;    }    #pag div:first-child{        width: 100%;        position: absolute;        top: 0px;        left: 0px;    }    /*#pag div.p{        position: absolute;        top: 0px;        left: auto;        width: auto;        height: 525px;        bottom: 0px;        right: 0px;        background-color: rgba( 0, 0, 0, 0.1);        padding: 10px;        color: #555;        font-family: 'Open Sans';        max-width: 50%;    }*/    /*#pag div.left {        position: absolute;        top: 50%;        left: -1px;        z-index: 50;        width: 50px;        height: 100px;        margin-top: -50px;        cursor: pointer;        display: none;        opacity: 0.2;    }    #pag div.left img{        width: 100%;        height: 100%;    }    #pag div.right {        position: absolute;        top: 50%;        right: -1px;        left: auto;        z-index: 50;        width: 50px;        height: 100px;        margin-top: -50px;        cursor: pointer;        opacity: 0.2;    }    #pag div.right img{        width: 100%;        height: 100%;    }    #pag span.left{        position: absolute;        z-index: 49;        top: 0px;        left: 0px;        bottom: 0px;        width: 50%;    }    #pag span.right{        position: absolute;        z-index: 49;        top: 0px;        right: 0px;        bottom: 0px;        width: 50%;    }*/    #lista15{        position: absolute;        bottom: 0px;        left: 0px;        right: 0px;        height: 110px; /*altezzza lista*/        padding: 0px;        overflow: hidden;       }    #lista151{        position: absolute;        height: 85px; /*altezza lista2*/        padding: 0px;        left: 5px;        top: 5px;        bottom: 15px;        z-index: 1;        width: 10000000000000000000000000000000000000px;    }    #lista151 div{        /*Dimensioni esatte per i box*/        -moz-box-sizing: border-box;        -webkit-box-sizing: border-box;        box-sizing: border-box;        position: absolute;        top: 0px;        height: 80px; /*altezza img*/        width: 100px; /*larghezza img*/        overflow: hidden;                /*margin-top: 0px;        margin-bottom: 0px;        margin-left: 0px;        margin-right: 8px;*/        cursor: pointer;        border: solid 1px #999;    }    #lista15 div.left{        position: absolute;        top: 100%;        left: 0px;        margin-top: -13px;        width: 25px;        height: 15px;        z-index: 50;        cursor: pointer;        text-align: left;        font-size: 15px;        color: #888;        display: none;    }    #lista15 div.left:hover{        color: #222;    }    #lista15 div.left img{        width: 100%;        height: 100%;    }    #lista15 div.right{        position: absolute;        top: 100%;        right: 0px;        margin-top: -20px;        width: 25px;        height: 16px;        z-index: 50;        cursor: pointer;        text-align: right;        font-size: 16px;        color: #888;    }    #lista15 div.right:hover{        color: #222;    }    #lista15 div.right img{        width: 100%;        height: 100%;    }    #lista151 div:hover{    }    #lista151 div:first-child{        border: solid 3px #999;    }    #lista151 div img{        height: 100%;    }    /*#test{        position: absolute;        top: 690px;        left: 0px;        right:0px;        padding: 5px;        font-family: 'Open Sans';    }    #Int15 {        position: absolute;        top: 0px;        left: 0px;        right: 0px;        padding-bottom: 5px;        font-size: 24px;        font-weight: 400;        color: #000;        font-family: 'Poiret One';        border-bottom: 1px solid #666;        margin-right: -10px;        margin-bottom: 5px;    }*/</style><style>    #immagini{        position: absolute;        top: 30px;        left: 0px;        bottom: 20px;        width: 750px;    }    #descrizione{        position: absolute;        top: 40px;        right: 0px;        bottom: 20px;        width: 300px;    }    #titoletto {        position: absolute;        top: 10px;        left: 0px;        right: 0px;        height: 40px;        padding-left: 10px;        font-family: Arial;        font-size: 13px;        color: #888;        font-weight: 600;    }    #descrizione div.des{        position: absolute;        top: 60px;        left: 0px;        right: 0px;        bottom: 0px;        padding-left: 10px;        font-family: Arial;        font-size: 12px;        color: #888;        display: none;        overflow: auto;    }    #categoria{        position: absolute;        bottom: 30px;        left: 0px;        right: 0px;        text-align: center;    }    #categoria a{        text-decoration: none;        font-family: Arial;        font-size: 13px;        color: #888;    }    #categoria a:hover{        color: #222;    }</style>            </div>
+
+            <!--PIE DI PAGINA-->
+            <div id="pie">
+                &copy; Stanislao Fierro Architetto - P.iva: 01639010212
+            </div>
+        </div>
+    </body>
+</html>
+

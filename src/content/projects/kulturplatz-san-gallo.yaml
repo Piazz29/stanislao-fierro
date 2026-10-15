@@ -1,0 +1,56 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=8&lang=it, https://www.stanislaofierro.com/index.php?p=12&lang=it
+title:
+  it: Nuova Kulturplatz
+  de: Neuer Kulturplatz
+  en: New Kulturplatz
+year: 2011
+place:
+  it: San Gallo, Svizzera
+  de: St. Gallen, Schweiz
+  en: St. Gallen, Switzerland
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2011
+  result:
+    it: 4° classificato
+    de: 4. Rang
+    en: 4th place
+area: 11.000 m²
+client:
+  it: Città di San Gallo
+  de: Stadt St. Gallen
+  en: City of St. Gallen
+partners:
+  - Nadine Saul
+excerpt:
+  lang: de
+  text: "Es werden jegliche Festlegungen und Vorprüfungen für anfällige Nutzungen vermieden. Der neue Kulturplatz tritt in den Dienst der Gebäude und nimmt sich mit vornehmer Haltung zurück. Die Museumstrasse und Kulturplatz werden somit ein Freiräume mit Nutzungszonen: Entspannung und Besinnlichkeit auf dem Kulturplatz, und Dynamik und Aktivität auf der Museumstrasse. Das Theater und die Tonhalle werden mit einem Wasserspiel und Beleuchtung stärker inszeniert."
+  source: https://www.stanislaofierro.com/index.php?p=8&lang=it
+cover: ../../assets/originali/pagine/foto/35_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/43_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=8&lang=it
+  - https://www.stanislaofierro.com/index.php?p=12&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/35_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/36_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/37_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/38_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/39_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/41_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/40_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/42_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/43_immagine.jpg
+    type: schizzo

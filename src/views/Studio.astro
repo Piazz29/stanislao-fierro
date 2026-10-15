@@ -1,0 +1,143 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Photo from '../components/Photo.astro';
+import { ui, tr, type Lang } from '../i18n';
+import { bio, books, publishedIn, lectures, honours, studio } from '../data/site';
+import portrait from '../assets/originali/altro/biografia.jpg';
+import mark from '../assets/originali/altro/studio.jpg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const yr = (y: string | { it: string; de: string; en: string }) => (typeof y === 'string' ? y : tr(y, lang));
+const architect = { it: 'Architetto', de: 'Architekt', en: 'Architect' }[lang];
+const architectF = { it: 'Architetto', de: 'Architektin', en: 'Architect' }[lang];
+---
+<Base lang={lang} title={ui.studioTitle[lang]} description={ui.studioDescription[lang]} route="studio" ogImage={portrait} ogAlt={ui.portraitAlt[lang]}>
+  <PageHead lang={lang} title="Stanislao Fierro" kicker={`${ui.studioTitle[lang]} · ${studio.city[lang]}`} />
+
+  <!-- Ritratto e profilo -->
+  <section class="frame">
+    <div class="grid-plan gap-y-10">
+      <figure class="col-span-4 md:col-span-4 lg:col-span-4">
+        <Photo src={portrait} alt={ui.portraitAlt[lang]} priority sizes={`(min-width: 768px) ${portrait.width}px, calc(100vw - 2rem)`} />
+        <figcaption class="t-data text-grigio mt-3">Stanislao Fierro</figcaption>
+      </figure>
+      <div class="col-span-4 md:col-span-4 lg:col-span-6 lg:col-start-6 self-end">
+        <h2 class="t-data text-grigio">{ui.profile[lang]}</h2>
+        <p class="t-lead mt-4 text-pretty">{bio.born[lang]} {bio.lines[0].text[lang]}</p>
+        <dl class="mt-8 border-t border-linea">
+          {bio.lines.slice(1, 2).map((l) => (
+            <div class="grid grid-cols-[6.5rem_1fr] gap-4 py-3 border-b border-linea">
+              <dt class="t-data-plain tabular-nums text-grigio">{yr(l.year)}</dt>
+              <dd class="text-pretty">{l.text[lang]}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insegnamento e incarichi -->
+  <section class="frame mt-[clamp(4rem,9vw,8rem)]">
+    <div class="grid-plan gap-y-10">
+      <div class="col-span-4 md:col-span-4 lg:col-span-5">
+        <h2 class="t-data border-b border-carbone/80 pb-2.5">{ui.teaching[lang]}</h2>
+        <p class="mt-5 text-[1.08rem] leading-relaxed text-pretty">
+          {{
+            it: 'Dal 1989 al 2005 collabora ai corsi di progettazione di Arrigo Rudi e Francesco Venezia allo IUAV di Venezia. Dal 2005 è professore incaricato di progettazione architettonica nella laurea specialistica in Costruzione. Relatore di tesi di laurea, seminari e mostre didattiche.',
+            de: 'Von 1989 bis 2005 Mitarbeit in den Entwurfskursen von Arrigo Rudi und Francesco Venezia an der IUAV Venedig. Seit 2005 Lehrbeauftragter für Architekturentwurf im Masterstudiengang Bauen (Costruzione). Betreuer von Abschlussarbeiten, Seminaren und Lehrausstellungen.',
+            en: 'From 1989 to 2005 he taught in the design studios of Arrigo Rudi and Francesco Venezia at IUAV Venice. Since 2005 he has been lecturer in architectural design in the master’s programme in Construction, supervising degree theses, seminars and teaching exhibitions.',
+          }[lang]}
+        </p>
+      </div>
+      <div class="col-span-4 md:col-span-4 lg:col-span-6 lg:col-start-7">
+        <h2 class="t-data border-b border-carbone/80 pb-2.5">{ui.roles[lang]}</h2>
+        <dl>
+          {bio.roles.map((r) => (
+            <div class="grid grid-cols-[6.5rem_1fr] gap-4 py-3 border-b border-linea">
+              <dt class="t-data-plain tabular-nums text-grigio">{r.year}</dt>
+              <dd class="text-pretty">{r.text[lang]}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pubblicazioni -->
+  <section class="frame mt-[clamp(4rem,9vw,8rem)]" aria-labelledby="pubblicazioni">
+    <div class="grid-plan gap-y-10">
+      <h2 id="pubblicazioni" class="col-span-4 md:col-span-8 lg:col-span-12 t-title text-[clamp(2rem,1.4rem+2.4vw,3.6rem)]">{ui.publications[lang]}</h2>
+      <div class="col-span-4 md:col-span-4 lg:col-span-6">
+        <h3 class="t-data border-b border-carbone/80 pb-2.5">{ui.ownBooks[lang]}</h3>
+        <ul>
+          {books.map((b) => (
+            <li class="grid grid-cols-[4rem_1fr] gap-4 py-3.5 border-b border-linea">
+              <span class="t-data-plain tabular-nums text-grigio">{b.year}</span>
+              <span><span class="block text-[1.08rem] leading-snug" lang="it">«{b.title}»</span><span class="t-data text-grigio block mt-1">{typeof b.publisher === 'string' ? b.publisher : b.publisher[lang]}</span></span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="col-span-4 md:col-span-4 lg:col-span-5 lg:col-start-8">
+        <h3 class="t-data border-b border-carbone/80 pb-2.5">{ui.publishedIn[lang]}</h3>
+        <ul>
+          {publishedIn.map((p) => (
+            <li class="grid grid-cols-[4rem_1fr] gap-4 py-2.5 border-b border-linea">
+              <span class="t-data-plain tabular-nums text-grigio">{p.year}</span>
+              <span>{p.title}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conferenze e riconoscimenti -->
+  <section class="frame mt-[clamp(4rem,9vw,8rem)]">
+    <div class="grid-plan gap-y-10">
+      <div class="col-span-4 md:col-span-4 lg:col-span-6">
+        <h2 class="t-data border-b border-carbone/80 pb-2.5">{ui.lectures[lang]}</h2>
+        <ul>
+          {lectures.map((l) => (
+            <li class="grid grid-cols-[6.5rem_1fr] gap-4 py-3 border-b border-linea">
+              <span class="t-data-plain tabular-nums text-grigio">{l.year}</span>
+              <span class="text-pretty">{l.text[lang]}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="col-span-4 md:col-span-4 lg:col-span-5 lg:col-start-8">
+        <h2 class="t-data border-b border-carbone/80 pb-2.5">{ui.awards[lang]}</h2>
+        <ul>
+          {honours.map((h) => (
+            <li class="grid grid-cols-[4rem_1fr] gap-4 py-3 border-b border-linea">
+              <span class="t-data-plain tabular-nums text-grigio">{h.year}</span>
+              <span class="text-pretty">{h.text[lang]}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Studio -->
+  <section class="frame mt-[clamp(4rem,9vw,8rem)]" aria-labelledby="team">
+    <div class="grid-plan gap-y-8 border-t border-carbone/80 pt-3 items-start">
+      <h2 id="team" class="col-span-4 md:col-span-8 lg:col-span-3 t-data">{ui.team[lang]}</h2>
+      <ul class="col-span-4 md:col-span-5 lg:col-span-5 lg:col-start-4">
+        <li class="py-4 border-b border-linea flex justify-between gap-4 items-baseline">
+          <span class="text-[1.5rem] t-title">Stanislao Fierro</span><span class="t-data text-grigio">{architect}</span>
+        </li>
+        <li class="py-4 border-b border-linea flex justify-between gap-4 items-baseline">
+          <span class="text-[1.5rem] t-title">Nadine Saul</span><span class="t-data text-grigio">{architectF}</span>
+        </li>
+        <li class="py-4 t-data-plain text-grigio">{studio.street[lang]}, {studio.postal} {studio.city[lang]}</li>
+      </ul>
+      <figure class="col-span-2 md:col-span-3 lg:col-span-2 lg:col-start-11">
+        <Photo src={mark} alt={ui.studioMarkAlt[lang]} imgClass="mix-blend-multiply" sizes={`${mark.width}px`} />
+      </figure>
+    </div>
+  </section>
+</Base>

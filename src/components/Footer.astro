@@ -1,0 +1,75 @@
+---
+import { path, ui, type Lang } from '../i18n';
+import { h, lines } from '../i18n/home';
+import { studio } from '../data/site';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const year = 2026;
+---
+<footer class="site-footer relative overflow-hidden" data-footer>
+  <!-- colonnato: fasce verticali chiare e scure, come nella pianta di un portico -->
+  <div class="footer-columns absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+  <section class="frame relative text-center pt-[clamp(6rem,12vw,10rem)] pb-[clamp(5rem,10vw,8rem)] border-t border-linea" aria-labelledby="cta-title">
+    <p class="t-tag">{h.ctaTag[lang]}</p>
+    <h2 id="cta-title" class="t-display text-[clamp(2.6rem,1.6rem+3.6vw,5rem)] mt-5" data-reveal-chars>
+      {lines(h.ctaTitle[lang]).map((l) => <span class="block">{l}</span>)}
+    </h2>
+    <p class="t-body mx-auto mt-6 max-w-[30ch]">{h.ctaText[lang]}</p>
+    <a class="btn mt-9" href={`mailto:${studio.email}`}>{studio.email}</a>
+  </section>
+
+  <div class="frame relative border-t border-carbone/15">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-y-10 items-center py-8">
+      <nav aria-label={ui.mainNav[lang]} class="order-2 md:order-1">
+        <ul class="space-y-1.5 text-[1rem]">
+          {(['works', 'competitions', 'sketches', 'studio', 'contact'] as const).map((k) => (
+            <li><a class="hover:opacity-60 transition-opacity duration-500" href={path(lang, k)}>{ui.nav[k][lang]}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <div class="order-1 md:order-2 col-span-2 md:col-span-1 text-center">
+        <a href={path(lang, 'home')} class="font-serif uppercase text-[clamp(1.6rem,1.2rem+1.4vw,2.4rem)] leading-none tracking-[0.01em]">Stanislao Fierro</a>
+        <p class="mt-2 text-grigio text-[0.95rem]">© {year} Stanislao Fierro · {ui.vat[lang]} {studio.vat}</p>
+      </div>
+      <address class="order-3 not-italic text-right text-[1rem] leading-relaxed">
+        {studio.street[lang]}<br />
+        {studio.postal} {studio.city[lang]}<br />
+        <a class="hover:opacity-60 transition-opacity duration-500" href={`mailto:${studio.email}`}>{studio.email}</a><br />
+        <a class="hover:opacity-60 transition-opacity duration-500 text-grigio" href={`mailto:${studio.pec}`}>PEC</a>
+      </address>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 items-center border-t border-carbone/15 py-6 text-[0.95rem]">
+      <p><span class="text-grigio">{h.callUs[lang]}</span>&nbsp; <a class="hover:opacity-60 transition-opacity duration-500" href={`tel:${studio.phoneIntl}`}>{studio.phoneDisplay}</a></p>
+      <p class="md:text-center"><a href="#contenuto" class="t-data" data-back-top>{h.backToTop[lang]}</a></p>
+      <p class="md:text-right text-grigio">{ui.demoCredit[lang]}</p>
+    </div>
+  </div>
+  <div class="h-[clamp(4rem,14vw,12rem)]" aria-hidden="true"></div>
+</footer>
+
+<style>
+  .site-footer { background: var(--color-calce); }
+  .footer-columns {
+    background-image: repeating-linear-gradient(90deg,
+      transparent 0, transparent 3.2%,
+      color-mix(in oklch, var(--color-carbone) 4%, transparent) 3.2%, color-mix(in oklch, var(--color-carbone) 4%, transparent) 8.6%,
+      transparent 8.6%, transparent 9.4%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 55%);
+  }
+  .site-footer::after {
+    content: '';
+    position: absolute; inset: 40% 0 0 0;
+    background: linear-gradient(to bottom, transparent, color-mix(in oklch, var(--color-pietra) 55%, transparent));
+    pointer-events: none;
+  }
+  .site-footer > * { position: relative; z-index: 1; }
+</style>
+
+<script>
+  document.querySelector('[data-back-top]')?.addEventListener('click', (e) => {
+    const lenis = (window as unknown as { lenis?: { scrollTo(t: number): void } }).lenis;
+    if (lenis) { e.preventDefault(); lenis.scrollTo(0); }
+  });
+</script>

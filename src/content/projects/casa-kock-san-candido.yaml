@@ -1,0 +1,53 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=18&lang=it, https://www.stanislaofierro.com/index.php?p=25&lang=it
+title:
+  it: Casa Köck, biblioteca comunale
+  de: Haus Köck, Gemeindebibliothek
+  en: Casa Köck, public library
+year: 2010
+place:
+  it: San Candido
+  de: Innichen
+  en: San Candido
+typology: edifici-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2010
+  result:
+    it: 3° premio
+    de: 3. Preis
+    en: 3rd prize
+area: 1.500 m²
+client:
+  it: Provincia autonoma di Bolzano
+  de: Autonome Provinz Bozen
+  en: Autonomous Province of Bolzano
+partners:
+  - Roberto Rosset
+excerpt:
+  lang: it
+  text: I lavori di recupero e rifunzionalizzazione della struttura si pongono come obiettivo principale un’accurata opera di restauro della struttura storica che ne evidenzi i tratti originali, il tutto inserito in una più complessiva sistemazione delle aree. L’approccio progettuale privilegia pertanto il restauro conservativo quale processo indispensabile per valorizzare e rendere leggibili gli elementi costitutivi del fabbricato.
+  source: https://www.stanislaofierro.com/index.php?p=18&lang=it
+cover: ../../assets/originali/pagine/foto/69_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=18&lang=it
+  - https://www.stanislaofierro.com/index.php?p=25&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/65_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/66_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/67_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/68_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/69_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/70_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/71_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/72_immagine.jpg
+    type: immagine

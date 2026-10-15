@@ -1,0 +1,90 @@
+// Prova le interazioni con movimento attivo: slideshow, filtri, anteprima, lightbox, menu mobile.
+import { chromium } from 'playwright-core';
+const base = process.argv[2] ?? 'http://localhost:4321';
+const out = process.argv[3];
+const b = await chromium.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' });
+const ok = []; const bad = [];
+const check = (c, m) => (c ? ok : bad).push(m);
+const errors = [];
+
+const d = await b.newContext({ viewport: { width: 1440, height: 900 } });
+const p = await d.newPage();
+p.on('pageerror', (e) => errors.push(e.message));
+await p.goto(base + '/', { waitUntil: 'networkidle' });
+await p.waitForTimeout(300);
+if (out) await p.screenshot({ path: `${out}/intro-0300ms.png` });
+await p.waitForTimeout(2200);
+if (out) await p.screenshot({ path: `${out}/intro-2500ms.png` });
+const cap0 = await p.locator('[data-caption-item]:not([hidden])').innerText();
+await p.waitForTimeout(8500);
+const cap1 = await p.locator('[data-caption-item]:not([hidden])').innerText();
+check(cap0 !== cap1, `autoplay avanza (${cap0.split('\n')[0]} → ${cap1.split('\n')[0]})`);
+await p.click('[data-toggle]');
+const capP = await p.locator('[data-caption-item]:not([hidden])').innerText();
+await p.waitForTimeout(7500);
+check(capP === (await p.locator('[data-caption-item]:not([hidden])').innerText()), 'pausa ferma lo slideshow');
+await p.click('[data-next]');
+check(capP !== (await p.locator('[data-caption-item]:not([hidden])').innerText()), 'pulsante successiva');
+
+await p.goto(base + '/opere/', { waitUntil: 'networkidle' });
+const total = await p.locator('[data-count]').innerText();
+await p.click('[data-filter="t"][data-value="residenziale"]');
+const res = await p.locator('[data-count]').innerText();
+check(Number(res) > 0 && Number(res) < Number(total), `filtro tipologia ${total} → ${res}`);
+check(p.url().includes('t=residenziale'), 'filtro nell’URL');
+await p.click('[data-filter="s"][data-value="realizzato"]');
+const both = await p.locator('[data-count]').innerText();
+check(Number(both) <= Number(res), `filtro combinato ${both}`);
+await p.click('[data-filter="t"][data-value="allestimenti"]');
+await p.click('[data-filter="s"][data-value="concorso"]');
+check(await p.locator('[data-empty]').isVisible(), 'stato vuoto visibile');
+await p.click('[data-reset]');
+check((await p.locator('[data-count]').innerText()) === total, 'ripristino filtri');
+await p.goto(base + '/opere/?t=scuole', { waitUntil: 'networkidle' });
+check((await p.locator('[data-filter="t"][data-value="scuole"]').getAttribute('aria-pressed')) === 'true', 'filtro letto dall’URL');
+await p.goto(base + '/opere/', { waitUntil: 'networkidle' });
+await p.hover('tr.row >> nth=1');
+await p.waitForTimeout(400);
+check(await p.locator('[data-preview-box]').isVisible(), 'anteprima all’hover');
+if (out) await p.screenshot({ path: `${out}/hover.png` });
+
+await p.goto(base + '/opere/centro-formazione-baza/', { waitUntil: 'networkidle' });
+await p.click('[data-lb] >> nth=0');
+await p.waitForTimeout(500);
+check(await p.locator('dialog[open]').isVisible(), 'lightbox si apre');
+const c1 = await p.locator('[data-lb-count]').innerText();
+await p.keyboard.press('ArrowRight');
+check(c1 !== (await p.locator('[data-lb-count]').innerText()), 'freccia destra nel lightbox');
+const alt = await p.locator('[data-lb-img]').getAttribute('alt');
+check(alt && alt.length > 12, `alt nel lightbox «${alt}»`);
+if (out) await p.screenshot({ path: `${out}/lightbox.png` });
+await p.keyboard.press('Escape');
+await p.waitForTimeout(300);
+check(!(await p.locator('dialog[open]').count()), 'Esc chiude il lightbox');
+const focused = await p.evaluate(() => document.activeElement?.hasAttribute('data-lb'));
+check(focused, 'il focus torna all’immagine');
+
+await p.goto(base + '/concorsi/', { waitUntil: 'networkidle' });
+const all = await p.locator('[data-count]').innerText();
+await p.click('[data-intl]');
+const intl = await p.locator('[data-count]').innerText();
+check(Number(intl) < Number(all) && Number(intl) > 10, `filtro internazionali ${all} → ${intl}`);
+
+const m = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
+const mp = await m.newPage();
+mp.on('pageerror', (e) => errors.push(e.message));
+await mp.goto(base + '/de/', { waitUntil: 'networkidle' });
+await mp.click('[data-menu-toggle]');
+await mp.waitForTimeout(800);
+check((await mp.getAttribute('[data-menu-toggle]', 'aria-expanded')) === 'true', 'menu mobile si apre');
+check(await mp.locator('#menu-mobile a:has-text("Werke")').isVisible(), 'voce Werke visibile');
+if (out) await mp.screenshot({ path: `${out}/menu-mobile.png` });
+await mp.keyboard.press('Escape');
+await mp.waitForTimeout(800);
+check((await mp.getAttribute('[data-menu-toggle]', 'aria-expanded')) === 'false', 'Esc chiude il menu');
+await mp.click('#menu-mobile a >> nth=0', { trial: true }).then(() => bad.push('link del menu chiuso cliccabile'), () => ok.push('link del menu chiuso non raggiungibile'));
+
+await b.close();
+console.log(ok.map((x) => 'ok   ' + x).join('\n'));
+if (bad.length || errors.length) { console.log(bad.map((x) => 'FAIL ' + x).join('\n')); console.log(errors.join('\n')); process.exit(1); }
+console.log('INTERACTIONS VERIFIED');

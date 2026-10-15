@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { path, ui, type Lang } from '../i18n';
+import { competitionRows } from '../lib/projects';
+import sketch from '../assets/originali/pagine/foto/343_immagine.jpg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const rows = await competitionRows(lang);
+
+const years = [...new Set(rows.map((r) => r.year))];
+const firsts = rows.filter((r) => r.first).length;
+const countries = new Set(rows.map((r) => r.country)).size;
+const countLine = {
+  it: `${rows.length} concorsi, ${firsts} primi premi, ${countries} paesi.`,
+  de: `${rows.length} Wettbewerbe, ${firsts} erste Preise, ${countries} Länder.`,
+  en: `${rows.length} competitions, ${firsts} first prizes, ${countries} countries.`,
+}[lang];
+---
+<Base lang={lang} title={ui.compTitle[lang]} description={ui.compDescription[lang]} route="competitions">
+  <PageHead lang={lang} title={ui.compTitle[lang]} lead={`${ui.compLead[lang]} ${countLine}`} sketch={sketch} />
+
+  <section class="frame" data-register>
+    <div class="flex justify-between items-end gap-4 pb-4">
+      <button type="button" class="chip" aria-pressed="false" data-intl>{ui.onlyInternational[lang]}</button>
+      <p class="t-data text-grigio" aria-live="polite"><span data-count>{rows.length}</span> {ui.competitionsCount[lang]}</p>
+    </div>
+
+    <table class="w-full border-collapse text-left">
+      <caption class="sr-only">{ui.compTitle[lang]}</caption>
+      <thead>
+        <tr class="border-y border-carbone/80 t-data text-grigio">
+          <th scope="col" class="py-2.5 pr-4 font-[500] w-[4.5rem]">{ui.colYear[lang]}</th>
+          <th scope="col" class="py-2.5 pr-4 font-[500]">{ui.colCompetition[lang]}</th>
+          <th scope="col" class="py-2.5 pr-4 font-[500] hidden md:table-cell">{ui.colPlace[lang]}</th>
+          <th scope="col" class="py-2.5 font-[500] hidden md:table-cell w-[11rem]">{ui.colResult[lang]}</th>
+        </tr>
+      </thead>
+      {years.map((y) => {
+        const group = rows.filter((r) => r.year === y);
+        return (
+          <tbody data-year={y}>
+            {group.map((r, i) => (
+              <tr class:list={['border-b border-linea align-top', i === 0 && 'border-t border-pietra/60']} data-intl={r.international ? '1' : '0'}>
+                <th scope="row" class:list={['py-3 pr-4 t-data-plain font-[450] tabular-nums', i === 0 ? 'text-carbone' : 'text-transparent select-none']}>
+                  {y}
+                </th>
+                <td class="py-3 pr-4">
+                  {r.href
+                    ? <a href={r.href} class="text-[1.02rem] leading-snug font-[440] hover:text-porfido transition-colors duration-300 link-plain">{r.title}</a>
+                    : <span class="text-[1.02rem] leading-snug font-[400]">{r.title}</span>}
+                  {r.international && <span class="t-data text-grigio ml-2 whitespace-nowrap">· {ui.international[lang]}</span>}
+                  <span class="md:hidden block t-data text-grigio mt-1">{r.place}</span>
+                  <span class="md:hidden block t-data mt-1" class:list={[r.first ? 'text-porfido' : 'text-carbone']}>{r.result?.[lang] ?? ui.participation[lang]}</span>
+                  {r.note && <span class="block t-data text-grigio mt-1">{r.note}</span>}
+                </td>
+                <td class="py-3 pr-4 hidden md:table-cell t-data-plain text-[0.95rem]">{r.place}</td>
+                <td class="py-3 hidden md:table-cell">
+                  <span class:list={['t-data inline-flex items-center gap-2', r.first ? 'text-porfido' : r.result ? 'text-carbone' : 'text-grigio']}>
+                    {r.first && <span class="inline-block size-2 bg-porfido" aria-hidden="true" />}
+                    {r.result?.[lang] ?? ui.participation[lang]}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        );
+      })}
+    </table>
+  </section>
+</Base>
+
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-register]');
+  if (root) {
+    const btn = root.querySelector<HTMLButtonElement>('[data-intl]')!;
+    const count = root.querySelector('[data-count]')!;
+    const groups = [...root.querySelectorAll<HTMLTableSectionElement>('tbody')];
+    btn.addEventListener('click', () => {
+      const on = btn.getAttribute('aria-pressed') !== 'true';
+      btn.setAttribute('aria-pressed', String(on));
+      let n = 0;
+      groups.forEach((g) => {
+        const rows = [...g.querySelectorAll<HTMLTableRowElement>('tr')];
+        let firstShown = false;
+        rows.forEach((r) => {
+          const show = !on || r.dataset.intl === '1';
+          r.hidden = !show;
+          // l'anno resta visibile sulla prima riga mostrata del gruppo
+          const th = r.querySelector('th')!;
+          th.classList.toggle('text-transparent', !(show && !firstShown));
+          th.classList.toggle('text-carbone', show && !firstShown);
+          if (show) { n++; firstShown = true; }
+        });
+        g.hidden = !firstShown;
+      });
+      count.textContent = String(n);
+    });
+  }
+</script>

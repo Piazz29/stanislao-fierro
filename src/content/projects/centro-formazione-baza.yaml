@@ -1,0 +1,253 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=85&lang=it
+title:
+  it: Edificio de Formación y Empleo
+  de: Edificio de Formación y Empleo
+  en: Edificio de Formación y Empleo
+subtitle:
+  it: Centro di formazione e lavoro
+  de: Ausbildungs- und Arbeitszentrum
+  en: Training and employment centre
+year: 2015
+place:
+  it: Baza, Spagna
+  de: Baza, Spanien
+  en: Baza, Spain
+typology: edifici-pubblici
+status: realizzato
+international: true
+featured: true
+order: 2
+competition:
+  year: 2007
+  result:
+    it: 1° premio
+    de: 1. Preis
+    en: 1st prize
+  name:
+    it: Concorso Alcazaba de Baza
+    de: Wettbewerb Alcazaba de Baza
+    en: Alcazaba de Baza competition
+built: "2015"
+area: 1.564 m²
+client:
+  it: Ayuntamiento de Baza
+  de: Ayuntamiento de Baza
+  en: Ayuntamiento de Baza
+partners:
+  - Daroca Arquitectos (José Luís Daroca Bruño)
+awards:
+  - it: Premio Architettura Alto Adige 2019, premio Architettura export
+    de: Architekturpreis Südtirol 2019, Preis Architektur-Export
+    en: South Tyrol Architecture Award 2019, Architecture Export award
+press:
+  - Casabella n. 873, 2017
+  - ArchDaily
+  - Dezeen
+photographer: Fernando Alda
+text:
+  it:
+    - L’edificio nasce dal concorso internazionale per l’Alcazaba di Baza, vinto nel 2007 con José Luís Daroca Bruño.
+    - Sta sul limite dell’area, tra la parte alta e la parte bassa della città, ed è anche un collegamento pubblico tra le due.
+    - Pubblicato su Casabella n. 873 (2017), ArchDaily e Dezeen.
+  de:
+    - Das Gebäude geht aus dem internationalen Wettbewerb für die Alcazaba von Baza hervor, den Fierro 2007 gemeinsam mit José Luís Daroca Bruño gewann.
+    - Es steht am Rand des Areals, zwischen Ober- und Unterstadt, und ist zugleich eine öffentliche Verbindung zwischen beiden.
+    - Veröffentlicht in Casabella Nr. 873 (2017), auf ArchDaily und Dezeen.
+  en:
+    - The building grew out of the international competition for the Alcazaba of Baza, won in 2007 with José Luís Daroca Bruño.
+    - It stands at the edge of the site, between the upper and the lower town, and is also a public link between the two.
+    - Published in Casabella no. 873 (2017), on ArchDaily and Dezeen.
+cover: ../../assets/originali/pagine/foto/506_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/497_immagine.jpg
+reveal:
+  sketch: ../../assets/originali/pagine/foto/497_immagine.jpg
+  sketchAlt:
+    it: "Schizzo di sezione: il nuovo edificio tra la città alta e la città bassa, con la luce disegnata in giallo"
+    de: "Schnittskizze: der Neubau zwischen Ober- und Unterstadt, das Licht gelb eingezeichnet"
+    en: "Section sketch: the new building between the upper and lower town, with light drawn in yellow"
+  photo: ../../assets/originali/home/1493912194_immagine.jpg
+  photoAlt:
+    it: Il lungo volume bianco sul basamento in pietra al margine della città, luce della sera
+    de: Der lange weiße Baukörper auf dem Steinsockel am Stadtrand, Abendlicht
+    en: The long white volume on its stone base at the edge of the town, evening light
+  credit: Fernando Alda
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=85&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/497_immagine.jpg
+    type: schizzo
+    alt:
+      it: "Schizzo di sezione: il nuovo edificio tra la città alta e la città bassa, con la luce disegnata in giallo"
+      de: "Schnittskizze: der Neubau zwischen Ober- und Unterstadt, das Licht gelb eingezeichnet"
+      en: "Section sketch: the new building between the upper and lower town, with light drawn in yellow"
+  - image: ../../assets/originali/pagine/foto/498_immagine.jpg
+    type: foto
+    caption:
+      it: Fotopiano
+      de: Luftbild
+      en: Aerial photograph
+    alt:
+      it: Fotopiano dell’area dell’Alcazaba di Baza con il nuovo edificio al margine del centro storico
+      de: Luftbild des Alcazaba-Areals in Baza mit dem Neubau am Rand der Altstadt
+      en: Aerial photograph of the Alcazaba area in Baza with the new building at the edge of the old town
+  - image: ../../assets/originali/pagine/foto/499_immagine.jpg
+    type: disegno
+    caption:
+      it: Planimetria, livello 0
+      de: Lageplan, Ebene 0
+      en: Site plan, level 0
+  - image: ../../assets/originali/pagine/foto/500_immagine.jpg
+    type: disegno
+    caption:
+      it: Planimetria, livello superiore
+      de: Lageplan, obere Ebene
+      en: Site plan, upper level
+  - image: ../../assets/originali/pagine/foto/501_immagine.jpg
+    type: disegno
+    caption:
+      it: Piante
+      de: Grundrisse
+      en: Plans
+  - image: ../../assets/originali/pagine/foto/502_immagine.jpg
+    type: disegno
+    caption:
+      it: Piante
+      de: Grundrisse
+      en: Plans
+  - image: ../../assets/originali/pagine/foto/503_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/504_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/505_immagine.jpg
+    type: foto
+    alt:
+      it: Il volume bianco su basamento in pietra, con la scala esterna che sale accanto all’edificio
+      de: Der weiße Baukörper auf dem Steinsockel, daneben die Außentreppe
+      en: The white volume on its stone base, with the outdoor stair rising beside it
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/506_immagine.jpg
+    type: foto
+    alt:
+      it: "L’edificio visto dalla piazza: volume bianco, fascia vetrata e gradinata verso le case del centro"
+      de: "Das Gebäude vom Platz aus: weißer Baukörper, Fensterband und Stufen zu den Häusern der Altstadt"
+      en: "The building seen from the square: white volume, glazed band and steps towards the houses of the old town"
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/507_immagine.jpg
+    type: foto
+    alt:
+      it: Lo spigolo del volume bianco a sbalzo sul basamento in pietra e sul piano terra vetrato
+      de: Die Ecke des weißen Baukörpers, auskragend über Steinsockel und verglastem Erdgeschoss
+      en: The corner of the white volume cantilevering over the stone base and the glazed ground floor
+    credit: Fernando Alda
+  - image: ../../assets/originali/home/1493911473_immagine.jpg
+    type: foto
+    alt:
+      it: La piazza alberata davanti all’edificio, che ne chiude la prospettiva
+      de: Der baumbestandene Platz vor dem Gebäude, das die Blickachse abschließt
+      en: The tree-lined square in front of the building, which closes the view
+    credit: Fernando Alda
+  - image: ../../assets/originali/home/1493912194_immagine.jpg
+    type: foto
+    alt:
+      it: Il lungo volume bianco sul basamento in pietra al margine della città, luce della sera
+      de: Der lange weiße Baukörper auf dem Steinsockel am Stadtrand, Abendlicht
+      en: The long white volume on its stone base at the edge of the town, evening light
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/510_immagine.jpg
+    type: foto
+    alt:
+      it: La gradinata in pietra davanti alle case e ai platani della piazza
+      de: Die Steinstufen vor den Häusern und Platanen des Platzes
+      en: The stone steps in front of the houses and plane trees of the square
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/511_immagine.jpg
+    type: foto
+    alt:
+      it: Una scala stretta tra il muro bianco e il muro in pietra
+      de: Eine schmale Treppe zwischen weißer Wand und Steinmauer
+      en: A narrow stair between the white wall and the stone wall
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/512_immagine.jpg
+    type: foto
+    alt:
+      it: La scala sale tra pietra e intonaco bianco verso una fessura di cielo
+      de: Die Treppe steigt zwischen Stein und weißem Putz zu einem Spalt Himmel
+      en: The stair climbs between stone and white render towards a slit of sky
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/513_immagine.jpg
+    type: foto
+    alt:
+      it: La terrazza coperta sotto la grande copertura, con la facciata vetrata
+      de: Die überdachte Terrasse unter dem großen Dach, mit verglaster Fassade
+      en: The covered terrace beneath the large roof, with the glazed façade
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/514_immagine.jpg
+    type: foto
+    alt:
+      it: Il passaggio coperto sotto la copertura, due figure in controluce
+      de: Der überdachte Durchgang, zwei Personen im Gegenlicht
+      en: The covered passage under the roof, two figures against the light
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/516_immagine.jpg
+    type: foto
+    alt:
+      it: Il percorso in copertura con la vista sulle montagne
+      de: Der Weg auf dem Dach mit Blick auf die Berge
+      en: The rooftop walkway with a view of the mountains
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/517_immagine.jpg
+    type: foto
+    alt:
+      it: "Interno: la galleria con la lunga finestra a nastro sulla città"
+      de: "Innenraum: die Galerie mit dem langen Fensterband zur Stadt"
+      en: "Interior: the gallery with its long ribbon window over the town"
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/518_immagine.jpg
+    type: foto
+    alt:
+      it: "Interno: la finestra panoramica sopra un vuoto tra pareti in pietra"
+      de: "Innenraum: das Panoramafenster über einem Luftraum zwischen Steinwänden"
+      en: "Interior: the panoramic window above a void between stone walls"
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/519_immagine.jpg
+    type: foto
+    alt:
+      it: "Interno: il vuoto a doppia altezza con lucernario e finestra a nastro"
+      de: "Innenraum: der zweigeschossige Luftraum mit Oberlicht und Fensterband"
+      en: "Interior: the double-height void with rooflight and ribbon window"
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/520_immagine.jpg
+    type: foto
+    alt:
+      it: "Interno: atrio bianco con la porta rossa e la finestra"
+      de: "Innenraum: weiße Halle mit roter Tür und Fenster"
+      en: "Interior: white hall with the red door and window"
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/521_immagine.jpg
+    type: foto
+    alt:
+      it: "Interno: la scala tra pareti rivestite in pietra e pareti bianche"
+      de: "Innenraum: die Treppe zwischen steinverkleideten und weißen Wänden"
+      en: "Interior: the stair between stone-clad and white walls"
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/522_immagine.jpg
+    type: foto
+    alt:
+      it: "Interno: la scala tra muri in pietra, luce dall’alto"
+      de: "Innenraum: die Treppe zwischen Steinmauern, Licht von oben"
+      en: "Interior: the stair between stone walls, light from above"
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/523_immagine.jpg
+    type: foto
+    alt:
+      it: "Interno: il corridoio con la scala e i lucernari"
+      de: "Innenraum: der Gang mit Treppe und Oberlichtern"
+      en: "Interior: the corridor with the stair and rooflights"
+    credit: Fernando Alda
+  - image: ../../assets/originali/pagine/foto/525_immagine.jpg
+    type: foto
+    alt:
+      it: "Interno: un pozzo di luce bianco con lucernario e porta rossa in fondo"
+      de: "Innenraum: ein weißer Lichtschacht mit Oberlicht und roter Tür am Grund"
+      en: "Interior: a white light shaft with a rooflight and a red door at its foot"
+    credit: Fernando Alda

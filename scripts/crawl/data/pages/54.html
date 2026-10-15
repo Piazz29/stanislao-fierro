@@ -1,0 +1,214 @@
+
+<html>
+    <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <script src="jquery-1.10.2.min.js"></script>
+        
+        <!-- Includo il link al css -->
+        <link rel="stylesheet" href="style.css" />
+        
+        <script>
+            $(window).resize(function() {
+                width = $(window).width();
+                if (width < 1100) {
+                    $("#pagina").css("left", "0px");
+                    $("#pagina").css("margin-left", "10px");
+                } else {
+                    $("#pagina").css("left", "50%");
+                    $("#pagina").css("margin-left", "-525px");
+                }
+
+                height = $(window).height();
+                if (height < 750) {
+                    $("#pagina").css("top", "0px");
+                    $("#pagina").css("margin-top", "10px");
+                } else {
+                    $("#pagina").css("top", "50%");
+                    $("#pagina").css("margin-top", "-375px");
+                }
+            });
+
+            $(document).ready(function() {
+
+                width = $(window).width();
+                if (width < 1100) {
+                    $("#pagina").css("left", "0px");
+                    $("#pagina").css("margin-left", "10px");
+                } else {
+                    $("#pagina").css("left", "50%");
+                    $("#pagina").css("margin-left", "-525px");
+                }
+
+                height = $(window).height();
+                if (height < 750) {
+                    $("#pagina").css("top", "0px");
+                    $("#pagina").css("margin-top", "10px");
+                } else {
+                    $("#pagina").css("top", "50%");
+                    $("#pagina").css("margin-top", "-375px");
+                }
+
+                $("#menu a").hover(function() {
+                    color = $(this).css("color");
+                    $(this).css("color", "#111");
+                }, function() {
+                    $(this).css("color", color);
+                });
+            });
+        </script>
+        
+        
+        <!-- Script per analytics -->
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-46289673-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </head>
+    <body onselectstart="return(false);">
+        <div id="pagina">
+
+            <!--TITOLO-->
+            <div id="titolo">
+                STANISLAO FIERRO ARCHITETTO
+            </div>
+
+            <!--MENU-->
+            <div id="menu">
+                <div id="lingua">
+                    <a style="color: #111" href="/index.php?p=54&lang=it&lang=it">it</a> |
+                    <a style="color: #888" href="/index.php?p=54&lang=it&lang=en">en</a> |
+                    <a style="color: #888" href="/index.php?p=54&lang=it&lang=de">de</a>
+                </div>
+                <div id="menu1">
+                    <ul>
+                        <li><a href="?p=Home" style="color: #888;">Home</a></li>
+                        <li><a href="?p=News" style="color: #888;">News</a></li>
+                        <li><a href="?p=Lista" style="color: #111;">Progetti</a></li>
+                        <li><a href="?p=Studio" style="color: #888;">Studio</a></li>
+                        <li><a href="?p=Contatti" style="color: #888;">Contatti</a></li>
+                        <li><a href="?p=Biografia" style="color: #888;">Info</a></li>
+                    </ul>
+                </div>
+                <div id="menu2">
+                    <ul class="progetti"  style="display: block;">
+                        <li><a href="?p=Lista" style="color: #888;">Lista</a></li>
+                        <li><a href="?p=Opere selezionate" style="color: #888;">Opere selezionate</a></li>
+                        <li><a href="?p=In corso" style="color: #888;">In corso</a></li>
+                        <li><a href="?p=Allestimenti" style="color: #888;">Tipo</a></li>
+                        <li><a href="?p=Regesto Schizzi" style="color: #888;">Regesto Schizzi</a></li>
+                    </ul>
+                    <ul class="info"  style="display: none;">
+                        <li><a href="?p=Biografia" style="color: #888;">Biografia</a></li>
+                        <li><a href="?p=Pubblicazioni" style="color: #888;">Pubblicazioni</a></li>
+                        <li><a href="?p=Premi" style="color: #888;">Premi</a></li>
+                        <li><a href="?p=Conferenze" style="color: #888;">Conferenze</a></li>
+                    </ul>
+                </div>
+                <div id="menu3"  style="display: none;">
+                    <ul>
+                        <li><a href="?p=Allestimenti" style="color: #888;">Allestimenti</a></li>
+                        <li><a href="?p=Riqualificazione Urbana" style="color: #888;">Riqualificazione Urbana</a></li>
+                        <li><a href="?p=Edifici Pubblici" style="color: #888;">Edifici Pubblici</a></li>
+                        <li><a href="?p=Residenziali" style="color: #888;">Residenziali</a></li>
+                        <li><a href="?p=Scolastici" style="color: #888;">Scolastici</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--CONTENUTO-->
+            <div id="contenuto">
+                <div id="immagini">    <div id="slide">        <div id="pag">            <div  id="a152" class="1">  <img src="public/pagine/foto/249_immagine.jpg">            </div><div class="2">  <img src="public/pagine/foto/250_immagine.jpg">            </div><div class="3">  <img src="public/pagine/foto/251_immagine.jpg">            </div><div class="4">  <img src="public/pagine/foto/252_immagine.jpg">            </div><div class="5">  <img src="public/pagine/foto/253_immagine.jpg">            </div><div class="6">  <img src="public/pagine/foto/254_immagine.jpg">            </div><div class="7">  <img src="public/pagine/foto/255_immagine.jpg">            </div><div class="8">  <img src="public/pagine/foto/256_immagine.jpg">            </div><div class="9">  <img src="public/pagine/foto/257_immagine.jpg">            </div><div class="10">  <img src="public/pagine/foto/258_immagine.jpg">            </div><div class="11">  <img src="public/pagine/foto/259_immagine.jpg">            </div><div class="12">  <img src="public/pagine/foto/260_immagine.jpg">            </div><div class="13">  <img src="public/pagine/foto/261_immagine.jpg">            </div><div class="14">  <img src="public/pagine/foto/262_immagine.jpg">            </div><div class="15">  <img src="public/pagine/foto/263_immagine.jpg">            </div><div class="16">  <img src="public/pagine/foto/264_immagine.jpg">            </div><div class="17">  <img src="public/pagine/foto/265_immagine.jpg">            </div><div class="18">  <img src="public/pagine/foto/266_immagine.jpg">            </div><div class="19">  <img src="public/pagine/foto/267_immagine.jpg">            </div>            <!--<span class="left">                <div class="left"><img src="left-arrow.png"></div>            </span>            <span class="right">                <div class="right"><img src="right-arrow.png"></div>            </span>-->        </div>        <div id="lista15">            <div id="lista151">                <div class="1" style="left: 0px;";>                        <img src="public/pagine/foto/249_immagine.jpg">                    </div><div class="2" style="left: 108px;";>                        <img src="public/pagine/foto/250_immagine.jpg">                    </div><div class="3" style="left: 216px;";>                        <img src="public/pagine/foto/251_immagine.jpg">                    </div><div class="4" style="left: 324px;";>                        <img src="public/pagine/foto/252_immagine.jpg">                    </div><div class="5" style="left: 432px;";>                        <img src="public/pagine/foto/253_immagine.jpg">                    </div><div class="6" style="left: 540px;";>                        <img src="public/pagine/foto/254_immagine.jpg">                    </div><div class="7" style="left: 648px;";>                        <img src="public/pagine/foto/255_immagine.jpg">                    </div><div class="8" style="left: 756px;";>                        <img src="public/pagine/foto/256_immagine.jpg">                    </div><div class="9" style="left: 864px;";>                        <img src="public/pagine/foto/257_immagine.jpg">                    </div><div class="10" style="left: 972px;";>                        <img src="public/pagine/foto/258_immagine.jpg">                    </div><div class="11" style="left: 1080px;";>                        <img src="public/pagine/foto/259_immagine.jpg">                    </div><div class="12" style="left: 1188px;";>                        <img src="public/pagine/foto/260_immagine.jpg">                    </div><div class="13" style="left: 1296px;";>                        <img src="public/pagine/foto/261_immagine.jpg">                    </div><div class="14" style="left: 1404px;";>                        <img src="public/pagine/foto/262_immagine.jpg">                    </div><div class="15" style="left: 1512px;";>                        <img src="public/pagine/foto/263_immagine.jpg">                    </div><div class="16" style="left: 1620px;";>                        <img src="public/pagine/foto/264_immagine.jpg">                    </div><div class="17" style="left: 1728px;";>                        <img src="public/pagine/foto/265_immagine.jpg">                    </div><div class="18" style="left: 1836px;";>                        <img src="public/pagine/foto/266_immagine.jpg">                    </div><div class="19" style="left: 1944px;";>                        <img src="public/pagine/foto/267_immagine.jpg">                    </div>            </div>            <div class="left">&#9668</div>   <div class="right">&#9658</div>        </div>    </div></div><div id="descrizione" onselectstart="return(true);">    <div id="titoletto">        2009 - Nuova Piazza Indipendenza, Torre di Mosto (Italia)    </div>    <div class="des" id="d0" style="display: block"><p>Progetto realizzato</p><p>
+2009</p><p>
+Costo  Euro 1.100.000,00</p><p>
+Committente: Comune di Torre di Mosto</p><p>
+Architetti :</p><p>
+Stanislao Fierro  Nadine Saul  C&P Architetti (Progetto preliminare, Progetto definitivo, Progetto esecutivo del 1° e 2° stralcio)</p><p>
+Stanislao Fierro  Direzione lavori del 1°stralcio</p><p>
+Elena Pedrina  Direzione lavori del 2°stralcio</p></div><div class="des" id="d1"><p>L MONUMENTO ESISTENTE</p><p>
+Il  Monumento ladideo esistente, dedicato ai caduti , non viene modificato ne tantomeno spostato.</p><p>
+Nella nuova sistemazione superficiale, non perde la sua centralità sia pur in una composizione geometrica diversa.</p><p>
+</p><p>
+IL GIARDINO</p><p>
+L'attuale giardino si presenta disordinato con piantumazioni a volte casuali.</p><p>
+Questa casualità ha scollegato il giardino dagli altri elementi circostanti, occludendo al contempo, la vista del Municipio.</p><p>
+In seguito ad una attenta analisi degli alberi esistenti, e soprattutto all'interno di una progettualità complessiva del verde, atta a conferire all'intervento un carattere di uniformità, si deciderà quali alberi tenere e quali abbattere.</p><p>
+In questa prima analisi si terrà in debito conto della "salute" delle singole alberature.</p><p>
+Il nuovo giardino farà parte di un progetto che terrà conto di problematiche più ampie, si partirà dal giardino "storico" antistante al Municipio per arrivare all'argine retrostante.</p></div><div class="des" id="d2"><p>La riqualificazione sarà, quindi, una integrazione degli alberi esistenti con i nuovi alberi di progetto.</p><p>
+Per il Giardino antistante si desidera conservare:</p><p>
+- N° 2 Tigli;</p><p>
+- N° 1 Cedro Atlantico;</p><p>
+- N° 1 Cedrus deodora;</p><p>
+- N° 1 Taxus bacata;</p><p>
+- N° 2 Cipressi;</p><p>
+- N° 1 Magnolia grandiflora</p><p>
+- N° 1 Acero</p><p>
+Le nuove alberature sono:</p><p>
+- N° 10 Lagestroemia o Cilegio da fiore</p><p>
+Per il filare su Via Dietro Municipio si desidera conservare:</p><p>
+- N° 3 Aceri saccarini</p><p>
+Le nuove alberature sono:</p><p>
+- N° 4 Liquidambar</p><p>
+Sul parcheggio a destra del Municipio </p><p>
+Le nuove alberature sono:</p><p>
+- N° 4 Paulownia o Kolreuteria Panuculata</p><p>
+Per quanto riguarda il nuovo manto erboso, sarà previsto:</p><p>
+- una adeguata fresatura e rastrellatura;</p><p>
+- uno spargimento di substrato;</p><p>
+- uno spargimento di semenza nel miscuglio pari a 25 gr. per mq, compreso il successivo interramento e rullatura;</p><p>
+- uno spargimento di concime speciale per tappeti erbosi, pari a 50gr. al mq.</p><p>
+</p></div><div class="des" id="d3"><p>ARREDO URBANO</p><p>
+Gli elementi di arredo saranno:</p><p>
+una fontana a ricircolo, una fontanella ad acqua potabile, panche, cestini .</p><p>
+</p><p>
+Fontana a ricircolo</p><p>
+La Fontana la cui posizione è riscontrabile negli elaborati grafici, è composta dai seguenti elementi:</p><p>
+- N°5 Getti tipo mod. Geiser 20</p><p>
+- N°1 Troppo pieno</p><p>
+- N°1 sistema filtrante a vista diametro 20 cm e h. 20cm </p><p>
+- N°1 elettropompa C 1800 B</p><p>
+- N°1 Trasformatore 200 VA 380//48V</p><p>
+- N°1 Piletta di scarico</p><p>
+La Fontana sarà  illuminata con fari sub. Led bianco, in acciaio inox 1,7 W completo di cilindro da incasso. E' previsto anche un trasformatore per fari sub. N 350 mA, 48V-DC IP 65.</p></div><div class="des" id="d4"><p>SISTEMAZIONE DELL'ARGINE</p><p>
+La discesa dell'argine verso lo spazio centrale, permette lo spostamento del baricentro della</p><p>
+piazza verso il fiume Livenza; attraverso la realizzazione di sedute e scale di accesso sarà</p><p>
+possibile immaginare un nuovo utilizzo del piano erboso inclinato.</p><p>
+La realizzazione dei gradoni sull'argine avverrà attraverso l'ingrosso della sezione arginale.</p><p>
+La sezione verrà ingrossata per una larghezza di circa 1 m nella parte superiore e di circa 2 m al</p><p>
+piede dell'argine attuale; questo lavoro viene fatto per ottenere un nuovo piano inclinato che non</p><p>
+comprometta la sezione dell'argine esistente.</p><p>
+La realizzazione del nuovo piano inclinato sarà ottenuta procedendo come segue:</p><p>
+1  Scotico di 20 cm dell'attuale tappeto erboso (asporto e recupero)</p><p>
+2  Formazione primaria di gradonate, con sezione di circa 1 x 1 m</p><p>
+3  Riporto di strati successivi di terreno compattati ogni 30  40 cm per la formazione del nuovo</p><p>
+piano inclinato</p><p>
+</p></div><div class="des" id="d5"><p>4 - Posa di elementi puntuali, prefabbricati in situ o gettati in opera in cemento armato, per la</p><p>
+realizzazione delle scale di accesso e dei piani di seduta</p><p>
+5 Recupero e posa dello scotico precedentemente asportato per favorire la ripresa dello strato</p><p>
+vegetale esistente</p><p>
+Ai piedi del nuovo profilo dell'argine è prevista la realizzazione di un percorso carrabile di</p><p>
+collegamento tra Via Dietro il Municipio e Via Cairoli il cui uso è saltuario e consentito solamente in</p><p>
+occasione di manifestazioni che prevedano la chiusura di un tratto di Via 2 Giugno e della strada</p><p>
+sul retro del municipio. Per la realizzazione di questo percorso carrabile si rende necessario</p><p>
+l'arretramento della rete di confine del magazzino idraulico in modo tale da permettere l'uscita del</p><p>
+percorso su via Cairoli. Per ottenere questo passaggio lo spazio da concedere ad uso del comune corrisponde ad un' area di circa 45 mq.</p></div><div class="des" id="d6"><p>foto</p></div><div class="des" id="d7"><p>foto</p></div><div class="des" id="d8"><p>foto</p></div><div class="des" id="d9"><p>pavimentazione</p></div><div class="des" id="d10"><p>particolare pavimentazione</p></div><div class="des" id="d11"><p>foto</p></div><div class="des" id="d12"><p>foto</p></div><div class="des" id="d13"><p>foto</p></div><div class="des" id="d14"><p>particolare seduta</p></div><div class="des" id="d15"><p>foto</p></div><div class="des" id="d16"><p>foto</p></div><div class="des" id="d17"><p>planimetria 2</p></div><div class="des" id="d18"><p>foto</p></div></div><script>    max = 19;    maxRight = (max - 6) * 150;    maxRight *= -1;    $("#pag div.right").click(function() {        $("#pag div.left").show();        a = $("#a152").attr("class");        a = parseInt(a);        if (a < max) {            a += 1;            if (a === max)                $("#pag div.right").hide();            $("#a152").animate({left: "-100%"});            $("#pag div." + a).animate({left: "0px"});            $("#lista151 div").css("border", " solid 1px #999");            $("#lista151 div." + a).css("border", " solid 3px #999");            $("#a152").attr("id", "");            $("#pag div." + a).attr("id", "a152");            left = a * 150 - 450;            left *= -1;            $("#lista15 div.right").show();            $("#lista15 div.left").show();            if (left < maxRight) {                left = maxRight;                $("#lista15 div.right").hide();            }            if (left > 0) {                left = 0;                $("#lista15 div.left").hide();            }            left += "px";            $("#lista151").animate({left: left});        }    });    $("#pag div.left").click(function() {        $("#pag div.right").show();        a = $("#a152").attr("class");        a = parseInt(a);        if (a > 1) {            a -= 1;            if (a === 1)                $("#pag div.left").hide();            $("#a152").animate({left: "100%"});            $("#pag div." + a).animate({left: "0px"});            $("#lista151 div").css("border", " solid 1px #999");            $("#lista151 div." + a).css("border", " solid 3px #999");            $("#a152").attr("id", "");            $("#pag div." + a).attr("id", "a152");            left = a * 150 - 450;            left *= -1;            $("#lista15 div.right").show();            $("#lista15 div.left").show();            if (left < maxRight) {                left = maxRight;                $("#lista15 div.right").hide();            }            if (left > 0) {                left = 0;                $("#lista15 div.left").hide();            }            left += "px";            $("#lista151").animate({left: left});        }    });    $("#lista151 div").click(function() {        //CAMBIO L'IMMAGINE        a = $(this).attr("class");        b = $("#a152").attr("class");        if (a !== b) {            $("#pag div.right").show();            $("#pag div.left").show();            a = parseInt(a);            if (a === 1)                $("#pag div.left").hide();            if (a === max)                $("#pag div.right").hide();            if (a > b) {                for (i = b; i < a; i++) {                    $("#pag div." + i).animate({left: "-100%"});                }            }            else {                for (i = b; i > a; i--) {                    $("#pag div." + i).animate({left: "100%"});                }            }            $("#pag div." + a).animate({left: "0px"});            $("#lista151 div").css("border", " solid 1px #999");            $("#lista151 div." + a).css("border", " solid 3px #999");            $("#a152").attr("id", "");            $("#pag div." + a).attr("id", "a152");            //CAMBIO LA DESCRIZIONE            r = a - 1;            $("div.des").css("display", "none");            $("#d" + r).css("display", "block");            //POSIZIONO LA LISTA DI IMMAGINI            left = a * 108 - 324;            left *= -1;            $("#lista15 div.right").show();            $("#lista15 div.left").show();            if (left < maxRight) {                left = maxRight;                $("#lista15 div.right").hide();            }            if (left > 0) {                left = 0;                $("#lista15 div.left").hide();            }            left += "px";            $("#lista151").animate({left: left});        }    });    okRight = true;    $("#lista15 div.right").click(function() {        if (okRight) {            $("#lista15 div.left").show();            okRight = false;            left = parseInt($("#lista151").css("left"));            if (left - 400 <= maxRight) {                $("#lista151").animate({left: maxRight}, function() {                    $("#lista15 div.right").hide();                    okRight = true;                });            }            else {                $("#lista151").animate({left: "-=400"}, function() {                    okRight = true;                });            }        }    });    okLeft = true;    $("#lista15 div.left").click(function() {        if (okLeft) {            $("#lista15 div.right").show();            okLeft = false;            left = $("#lista151").css("left");            left = parseInt(left);            if (left + 400 >= 0) {                $("#lista151").animate({left: "0px"}, function() {                    $("#lista15 div.left").hide();                    okLeft = true;                });            }            else {                $("#lista151").animate({left: "+=400"}, function() {                    okLeft = true;                });            }        }    });    /*$("#pag span.right").hover( function () {     $("#pag span.right div.right").animate({opacity: "0.2"});     }, function () {     if(ok)     $("#pag span.right div.right").animate({opacity: "0.05"});     alert(ok);     });*/    $("#pag span.right div.right").hover(function() {        $(this).css("opacity", "0.5");    }, function() {        $(this).css("opacity", "0.2");    });    /*$("#pag span.left").hover( function () {     $("#pag span.left div.left").animate({opacity: "0.2"});     }, function () {     $("#pag span.left div.left").animate({opacity: "0.05"});     });*/    $("#pag span.left div.left").hover(function() {        $(this).css("opacity", "0.5");    }, function() {        $(this).css("opacity", "0.2");    });</script><style>    #slide{        position: absolute;        top: 0px;        left: 0px;        right: 10px;        bottom: 0px;    }    #pag{        position: absolute;        top: 0px;        left: 0px;        right: 0px;        bottom: 110px;        overflow: hidden;    }    #pag div{        width: 100%;        position: absolute;        top: 0px;        left: 100%;    }    #pag div img {        max-width: 100%;        max-height: 100%;        position: relative;        margin: 0px;    }    #pag div:first-child{        width: 100%;        position: absolute;        top: 0px;        left: 0px;    }    /*#pag div.p{        position: absolute;        top: 0px;        left: auto;        width: auto;        height: 525px;        bottom: 0px;        right: 0px;        background-color: rgba( 0, 0, 0, 0.1);        padding: 10px;        color: #555;        font-family: 'Open Sans';        max-width: 50%;    }*/    /*#pag div.left {        position: absolute;        top: 50%;        left: -1px;        z-index: 50;        width: 50px;        height: 100px;        margin-top: -50px;        cursor: pointer;        display: none;        opacity: 0.2;    }    #pag div.left img{        width: 100%;        height: 100%;    }    #pag div.right {        position: absolute;        top: 50%;        right: -1px;        left: auto;        z-index: 50;        width: 50px;        height: 100px;        margin-top: -50px;        cursor: pointer;        opacity: 0.2;    }    #pag div.right img{        width: 100%;        height: 100%;    }    #pag span.left{        position: absolute;        z-index: 49;        top: 0px;        left: 0px;        bottom: 0px;        width: 50%;    }    #pag span.right{        position: absolute;        z-index: 49;        top: 0px;        right: 0px;        bottom: 0px;        width: 50%;    }*/    #lista15{        position: absolute;        bottom: 0px;        left: 0px;        right: 0px;        height: 110px; /*altezzza lista*/        padding: 0px;        overflow: hidden;       }    #lista151{        position: absolute;        height: 85px; /*altezza lista2*/        padding: 0px;        left: 5px;        top: 5px;        bottom: 15px;        z-index: 1;        width: 10000000000000000000000000000000000000px;    }    #lista151 div{        /*Dimensioni esatte per i box*/        -moz-box-sizing: border-box;        -webkit-box-sizing: border-box;        box-sizing: border-box;        position: absolute;        top: 0px;        height: 80px; /*altezza img*/        width: 100px; /*larghezza img*/        overflow: hidden;                /*margin-top: 0px;        margin-bottom: 0px;        margin-left: 0px;        margin-right: 8px;*/        cursor: pointer;        border: solid 1px #999;    }    #lista15 div.left{        position: absolute;        top: 100%;        left: 0px;        margin-top: -13px;        width: 25px;        height: 15px;        z-index: 50;        cursor: pointer;        text-align: left;        font-size: 15px;        color: #888;        display: none;    }    #lista15 div.left:hover{        color: #222;    }    #lista15 div.left img{        width: 100%;        height: 100%;    }    #lista15 div.right{        position: absolute;        top: 100%;        right: 0px;        margin-top: -20px;        width: 25px;        height: 16px;        z-index: 50;        cursor: pointer;        text-align: right;        font-size: 16px;        color: #888;    }    #lista15 div.right:hover{        color: #222;    }    #lista15 div.right img{        width: 100%;        height: 100%;    }    #lista151 div:hover{    }    #lista151 div:first-child{        border: solid 3px #999;    }    #lista151 div img{        height: 100%;    }    /*#test{        position: absolute;        top: 690px;        left: 0px;        right:0px;        padding: 5px;        font-family: 'Open Sans';    }    #Int15 {        position: absolute;        top: 0px;        left: 0px;        right: 0px;        padding-bottom: 5px;        font-size: 24px;        font-weight: 400;        color: #000;        font-family: 'Poiret One';        border-bottom: 1px solid #666;        margin-right: -10px;        margin-bottom: 5px;    }*/</style><style>    #immagini{        position: absolute;        top: 30px;        left: 0px;        bottom: 20px;        width: 750px;    }    #descrizione{        position: absolute;        top: 40px;        right: 0px;        bottom: 20px;        width: 300px;    }    #titoletto {        position: absolute;        top: 10px;        left: 0px;        right: 0px;        height: 40px;        padding-left: 10px;        font-family: Arial;        font-size: 13px;        color: #888;        font-weight: 600;    }    #descrizione div.des{        position: absolute;        top: 60px;        left: 0px;        right: 0px;        bottom: 0px;        padding-left: 10px;        font-family: Arial;        font-size: 12px;        color: #888;        display: none;        overflow: auto;    }    #categoria{        position: absolute;        bottom: 30px;        left: 0px;        right: 0px;        text-align: center;    }    #categoria a{        text-decoration: none;        font-family: Arial;        font-size: 13px;        color: #888;    }    #categoria a:hover{        color: #222;    }</style>            </div>
+
+            <!--PIE DI PAGINA-->
+            <div id="pie">
+                &copy; Stanislao Fierro Architetto - P.iva: 01639010212
+            </div>
+        </div>
+    </body>
+</html>
+

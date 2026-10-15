@@ -1,0 +1,52 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=9&lang=it, https://www.stanislaofierro.com/index.php?p=10&lang=it
+title:
+  it: Palestra della scuola elementare
+  de: Turnhalle der Grundschule
+  en: Primary school gymnasium
+year: 2011
+place:
+  it: Nalles
+  de: Nals
+  en: Nalles
+typology: scuole
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2011
+  result:
+    it: Finalista
+    de: Finalist
+    en: Finalist
+area: 4.000 m²
+client:
+  it: Comune di Nalles
+  de: Gemeinde Nals
+  en: Municipality of Nalles
+partners:
+  - Nadine Saul
+excerpt:
+  lang: it
+  text: L’IDEA L’idea del progetto desidera mettere in atto , dopo attente considerazioni insediative, il tema del “Basamento”. Nell’analisi dei caratteri dell’area, tra le altre cose , colpisce il Basamento del Cimitero, e della Scuola Elementare, che crediamo, non casualmente della stessa altezza. Il nuovo intervento intende allinearsi all’altezza dei basamenti esistenti, ed in un certo modo, dialogare con essi. Si innescano, in questo modo, attraverso la composizione dei nuovi volumi, nuove ed interessanti relazioni.
+  source: https://www.stanislaofierro.com/index.php?p=9&lang=it
+cover: ../../assets/originali/pagine/foto/46_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/47_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=9&lang=it
+  - https://www.stanislaofierro.com/index.php?p=10&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/46_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/47_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/48_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/49_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/62_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/50_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/64_immagine.jpg
+    type: tavola

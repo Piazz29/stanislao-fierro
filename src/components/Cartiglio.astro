@@ -1,0 +1,26 @@
+---
+// Cartiglio: il riquadro dati di una tavola di progetto.
+interface Row { label: string; value: string | string[]; href?: string }
+interface Props { rows: Row[]; heading?: string; code?: string; class?: string; dense?: boolean }
+const { rows, heading, code, class: cls, dense = false } = Astro.props;
+---
+<div class:list={['border border-pietra/70 bg-calce', cls]}>
+  {(heading || code) && (
+    <div class="flex justify-between items-baseline gap-4 border-b border-pietra/70 px-3 py-2">
+      {heading && <span class="t-data text-carbone">{heading}</span>}
+      {code && <span class="t-data text-grigio">{code}</span>}
+    </div>
+  )}
+  <dl class="grid grid-cols-[minmax(6.5rem,32%)_1fr]">
+    {rows.map((r, i) => (
+      <>
+        <dt class:list={['t-data text-grigio px-3 border-r border-pietra/40', dense ? 'py-1.5' : 'py-2.5', i > 0 && 'border-t border-pietra/40']}>{r.label}</dt>
+        <dd class:list={['t-data-plain text-[0.9rem] leading-snug px-3 text-carbone', dense ? 'py-1.5' : 'py-2.5', i > 0 && 'border-t border-pietra/40']}>
+          {Array.isArray(r.value)
+            ? r.value.map((v) => <span class="block">{v}</span>)
+            : r.href ? <a class="link" href={r.href}>{r.value}</a> : r.value}
+        </dd>
+      </>
+    ))}
+  </dl>
+</div>

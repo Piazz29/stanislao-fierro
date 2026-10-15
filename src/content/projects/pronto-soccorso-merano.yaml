@@ -1,0 +1,39 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=41&lang=it
+title:
+  it: Pronto soccorso
+  de: Notaufnahme
+  en: Emergency department
+year: 2009
+place:
+  it: Merano
+  de: Meran
+  en: Merano
+typology: edifici-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2009
+  result:
+    it: 3° premio
+    de: 3. Preis
+    en: 3rd prize
+client:
+  it: Provincia autonoma di Bolzano
+  de: Autonome Provinz Bozen
+  en: Autonomous Province of Bolzano
+partners:
+  - Wolfgang Simmerle
+cover: ../../assets/originali/pagine/foto/174_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=41&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/172_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/173_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/174_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/175_immagine.jpg
+    type: disegno

@@ -1,0 +1,322 @@
+
+<html>
+    <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <script src="jquery-1.10.2.min.js"></script>
+        
+        <!-- Includo il link al css -->
+        <link rel="stylesheet" href="style.css" />
+        
+        <script>
+            $(window).resize(function() {
+                width = $(window).width();
+                if (width < 1100) {
+                    $("#pagina").css("left", "0px");
+                    $("#pagina").css("margin-left", "10px");
+                } else {
+                    $("#pagina").css("left", "50%");
+                    $("#pagina").css("margin-left", "-525px");
+                }
+
+                height = $(window).height();
+                if (height < 750) {
+                    $("#pagina").css("top", "0px");
+                    $("#pagina").css("margin-top", "10px");
+                } else {
+                    $("#pagina").css("top", "50%");
+                    $("#pagina").css("margin-top", "-375px");
+                }
+            });
+
+            $(document).ready(function() {
+
+                width = $(window).width();
+                if (width < 1100) {
+                    $("#pagina").css("left", "0px");
+                    $("#pagina").css("margin-left", "10px");
+                } else {
+                    $("#pagina").css("left", "50%");
+                    $("#pagina").css("margin-left", "-525px");
+                }
+
+                height = $(window).height();
+                if (height < 750) {
+                    $("#pagina").css("top", "0px");
+                    $("#pagina").css("margin-top", "10px");
+                } else {
+                    $("#pagina").css("top", "50%");
+                    $("#pagina").css("margin-top", "-375px");
+                }
+
+                $("#menu a").hover(function() {
+                    color = $(this).css("color");
+                    $(this).css("color", "#111");
+                }, function() {
+                    $(this).css("color", color);
+                });
+            });
+        </script>
+        
+        
+        <!-- Script per analytics -->
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-46289673-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </head>
+    <body onselectstart="return(false);">
+        <div id="pagina">
+
+            <!--TITOLO-->
+            <div id="titolo">
+                STANISLAO FIERRO ARCHITETTO
+            </div>
+
+            <!--MENU-->
+            <div id="menu">
+                <div id="lingua">
+                    <a style="color: #111" href="/index.php?p=Biografia&lang=it&lang=it">it</a> |
+                    <a style="color: #888" href="/index.php?p=Biografia&lang=it&lang=en">en</a> |
+                    <a style="color: #888" href="/index.php?p=Biografia&lang=it&lang=de">de</a>
+                </div>
+                <div id="menu1">
+                    <ul>
+                        <li><a href="?p=Home" style="color: #888;">Home</a></li>
+                        <li><a href="?p=News" style="color: #888;">News</a></li>
+                        <li><a href="?p=Lista" style="color: #888;">Progetti</a></li>
+                        <li><a href="?p=Studio" style="color: #888;">Studio</a></li>
+                        <li><a href="?p=Contatti" style="color: #888;">Contatti</a></li>
+                        <li><a href="?p=Biografia" style="color: #111;">Info</a></li>
+                    </ul>
+                </div>
+                <div id="menu2">
+                    <ul class="progetti"  style="display: none;">
+                        <li><a href="?p=Lista" style="color: #888;">Lista</a></li>
+                        <li><a href="?p=Opere selezionate" style="color: #888;">Opere selezionate</a></li>
+                        <li><a href="?p=In corso" style="color: #888;">In corso</a></li>
+                        <li><a href="?p=Allestimenti" style="color: #888;">Tipo</a></li>
+                        <li><a href="?p=Regesto Schizzi" style="color: #888;">Regesto Schizzi</a></li>
+                    </ul>
+                    <ul class="info"  style="display: block;">
+                        <li><a href="?p=Biografia" style="color: #111;">Biografia</a></li>
+                        <li><a href="?p=Pubblicazioni" style="color: #888;">Pubblicazioni</a></li>
+                        <li><a href="?p=Premi" style="color: #888;">Premi</a></li>
+                        <li><a href="?p=Conferenze" style="color: #888;">Conferenze</a></li>
+                    </ul>
+                </div>
+                <div id="menu3"  style="display: none;">
+                    <ul>
+                        <li><a href="?p=Allestimenti" style="color: #888;">Allestimenti</a></li>
+                        <li><a href="?p=Riqualificazione Urbana" style="color: #888;">Riqualificazione Urbana</a></li>
+                        <li><a href="?p=Edifici Pubblici" style="color: #888;">Edifici Pubblici</a></li>
+                        <li><a href="?p=Residenziali" style="color: #888;">Residenziali</a></li>
+                        <li><a href="?p=Scolastici" style="color: #888;">Scolastici</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--CONTENUTO-->
+            <div id="contenuto">
+                <div id="immagini">    <img id="immagine" src="public/altro/biografia.jpg"></div><div id="descrizione" onselectstart="return(true);">    <div id="titoletto">        Biografia<p>sottotitolo de</p>    </div>    <div class="des" style="display: block"><p>ARCH. STANISLAO FIERRO</p><p>
+DATA DI NASCITA: Taurasi , 3 Agosto de 1961</p><p>
+DOMICILIO PROFESSIONALE: Via Montello 3 Bolzano tel/fax 0471.97389</p><p>
+POSTA ELETTONICA: stanislao.fierro@libero.it, PEC: stanislao.fierro@archiworldpec.it Abilitato alla professione dal Luglio 1989, iscritto allOrdine degli Architetti di N°599</p><p>
+</p><p>
+FORMAZIONE ACCADEMICA</p><p>
+Architetto laureato presso IUAV di Venezia nel 1988</p><p>
+Dal 1989 al 2005 collabora ai corsi di progettazione dei Prof. Arrigo Rudi e Francesco Venezia presso lo IUAV di Venezia</p><p>
+Dal 2005 professore incaricato di progettazione architettonica specialistica in costruzione dello IUAV di Venezia. Relatore a numerose tesi di laurea, seminari e mostre didattiche e scientifiche.</p><p>
+</p><p>
+2016-2017 esperto nella commissione edilizia e per il paesaggio del Comune di Trento</p><p>
+1998-2004 Consigliere dellOrdine degli Architetti di Bolzano e Responsabile del settore Cultura dal 1998 al 2004.</p><p>
+Redattore della rivista di Architettura TURRIS BABEL: articoli sui N° 37-39-41-44-46.</p><p>
+</p><p>
+PREMI E RICONOSCIMENTI</p><p>
+2009 Segnalazione al Premio Gubbio edizione per la realizzazione della nuova Piazza Tribunale e parcheggi interrati a Bolzano.</p><p>
+2007 Vincitore IV premio di Architettura in Alto Adige per la realizzazione della nuova Piazza Tribunale e parcheggi interrati a Bolzano</p><p>
+2004 Vincitore del Premio di Architettura città di Oderzo VIII edizione per la realizzazione</p><p>
+2000 Vincitore del Premio di Architettura città di Oderzo IV edizione per la nuova realizzazione di Piazza Mazzini a Bolzano.</p><p>
+2000 Menzione Speciale al Premio Europeo di Architettura \\\"Luigi Cosenza\\\" per la nuova realizzazione di Piazza Mazzini a Bolzano.</p><p>
+1998 Selezionato al Premio Nazionale di Architettura \\\"Luigi Cosenza\\\" per i progetto del</p><p>
+1996 Selezionato per il programma Caledeoscopio, Giovani Architetti Europei</p><p>
+1996 Selezionato per il programma Caledeoscopio, Giovani Architetti Europei (università di Siviglia, Granada, Porto, Venezia) nuovo Museo d\\\'Arte a Tallin, Estonia della nuova Piazza Tribunale e parcheggi interrati a Bolzano.</p><p>
+1996 Menzione Speciale al Premio Nazionale di Architettura \\\"Luigi Cosenza\\\" per il progetto per il nuovo nucleo centrale di Laives, Bolzano.</p><p>
+1994 Vincitore Prima fase e selezionato per il programma Caleidoscopio.</p><p>
+1994 Menzione Speciale al Premio Nazionale di Architettura \\\"Luigi Cosenza\\\" per il progetto di massima del nuovo centro scolastico superiore in Piedicastello Trento.</p><p>
+</p><p>
+PREMI IN CONCORSI DI ARCHITETTURA</p><p>
+2014FINALISTA Concorso di progettazione internazionale per impianto sport su ghiaccio a Brunico 2014FINALISTA Concorso di progettazione per la zona ricreativa a Selva dei Mulini (Bz)</p><p>
+2014 2°PREMIO Concorso di progettazione internazionale ampliamento EURAC a Bolzano</p><p>
+2014 2°PREMIOConcorso di progettazione internazionale per nuoava sede Ipes a Bolzano 2014-FINALISTAConcorso di progettazione internazionale per la eiqualificazione di Piazza A.Moro ed E. Berlinguer aPutignano (Ba) 2013-FINALISTA Concorso Aula Magna a Salorno</p><p>
+2013-1°PREMIO Concorso per la realizzazione della nuova Piazza Universitàa Bolzano 2012-1°PREMIO Concorso per la realizzazione della nuova Piazza Silvus Magnago a Bolzano 2012-1°PREMIO Concorso per 9 abitazioneIPES a Soprabolzano(Bz.)</p><p>
+2011- FINALISTA Concorso internaz. a preselezione nuovaKulturplatz San Gallo Svizzera. 2011-FINALISTA Concorso internazionale a preselezione per una nuova palestra Nalles (Bz).</p><p>
+2011-2°PREMIO Organizzazione urbanisticadellarea sportiva e ricreativa di Lagundo (Bz). </p><p>
+2010-3°PREMIO Concorso per la ristrutturazione ed ampliamento della scuola elementare e la realizzazione di un planetario a San Valentino Comune di Cornedo(Bz) </p><p>
+2010-FINALISTA Concorso internazionale ad invita per la riqualificazione urbana dellarea</p><p>
+Wintergartenstrasse/Querstrasse Lipsia Germania</p><p>
+2009-2°PREMIO Riqualificazione del centro paese di Nova Levante (Bz) 2009 2009-3°PREMIO Riqualificazione dellarea centarale della Città di Noventa di Piave (Ve) 2009-3°PREMIO Riqualificazione urbana di Piazza Libertà a Guastalla</p><p>
+2008-1°PREMIO Concorso per la riqualificazione urbana del centro storico di Luson (Bz) 2008-FINALISTA Concorso ad inviti per una nuova Piazza a Stamberg (Germania) 2008-FINALISTA Concorso ad inviti per la costruzione di un nuovo ponte e 2 Piazze a Erfurt Germania.</p><p>
+2008-FINALISTA Concorso ad inviti per la nuova sistemazione urbanistica ad Hildesheim Germania.</p><p>
+2008-2°PREMIO Concorso internazionale ad inviti per una nuova sistemazione urbanistica</p><p>
+di Puerto Real (Cadiz-Spagna).</p><p>
+2008-FINALISTA Concorso per il nuovo centro multiservizi a Merano.</p><p>
+2007-1°PREMIO Concorso Internazionale ad inviti per il recupero dellAlcazaba de Baza Granada-Spagna.</p><p>
+2007-1°PREMIO Concorso per la riqualificazione Piazza Indipendenza aTorrediMosto(Ve). 2007-1°PREMIO Concorso europeo per la riqualificazione di Piazza Libertà a Trieste. 2007-FINALISTA Concorso Internazionale ad inviti per la riqualificazione della Ronda del</p><p>
+Marrubial a Cordoba Spagna.</p><p>
+2006-FINALISTA Concorso Internazionale ad inviti per la riqualificazione del Mausoleo di</p><p>
+Augusto e di Piazza Augusto Imperatore a Roma.</p><p>
+2006-FINALISTA Concorso Internazionale ad inviti per la sistemazione urbana del lungo lago di Stamberg (Germania) 2006</p><p>
+2006-3°PREMIO Concorso Internazionale ad inviti meno è più 1 Roma. 2006-FINALISTA Concorso Internazionale ad inviti per la sistemazione urbana del lungo lago di Stamberg Germania.</p><p>
+2006-FINALISTA Concorso Internazionale ad inviti per una nuova Piazza Marienhof a Monaco di Baviera Germania.</p><p>
+2005-3°PREMIO Concorso internazionale ad inviti per la riqualificazione del centro storico di Chiari.</p><p>
+2004-3°PREMIO Concorso ad inviti per ampiamento Museo Civico di Bolzano Italia 2003-3° PREMIO Concorso per Abitazazione Ipes  Vivera la città-ex centro Maya  a Merano.</p><p>
+2001-1°PREMIO Concorso nazionale per una nuova Piazza Tribunale a Bolzano 2000 2000-1°PREMIO Concorso nazionale per un nuovo parcheggio interrato a Bolzano. 1994-1°PREMIO Concorso nazionale per un nuovo centro storico di Laives (Bz). 1992-1°PREMIO Concorso ad inviti per la riqualificazione ad uso allestitivo del convento della Cartuja Siviglia Spagna.</p><p>
+</p><p>
+PRINCIPALI OPERE PUBBLICHE REALIZZATE O IN VIA DI REALIZZAZIONE</p><p>
+2014 Riqualificazione di Piazza Università a Bolzano. Progetto definitivo, esecutivo, direzione lavori. Classe e categoria : Id</p><p>
+Committente provincia autonoma di Bolzano.  400.000,00 .</p><p>
+2014 9 appartamenti Ipes a Soprabolzano (Bz) progetto preliminare, definitivo, esecutivo, in via di realizzazione.</p><p>
+Classe e categoria : Ib</p><p>
+Committente Ipes Bolzano. Importo dei lavori  1.500.000,00.</p><p>
+2014 Pista ciclabile ed arredo urbano ad Ariano Polesine (progetto ecomuseo parco delta del Po)  210.000,00 VI a</p><p>
+2011 Recupero ex Fornace di Riccione (RN) per la realizzazione di una scuola media, di un Teatro Classe e categoria : Id</p><p>
+ed una palazzina per uffici. Progetto definitivi ed esecutivo Committente Comune di Riccione lavori:  11.320.000,00.</p><p>
+2010 Riqualificazione urbana del centro storico di Tires(Bz)  985.000,00 in fase di progettazione</p><p>
+Classe e categoria : Ie</p><p>
+Committente: Comune di Tires</p><p>
+2009 Riqualificazione urbana del centro storico di Luson (Bz) in fase di realizzazione 400.000,00</p><p>
+Classe e categoria : Ie</p><p>
+Committente: Comune di Luson</p><p>
+2009-2014 Nuovo edificio socio-sanitario a Baza(Spagna) progetto definitivo approvato</p><p>
+importo dei lavori:  2.189.910,00</p><p>
+Classe e categoria : Id</p><p>
+Committente: Impresa pubblica del suolo Regione Andalucia (Spagna)</p><p>
+2007 Riqualificazione urbana e nuova Piazza Libertà a Trieste progetto definitivo approvato</p><p>
+importo dei lavori:  3.258186,50</p><p>
+Classe e categoria : Ie</p><p>
+Committente: Amministrazione Comunale di Trieste</p><p>
+2007 Progettazione di un ponte pedonale a Trieste progetto di fattibilità approvato</p><p>
+importo dei lavori:  1.153.875,00</p><p>
+Committente: Amministrazione Comunale di Trieste</p><p>
+2007 Progettazione quota 0 stazione ferroviaria di Trieste progetto definitivo approvato</p><p>
+importo dei lavori:  486.330,06</p><p>
+Committente: Amministrazione Comunale di Trieste</p><p>
+2007 Nuova Piazza a Torre di Mosto (Ve) importo dei lavori:  1.100.000,00</p><p>
+Classe e categoria : Ie</p><p>
+Lavoro eseguito</p><p>
+Committente: Amministrazione Comunale di Torre di Mosto</p><p>
+2005 Incarico progetto di fattibilità approvato dalla provincia autonoma di Bolzano per una nuova sistemazione esterna tra Palazzo Provinciale 1 e 2 a Bolzano ( parcheggio interrato sottostante ) Importo lavori  1.567.675,00</p><p>
+Committente: Provincia Autonoma di Bolzano</p><p>
+2004 Parcheggio multipiano con edifici commerciali e Piazza progetto esecutivo</p><p>
+Importo totale dei lavori:  8.772.600,00</p><p>
+Classe e categoria : Id, Ie, III VI.</p><p>
+Committente: Amministrazione Comunale di Pesaro</p><p>
+2004 Perizia suppletiva Parcheggio interrato e nuova Piazza Importo totale 190.000,00</p><p>
+Classe e categoria : Ie</p><p>
+Lavoro eseguito</p><p>
+Committente: Amministrazione Comunale di Bolzano</p><p>
+2004 Nuova Piazzetta + rampa pedonale</p><p>
+progetto preliminare, definitivo, esecutivo, direzione dei lavori, sicurezza in fase di esecuzione</p><p>
+Lavoro eseguito</p><p>
+Importo dei lavori 170.000,00</p><p>
+Classe e categoria : Ie</p><p>
+Committente: Amministrazione Comunale di Bolzano</p><p>
+2000-2004 Parcheggio interrato e nuova Piazza</p><p>
+Progetto preliminare , definitivo, esecutivo, direzione lavori, sicurezza in fase di esecuzione. Lavoro eseguito</p><p>
+importo dei lavori Garage  3.462.327, 05</p><p>
+importo dei lavori Piazza  1.567.645, 01</p><p>
+Classe e categoria : Id, Ie, III VI.</p><p>
+Committente: Amministrazione Comunale di Bolzano</p><p>
+2000 Progetto Parcheggio interrato</p><p>
+Progetto preliminare , definitivo, esecutivo, approvato importo lavori Garage  3.886.282,36</p><p>
+importo dei lavori Piazza  448.278,39</p><p>
+Classe e categoria : Ie, III, VI,f.</p><p>
+Committente: Amministrazione Comunale di Bolzano</p><p>
+2001 Sistemazione di Strada e rampe di collegamento nel centro storico di Bressanone Progetto preliminare ,definitivo, esecutivo, direzione lavori</p><p>
+Lavoro eseguito - importo dei lavori  196.253,62</p><p>
+Classe e categoria : Id, Ie, III VI, f.</p><p>
+Committente: Amministrazione Comunale di Bressanone</p><p>
+1996-2001 Riqualificazione urbana e parcheggio interrato</p><p>
+Progetto preliminare , definitivo, esecutivo, direzione lavori, sicurezza in fase di progetto e di esecuzione.</p><p>
+Lavoro eseguito - importo dei lavori  853.761,62</p><p>
+Classe e categoria : Id, Ie, III VI, f.</p><p>
+Committente: Amministrazione Comunale di Bolzano</p><p>
+1996 Nuova Piazza monumentale</p><p>
+Progetto preliminare , definitivo, esecutivo approvato. importo dei lavori:  980.239,95</p><p>
+Classe e categoria : Id, Ie, III VI.</p><p>
+Committente: Amministrazione Comunale di Bolzano</p><p>
+</p><p>
+SEMINARI E CONFERENZE</p><p>
+2011 ConferenziereCome si interviene negli spazi pubbliciEURAC Bz</p><p>
+2010 Conferenziere presso la Facoltà di Architettura di Siviglia (Spagna)</p><p>
+2007	Conferenziere  Nuova Piazza Tribunale a Bolzano IV Premio Architettura in Alto Adige. </p><p>
+2005	Conferenziere  Metamorfosi e Persistenze ordine degli Architetti di Cadiz Spagna</p><p>
+2005     Invitato al Festival dellArchitettura di Parma</p><p>
+2004     Invitato alla Triennale di Milano   Laboratorio Italia Autori a Confronto sull Architettura italiana doggi.</p><p>
+2003	Conferenziere alla IV settimana Internazionale di Architettura di Avila (Spagna). </p><p>
+2002	Conferenziere alla III settimana Internazionale di Architettura di Avila (Spagna).</p><p>
+2001     Invitato, con la realizzaione della nuova Piazza Mazzini di Bolzano , Arredare la Città 2001, spazio pubblico in Italia 1999-2000).</p><p>
+2001    Verso uningegneria architettonica merano Relatore.</p><p>
+2000    Concorsi in discussione Bolzano Relatore.</p><p>
+2000	Bolzano: Città in concorso. Seminario di Progettazione e convegni,. Ideatore e coordinatore.</p><p>
+2000	Bolzano: Città in concorso. Seminario di Progettazione e convegni,. Ideatore e  coordinatore.</p><p>
+1998       Curatore del Laboratorio di progettazione e del relativo libro  Museion, il  nuovo Museo   dArte Moderna di Bolzano dove? come?.</p><p>
+1994        Seminario e conferenza presso i Beni Monumentali ed Architettonici della Provincia di Trento  Il progetto per la Mostra il Paesaggio del Mediterraneo a Siviglia -  Le potenzialitá elle Rovine nella Progettazione Architettonica.</p><p>
+PUBBLICAZIONI</p><p>
+2012 Un Museo per la Collezione Cleto Munari Addizioni Elaborati di composizione nel Laboratorio 3 della specialistica Costruzione Ed.</p><p>
+2011  Il Basamento Giavedoni Ed.</p><p>
+2011 Per una Architettura della Costruzione Il Poligrafo Ed.</p><p>
+2011 Arrigo Rudi Architetture, restauro e allestimento Marsilio Ed.</p><p>
+2008  dallo schizzo alla Costruzione Galileo N°183 Ed. Collegio Ing. Di padova.</p><p>
+2008  Architettura della Costruzione IUAV 57 Ed. IUAV giornale dellUniversità.</p><p>
+2007 Turris Babel 72 IV Premio Architettura in Alto Adige.</p><p>
+2006 The significant space Architetture delo spazio pubblico contemporaneo di Valter Balducci Ed, Arredo&Città.</p><p>
+2006 Nuove Architetture in Alto Adige Ed.Springer Wien-NewYorg.</p><p>
+2005 Piazza e Spazi pubblici. 1990  2005 F. Motta Ed. Milano</p><p>
+2004 Premio Architettura Città di Oderzo VIII edizione Ed. Poligrafico Padova</p><p>
+2004 Almanacco di Casabella , giovani Architetti italiani.</p><p>
+2003 dArchitettura N° 21 u+r</p><p>
+2002 dArchitettura N° 17</p><p>
+2001  Lo spazio pubblico in Spagna 1990-2000, Lo spazio pubblico in Italia 1998-2000 Alinea Ed. Firenze.</p><p>
+2000 Pubblicazione su Almanacco di Casabella , giovani Architetti italiani.</p><p>
+2000 Vincitore premio di Architettura città di Oderzo</p><p>
+2000 Vincitore menzione speciale al premio europeo di Architettura Luigi</p><p>
+Cosenza Napoli Clean Napoli.</p><p>
+1998 Premio di Architettura nazionale Luigi Cosenza Ed. Clean Menzione speciale.</p><p>
+1998  Museion Wo?Wie dove?come,? Curatore Ed.Druck Brunico.</p><p>
+1997 Architécti N 37 iIl nuovo nucleo centrale di Laives (Bz).</p><p>
+1997 Architécti N 37 iIl nuovo nucleo centrale di Laives (Bz)</p><p>
+1996 Premio di Architettura nazionale Luigi Cosenza Ed. Clean Menzione speciale.</p><p>
+1996 Selezionato per il programma Caledeoscopio, Giovani Architetti Europei</p><p>
+1995 Architécti N 27  Un sistema di Piazze e un Giardino ad Atina.</p><p>
+1995 d Architettura N 14 Giardino Mediterraneo.</p><p>
+1994 Articolo su Alto Adige  Il Museo Archeologico a Trento.</p><p>
+1994 Catalogo Concorso Museo Nazionale dell Estonia</p><p>
+1994 La Scuola, il Fiume, la Cittá , Provincia A. di Trento</p><p>
+1994 Risalire la Cittá cittá di San Marino Ed. Electa.</p><p>
+1994 Premio Nazionale di Architettura L. Cosenza Ed. CLEAN Napoli.</p><p>
+1993 \\\"Il paesaggio mediterraneo\\\" in mostra all\\\'Expo di Siviglia Ed. Exporre Milano.</p><p>
+1992 \\\"Paesaggio mediterraneo\\\" Electa, Milano.</p><p>
+1992 \\\"Presenza veneta\\\" di G. Botter e M. Crosato. Veneto Magazine, n.5 1992 \\\"Architesi\\\" Edizioni R.C. Fotocomposizione, Bologna</p><p>
+1991 \\\"Nag Arnoldi Sculture: 1970 - 1990\\\" Edizione d\\\'arte Ghelfi. Verona 1991 \\\"Immagini dell\\\'invisibile\\\" Amilcare Pizzi Editore, Bergamo</p></div></div><style>    #immagini{        position: absolute;        top: 30px;        left: 0px;        bottom: 20px;        width: 750px;        text-align: center;    }    #immagine{        max-width: 100%;        max-height: 100%;    }    #descrizione{        position: absolute;        top: 40px;        right: 0px;        bottom: 20px;        width: 300px;    }    #titoletto {        position: absolute;        top: 10px;        left: 0px;        right: 0px;        height: 40px;        padding-left: 10px;        font-family: Arial;        font-size: 13px;        color: #888;        font-weight: 600;    }        #titoletto p{        font-family: Arial;        font-size: 13px;        color: #888;        font-weight: 500;    }    #descrizione div.des{        position: absolute;        top: 60px;        left: 0px;        right: 0px;        bottom: 0px;        padding-left: 10px;        font-family: Arial;        font-size: 12px;        color: #888;        display: none;        overflow: auto;    }    #categoria{        position: absolute;        bottom: 30px;        left: 0px;        right: 0px;        text-align: center;    }    #categoria a{        text-decoration: none;        font-family: Arial;        font-size: 13px;        color: #888;    }    #categoria a:hover{        color: #222;    }</style>            </div>
+
+            <!--PIE DI PAGINA-->
+            <div id="pie">
+                &copy; Stanislao Fierro Architetto - P.iva: 01639010212
+            </div>
+        </div>
+    </body>
+</html>
+

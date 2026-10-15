@@ -1,0 +1,39 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=61&lang=it
+title:
+  it: Nuova sede Banca Popolare
+  de: Neuer Sitz der Volksbank
+  en: New Banca Popolare headquarters
+year: 2006
+place:
+  it: Bressanone
+  de: Brixen
+  en: Bressanone
+typology: edifici-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2006
+partners:
+  - Nadine Saul
+cover: ../../assets/originali/pagine/foto/309_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=61&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/298_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/299_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/300_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/301_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/302_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/309_immagine.jpg
+    type: immagine
+    caption:
+      it: Vista
+      de: Ansicht
+      en: View

@@ -1,0 +1,43 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=49&lang=it
+title:
+  it: Intorno del Ferrocarril
+  de: Umfeld der Bahntrasse
+  en: Railway corridor
+year: 2008
+place:
+  it: Puerto Real (Cadice), Spagna
+  de: Puerto Real (Cádiz), Spanien
+  en: Puerto Real (Cádiz), Spain
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2008
+  result:
+    it: 2° premio
+    de: 2. Preis
+    en: 2nd prize
+partners:
+  - José Luís Daroca Bruño
+excerpt:
+  lang: es
+  text: En Puerto Real, al igual que ocurre en otras ciudades, la posición del ferrocarril ha impedido un crecimiento natural de la trama urbana, en este caso hacia el Norte del Casco Histórico. Esta desvinculación entre dos partes de ciudad, hoy resuelta por medio de un paso elevado en continuidad con la Av. de la Constitución, se siente aún más acusada por otro límite paralelo al ferrocarril como es la actual carretera de circunvalación.
+  source: https://www.stanislaofierro.com/index.php?p=49&lang=it
+cover: ../../assets/originali/pagine/foto/210_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=49&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/209_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/210_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/211_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/212_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/213_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/214_immagine.jpg
+    type: immagine

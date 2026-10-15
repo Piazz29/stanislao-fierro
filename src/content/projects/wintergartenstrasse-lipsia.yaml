@@ -1,0 +1,59 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=23&lang=it, https://www.stanislaofierro.com/index.php?p=35&lang=it
+title:
+  it: Wintergartenstraße / Querstraße
+  de: Wintergartenstraße / Querstraße
+  en: Wintergartenstraße / Querstraße
+year: 2010
+place:
+  it: Lipsia, Germania
+  de: Leipzig, Deutschland
+  en: Leipzig, Germany
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2010
+  result:
+    it: Finalista
+    de: Finalist
+    en: Finalist
+excerpt:
+  lang: de
+  text: Das neue Gebäude bildet gemeinsam mit dem Wintergartenhochhaus und dem Gebäudekopf des Victor`s Residenz Hotel eine Gebäudekomposition mit einer interessanten Wechselwirkung. Das Wintergartenhochhaus, das hoch und schlank ist bzw. eine Vertikale bezeichnet; im Kontrast dazu steht das neue horizontale und flache Gebäude. Gemeinsam mit der bestehenden Blockrandbebauung der Wintergartenstrasse und dem Gebäudekopf des Victor`s Residenz Hotels wird ein neuer städtischer Platz geschaffen. Der neue Platz schließt die Achse des Willy-Brandt-Platzes nach Osten hin ab.
+  source: https://www.stanislaofierro.com/index.php?p=23&lang=it
+cover: ../../assets/originali/pagine/foto/121_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/119_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=23&lang=it
+  - https://www.stanislaofierro.com/index.php?p=35&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/119_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/120_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/121_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/122_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/123_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/124_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/125_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/126_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/127_immagine.jpg
+    type: immagine
+    caption:
+      it: Vista
+      de: Ansicht
+      en: View
+  - image: ../../assets/originali/pagine/foto/136_immagine.jpg
+    type: schizzo
+    caption:
+      it: Primo schizzo
+      de: Erste Skizze
+      en: First sketch

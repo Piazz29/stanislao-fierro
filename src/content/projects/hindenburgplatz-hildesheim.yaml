@@ -1,0 +1,39 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=45&lang=it
+title:
+  it: Hindenburgplatz
+  de: Hindenburgplatz
+  en: Hindenburgplatz
+year: 2008
+place:
+  it: Hildesheim, Germania
+  de: Hildesheim, Deutschland
+  en: Hildesheim, Germany
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2008
+  result:
+    it: Finalista
+    de: Finalist
+    en: Finalist
+partners:
+  - Wolfgang Simmerle
+excerpt:
+  lang: it
+  text: La progettazione della nuova Piazza comportava uno studio urbanistico di un area molto vasta. Al contempo il concorso richiedeva la riprogettazione di tutti gli edifici che prospettavano sulla piazza e di un parco urbano adiacente.
+  source: https://www.stanislaofierro.com/index.php?p=45&lang=it
+cover: ../../assets/originali/pagine/foto/197_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=45&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/195_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/196_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/197_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/198_immagine.jpg
+    type: disegno

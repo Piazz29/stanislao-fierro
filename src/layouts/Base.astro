@@ -1,0 +1,138 @@
+---
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { langs, path, routes, htmlLang, ogLocale, ui, type Lang, type RouteKey } from '../i18n';
+import { studio, honours } from '../data/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Plan from '../components/Plan.astro';
+import defaultOg from '../assets/originali/home/1494000674_immagine.jpg';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  route: RouteKey;
+  slug?: string;
+  ogImage?: ImageMetadata;
+  ogAlt?: string;
+  intro?: boolean;
+  jsonld?: Record<string, unknown>[];
+  noindex?: boolean;
+}
+const { lang, title, description, route, slug, ogImage = defaultOg, ogAlt, intro = false, jsonld = [], noindex = false } = Astro.props;
+
+const site = Astro.site!;
+const abs = (p: string) => new URL(p, site).href;
+const canonical = abs(path(lang, route, slug));
+const alternates = langs.map((l) => ({ lang: l, href: abs(path(l, route, slug)) }));
+// foto per schema.org; per la condivisione si usa la tavola 1200x630 generata da scripts/brand/og.mjs
+const og = await getImage({ src: ogImage, width: Math.min(1200, ogImage.width), format: 'jpg', quality: 82 });
+const card = `/og/${lang}/${route === 'home' ? 'home' : routes[route][lang]}${slug ? `/${slug}` : ''}.jpg`;
+const fullTitle = route === 'home' ? title : `${title} · ${ui.studioName[lang]}`;
+
+const L = lang;
+const org = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['ProfessionalService', 'LocalBusiness'],
+      '@id': `${site.href}#studio`,
+      name: ui.studioName[L],
+      description: ui.homeDescription[L],
+      url: abs(path(L, 'home')),
+      image: abs(og.src),
+      telephone: studio.phoneIntl,
+      email: `mailto:${studio.email}`,
+      vatID: `IT${studio.vat}`,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: studio.street[L],
+        postalCode: studio.postal,
+        addressLocality: studio.city[L],
+        addressRegion: studio.region[L],
+        addressCountry: 'IT',
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: studio.geo.lat, longitude: studio.geo.lon },
+      areaServed: ['IT', 'EU'],
+      knowsLanguage: ['it', 'de', 'en', 'es'],
+      founder: { '@id': `${site.href}#stanislao-fierro` },
+      award: honours.map((h) => (h.year ? `${h.year} ${h.text[L]}` : h.text[L])),
+    },
+    {
+      '@type': 'Person',
+      '@id': `${site.href}#stanislao-fierro`,
+      name: 'Stanislao Fierro',
+      jobTitle: L === 'de' ? 'Architekt' : L === 'en' ? 'Architect' : 'Architetto',
+      hasOccupation: { '@type': 'Occupation', name: 'Architect', occupationLocation: { '@type': 'City', name: 'Bolzano' } },
+      birthPlace: 'Taurasi',
+      birthDate: '1961',
+      alumniOf: { '@type': 'CollegeOrUniversity', name: 'Università Iuav di Venezia' },
+      worksFor: { '@id': `${site.href}#studio` },
+      workLocation: { '@id': `${site.href}#studio` },
+      award: honours.map((h) => (h.year ? `${h.year} ${h.text[L]}` : h.text[L])),
+    },
+  ],
+};
+const graphs = [org, ...jsonld];
+---
+<!doctype html>
+<html lang={htmlLang[lang]} class={intro ? 'intro' : undefined}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
+    <link rel="alternate" hreflang="x-default" href={alternates[0].href} />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preload" href="/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#f6f2ec" />
+
+    <meta property="og:type" content={route === 'works' && slug ? 'article' : 'website'} />
+    <meta property="og:site_name" content={ui.studioName[lang]} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={abs(card)} />
+    <meta property="og:image:secure_url" content={abs(card)} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogAlt ? `${title}. ${ogAlt}` : `${title}, ${ui.studioName[lang]}`} />
+    <meta property="og:locale" content={ogLocale[lang]} />
+    {langs.filter((l) => l !== lang).map((l) => <meta property="og:locale:alternate" content={ogLocale[l]} />)}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={abs(card)} />
+
+    {graphs.map((g) => <script type="application/ld+json" is:inline set:html={JSON.stringify(g)} />)}
+  </head>
+  <body class="relative">
+    <a href="#contenuto" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-calce focus:px-4 focus:py-2 t-data">{ui.skip[lang]}</a>
+    <Plan />
+    <div class="relative">
+      <Header lang={lang} route={route} slug={slug} />
+      <main id="contenuto" tabindex="-1" class:list={['outline-none', !intro && 'pt-[var(--header-h)]']}>
+        <slot />
+      </main>
+      <Footer lang={lang} />
+    </div>
+    <script>
+      import Lenis from 'lenis';
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!reduce.matches) {
+        const lenis = new Lenis({ duration: 1.15, easing: (t: number) => 1 - Math.pow(1 - t, 4), anchors: true });
+        const raf = (time: number) => { lenis.raf(time); requestAnimationFrame(raf); };
+        requestAnimationFrame(raf);
+        (window as unknown as { lenis: Lenis }).lenis = lenis;
+      }
+    </script>
+  </body>
+</html>

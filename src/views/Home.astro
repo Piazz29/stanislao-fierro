@@ -1,0 +1,592 @@
+---
+import Base from '../layouts/Base.astro';
+import VideoSlot from '../components/VideoSlot.astro';
+import { Image, getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { path, ui, type Lang } from '../i18n';
+import { h, lines } from '../i18n/home';
+import { studio, honours, publishedIn } from '../data/site';
+import { heroVideo, featuredVideos } from '../data/media';
+import { getProjects, competitionRows } from '../lib/projects';
+
+import sketchFunes from '../assets/originali/pagine/foto/339_immagine.jpg';
+import sketchMadrid from '../assets/originali/pagine/foto/285_immagine.jpg';
+import sketchRoma from '../assets/originali/pagine/foto/303_immagine.jpg';
+import sketchMagnago from '../assets/originali/pagine/foto/453_immagine.jpg';
+import sketchBaza from '../assets/originali/pagine/foto/497_immagine.jpg';
+import sketchUni from '../assets/originali/pagine/foto/527_immagine.jpg';
+import boardMexico from '../assets/originali/pagine/foto/200_immagine.jpg';
+import drawingMagnago from '../assets/originali/pagine/foto/455_immagine.jpg';
+import bazaWide from '../assets/originali/home/1493911473_immagine.jpg';
+import bazaFront from '../assets/originali/pagine/foto/506_immagine.jpg';
+import bazaDusk from '../assets/originali/home/1493912194_immagine.jpg';
+import magnagoNight from '../assets/originali/home/1494000674_immagine.jpg';
+import portrait from '../assets/originali/altro/biografia.jpg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const L = lang;
+const pad = (n: number) => String(n).padStart(2, '0');
+
+const projects = await getProjects();
+const bySlug = Object.fromEntries(projects.map((p) => [p.id, p]));
+
+// ---- apertura: miniature di opere e schizzi che si raccolgono nel video
+// solo fotografie e rendering: i disegni su fondo bianco, così piccoli, si perderebbero
+const rank = { foto: 0, rendering: 1, immagine: 2 } as Record<string, number>;
+const tilePool = [...new Set(projects.flatMap((p) => p.data.gallery.filter((g) => g.type in rank).sort((a, b) => rank[a.type] - rank[b.type]).slice(0, 1).map((g) => g.image)))];
+const step = Math.max(1, Math.floor(tilePool.length / 14));
+const tileImgs = await Promise.all(
+  tilePool.filter((_, i) => i % step === 0).slice(0, 14).map((src) => getImage({ src, width: 160, height: 160, fit: 'cover', format: 'webp', quality: 70 })),
+);
+
+// ---- metodo: immagini sospese a velocità diverse
+const floating = [
+  { img: sketchFunes, alt: { it: 'Schizzo a mano delle abitazioni a Funes', de: 'Handskizze der Wohnbauten in Villnöß', en: 'Hand sketch of the housing in Funes' }, cls: 'f1', speed: -18, href: 'abitazioni-funes' },
+  { img: bazaWide, alt: { it: 'Baza, l’edificio bianco tra gli alberi della piazza', de: 'Baza, der weiße Bau zwischen den Bäumen des Platzes', en: 'Baza, the white building among the trees of the square' }, cls: 'f2', speed: -42, href: 'centro-formazione-baza' },
+  { img: sketchUni, alt: { it: 'Schizzo in pianta di Piazza Università', de: 'Grundrissskizze des Universitätsplatzes', en: 'Plan sketch of Piazza Università' }, cls: 'f3', speed: -28, href: 'piazza-universita' },
+  { img: sketchMadrid, alt: { it: 'Disegno a colori dell’edificio sportivo nel parco di Fuencarral, Madrid', de: 'Farbzeichnung des Sportgebäudes im Park von Fuencarral, Madrid', en: 'Colour drawing of the sports building in Fuencarral park, Madrid' }, cls: 'f4', speed: -55, href: 'fuencarral-madrid' },
+  { img: sketchMagnago, alt: { it: 'Schizzo a mano di Piazza Silvius Magnago', de: 'Handskizze des Silvius-Magnago-Platzes', en: 'Hand sketch of Piazza Silvius Magnago' }, cls: 'f5', speed: -35, href: 'piazza-silvius-magnago' },
+  { img: sketchRoma, alt: { it: 'Disegno della piazza al Divino Amore, Roma', de: 'Zeichnung des Platzes am Divino Amore, Rom', en: 'Drawing of the square at Divino Amore, Rome' }, cls: 'f6', speed: -22, href: 'divino-amore-roma' },
+  { img: bazaFront, alt: { it: 'Baza, l’edificio bianco sulla piazza in pietra, foto di Fernando Alda', de: 'Baza, der weiße Bau am steinernen Platz, Foto von Fernando Alda', en: 'Baza, the white building on the stone square, photo by Fernando Alda' }, cls: 'f7', speed: -30, href: 'centro-formazione-baza' },
+];
+
+// ---- opere in evidenza
+const featuredSlugs = ['piazza-silvius-magnago', 'centro-formazione-baza', 'piazza-tribunale', 'piazza-universita', 'centro-luson'];
+const featured = featuredSlugs.map((s) => bySlug[s]).filter(Boolean);
+
+// ---- processo
+const stepImgs = [
+  { img: sketchBaza, alt: { it: 'Schizzo di sezione per Baza, con la luce disegnata in giallo', de: 'Schnittskizze für Baza, mit gelb gezeichnetem Licht', en: 'Section sketch for Baza, with light drawn in yellow' } },
+  { img: boardMexico, alt: { it: 'Tavola di concorso per la piazza del Bicentenario a Città del Messico', de: 'Wettbewerbstafel für den Platz des Bicentenario in Mexiko-Stadt', en: 'Competition board for the Bicentenario square in Mexico City' } },
+  { img: drawingMagnago, alt: { it: 'Disegno di progetto per Piazza Silvius Magnago', de: 'Projektzeichnung für den Silvius-Magnago-Platz', en: 'Design drawing for Piazza Silvius Magnago' } },
+  { img: bazaFront, alt: { it: 'Baza, l’edificio costruito sulla piazza, foto di Fernando Alda', de: 'Baza, das gebaute Werk am Platz, Foto von Fernando Alda', en: 'Baza, the completed building on the square, photo by Fernando Alda' } },
+];
+
+// ---- tipologie
+const typologies = ['spazi-pubblici', 'edifici-pubblici', 'scuole', 'residenziale', 'allestimenti'] as const;
+const typo = typologies.map((t) => {
+  const list = projects.filter((p) => p.data.typology === t);
+  const covers = list.map((p) => p.data.cover ?? p.data.sketch).filter((x): x is ImageMetadata => !!x);
+  return { key: t, count: list.length, covers: covers.slice(0, 5) };
+});
+
+// ---- cifre: dal registro dei concorsi, come nella pagina Concorsi
+const rows = await competitionRows(lang);
+const numbers = [
+  { label: h.years[L], value: 2026 - 1989, img: sketchMagnago, alt: ui.imageTypes.schizzo[L] },
+  { label: h.competitions[L], value: rows.length, img: boardMexico, alt: ui.imageTypes.tavola[L] },
+  { label: h.firstPrizes[L], value: rows.filter((r) => r.first).length, img: magnagoNight, alt: ui.imageTypes.rendering[L] },
+  { label: h.countries[L], value: new Set(rows.map((r) => r.country)).size, img: bazaDusk, alt: ui.imageTypes.foto[L] },
+];
+const recent = rows.filter((r) => r.result).slice(0, 7);
+
+// ---- pubblicazioni, senza doppioni
+// le riviste senza editore né numero; «ArchDaily, Dezeen» sono due testate distinte
+const pubs = [...new Set(publishedIn.flatMap((p) => (p.title === 'ArchDaily, Dezeen' ? ['ArchDaily', 'Dezeen'] : [p.title.replace(/^«|».*$/g, '').replace(/ n\. \d+$/, '').replace(/,.*$/, '')])))];
+---
+<Base lang={lang} title={ui.homeTitle[lang]} description={ui.homeDescription[lang]} route="home" intro>
+
+  <!-- ============ Caricamento: il nome si apre, le miniature passano, la prima diventa la hero ============ -->
+  <div class="loader" data-loader aria-hidden="true">
+    <script is:inline>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('is-loading');if('scrollRestoration' in history)history.scrollRestoration='manual';scrollTo(0,0);}</script>
+    <div class="ld-grid"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="ld-axis"></div>
+    <div class="ld-tiles">
+      {tileImgs.map((t) => <span class="ld-tile" data-tile><img src={t.src} alt="" width="160" height="160" decoding="async" fetchpriority="low" /></span>)}
+    </div>
+    <div class="ld-media" data-ld-media>
+      <VideoSlot slot={heroVideo} alt="" eager />
+      <div class="hero-shade" data-ld-shade></div>
+    </div>
+    <p class="ld-name" data-ld-name>
+      <span class="ld-word" data-ld-word><span class="ld-sign" data-ld-char></span><span data-ld-split>Stanislao</span></span>
+      <span class="ld-word" data-ld-word><span data-ld-split>Fierro</span></span>
+    </p>
+    <div class="ld-foot frame" data-ld-foot>
+      <span class="t-data">{h.loaderRole[L]}</span>
+      <span class="ld-count t-display" data-ld-count>000</span>
+    </div>
+  </div>
+
+  <!-- ============ Hero: a tutto schermo, il primo video ============ -->
+  <section class="hero" data-hero data-tone="dark" aria-labelledby="hero-title">
+    <div class="hero-media">
+      <VideoSlot slot={heroVideo} alt={h.heroVideoAlt[L]} eager />
+      <div class="hero-shade"></div>
+    </div>
+    <div class="hero-copy frame" data-hero-copy>
+      <div class="grid-plan items-end gap-y-8">
+        <div class="col-span-4 md:col-span-6 lg:col-span-8">
+          <h1 id="hero-title" class="t-display text-[clamp(3rem,1.6rem+5.6vw,7.4rem)]">
+            {lines(h.heroTitle[L]).map((l) => <span class="hero-line"><span class="block" data-hero-line>{l}</span></span>)}
+          </h1>
+          <p class="mt-5 text-[1.05rem] opacity-90" data-hero-fade>{h.heroSub[L]}</p>
+        </div>
+        <a href={path(L, 'works', 'piazza-silvius-magnago')} class="hero-caption col-span-4 md:col-span-2 lg:col-span-3 lg:col-start-10" data-hero-fade>
+          <span class="t-data opacity-75 block">{ui.imageTypes.rendering[L]}</span>
+          <span class="block mt-1.5 text-[1.05rem] leading-snug">{bySlug['piazza-silvius-magnago'].data.title[L]}, {bySlug['piazza-silvius-magnago'].data.place[L]}</span>
+        </a>
+      </div>
+      <p class="hero-scroll t-data" data-hero-fade aria-hidden="true"><span>{h.scrollHint[L]}</span><i></i></p>
+    </div>
+  </section>
+
+  <!-- ============ Metodo: titolo fermo, immagini che scorrono a velocità diverse ============ -->
+  <section class="compose" data-compose aria-labelledby="method-title">
+    <div class="compose-lines frame" aria-hidden="true"><div><span></span><span></span><span></span><span></span></div></div>
+    <div class="compose-pin frame">
+      <div class="compose-head text-center">
+        <p class="t-tag">{h.methodTag[L]}</p>
+        <h2 id="method-title" class="t-display text-[clamp(2.6rem,1.6rem+3.4vw,4.8rem)] mt-5" data-reveal-chars>
+          {lines(h.methodTitle[L]).map((l) => <span class="block">{l}</span>)}
+        </h2>
+      </div>
+      <p class="compose-left t-body" data-reveal-lines>{h.methodLeft[L]}</p>
+      <p class="compose-right t-body" data-reveal-lines>{h.methodRight[L]}</p>
+    </div>
+    <div class="compose-float frame">
+      {floating.map((f) => (
+        <a href={path(L, 'works', f.href)} class:list={['float-img', f.cls]} data-speed={f.speed}>
+          <Image src={f.img} alt={f.alt[L]} width={Math.min(f.img.width, 640)} loading="lazy" decoding="async" />
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- ============ Opere in evidenza: la foto si apre a tutto schermo ============ -->
+  <section class="feature" data-feature data-tone="dark" aria-labelledby="feature-title" aria-roledescription="carousel">
+    <div class="feature-pin" data-feature-pin>
+      <div class="feature-media" data-feature-media>
+        {featured.map((p, i) => (
+          <div class="feature-slide" data-feature-slide aria-hidden={i === 0 ? undefined : 'true'} style={`opacity:${i === 0 ? 1 : 0}`}>
+            <VideoSlot slot={featuredVideos[p.id]} alt={`${p.data.title[L]}, ${p.data.place[L]}`} sizes="100vw" />
+          </div>
+        ))}
+        <div class="feature-shade" data-feature-shade></div>
+      </div>
+
+      <div class="feature-ui frame">
+        <h2 id="feature-title" class="sr-only">{h.featuredLabel[L]}</h2>
+        <div class="feature-counter" data-feature-counter>
+          <p class="t-display text-[clamp(1.8rem,1.2rem+1.4vw,2.6rem)] leading-none" aria-live="polite">
+            <span data-feature-index>01</span><span class="opacity-70">/</span><span class="text-[0.45em] opacity-70 align-baseline">{pad(featured.length)}</span>
+          </p>
+          <div class="feature-nav">
+            <button type="button" class="t-data" data-feature-prev aria-label={ui.prev[L]}>←</button>
+            <button type="button" class="t-data" data-feature-next aria-label={ui.next[L]}>→</button>
+          </div>
+        </div>
+        <div class="feature-bar" aria-hidden="true"><span data-feature-bar></span></div>
+
+        <div class="feature-titles">
+          {featured.map((p, i) => (
+            <h3 class="feature-title t-display text-[clamp(2.2rem,1.4rem+2.4vw,3.6rem)]" data-feature-title hidden={i !== 0}>
+              <a href={path(L, 'works', p.id)}>{p.data.title[L]}</a>
+            </h3>
+          ))}
+        </div>
+
+        <div class="feature-meta">
+          {featured.map((p, i) => (
+            <dl class="space-y-4 text-right" data-feature-meta hidden={i !== 0}>
+              {p.data.competition && (
+                <div><dt class="t-data opacity-80">{h.competition[L]}</dt><dd class="text-[1.2rem] leading-tight mt-1">{p.data.competition.year}{p.data.competition.result ? ` · ${p.data.competition.result[L]}` : ''}</dd></div>
+              )}
+              {p.data.built && (
+                <div><dt class="t-data opacity-80">{h.completed[L]}</dt><dd class="text-[1.2rem] leading-tight mt-1">{p.data.built}</dd></div>
+              )}
+              <div><dt class="t-data opacity-80">{h.place[L]}</dt><dd class="text-[1.2rem] leading-tight mt-1">{p.data.place[L]}</dd></div>
+            </dl>
+          ))}
+        </div>
+
+        <div class="feature-actions">
+          {featured.map((p, i) => (
+            <a href={path(L, 'works', p.id)} class="btn btn-ghost" data-feature-link hidden={i !== 0}>{h.viewWork[L]}</a>
+          ))}
+          <a href={path(L, 'works')} class="btn btn-light">{h.allWorks[L]}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Processo: quattro passaggi ============ -->
+  <section class="frame process" aria-labelledby="process-title">
+    <div class="grid-plan gap-y-8 pt-[clamp(6rem,12vw,10rem)] pb-[clamp(3rem,6vw,5rem)]">
+      <p class="col-span-4 md:col-span-4 lg:col-span-4 t-body max-w-[34ch]" data-reveal-lines>{h.processLead[L]}</p>
+      <div class="col-span-4 md:col-span-4 md:col-start-5 lg:col-span-6 lg:col-start-7">
+        <p class="t-tag">{h.processTag[L]}</p>
+        <h2 id="process-title" class="t-display text-[clamp(2.6rem,1.6rem+3.2vw,4.6rem)] mt-5" data-reveal-chars>
+          {lines(h.processTitle[L]).map((l) => <span class="block">{l}</span>)}
+        </h2>
+      </div>
+    </div>
+    <ol class="border-t border-linea">
+      {h.steps.map((s, i) => (
+        <li class="process-row grid-plan border-b border-linea">
+          <div class:list={['col-span-4 md:col-span-3 lg:col-span-4 process-img', i < 3 && 'is-drawing']}>
+            <Image src={stepImgs[i].img} alt={stepImgs[i].alt[L]} width={Math.min(stepImgs[i].img.width, 640)} loading="lazy" decoding="async" />
+          </div>
+          <div class="col-span-4 md:col-span-5 lg:col-span-5 lg:col-start-7 grid grid-cols-[auto_1fr] gap-x-5 py-6 lg:py-8 content-start">
+            <span class="t-tag mt-3">{pad(i + 1)}</span>
+            <h3 class="t-display text-[clamp(1.9rem,1.4rem+1.4vw,2.7rem)]" data-reveal-chars>{s.title[L]}</h3>
+            <p class="col-start-2 t-body mt-4 max-w-[40ch]" data-reveal-lines>{s.text[L]}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <!-- ============ Notte: disegni bianchi e le tipologie in orizzontale ============ -->
+  <section class="night" data-night data-tone="dark" aria-labelledby="night-title">
+    <div class="night-pin" data-night-pin>
+      <div class="night-sketches" aria-hidden="true">
+        <Image src={sketchRoma} alt="" width={sketchRoma.width} class="ns ns1" loading="lazy" />
+        <Image src={sketchFunes} alt="" width={sketchFunes.width} class="ns ns2" loading="lazy" />
+        <Image src={sketchMagnago} alt="" width={Math.min(sketchMagnago.width, 900)} class="ns ns3" loading="lazy" />
+      </div>
+      <div class="night-head frame text-center">
+        <p class="t-tag">{h.nightTag[L]}</p>
+        <h2 id="night-title" class="t-display text-[clamp(2.6rem,1.6rem+3.6vw,5rem)] mt-5" data-reveal-chars>
+          {lines(h.nightTitle[L]).map((l) => <span class="block">{l}</span>)}
+        </h2>
+      </div>
+      <p class="night-hint t-data" aria-hidden="true">{h.scrollHint[L]} <span>→</span></p>
+      <div class="night-track" data-night-track>
+        {typo.map((t, i) => (
+          <article class:list={['night-card', i % 2 === 0 ? 'is-light' : 'is-dark']}>
+            <div class="flex items-start gap-4">
+              <span class="t-tag mt-2.5">{pad(i + 1)}</span>
+              <h3 class="t-display text-[clamp(2rem,1.5rem+1.6vw,3rem)]">{ui.typologies[t.key][L]}</h3>
+            </div>
+            <div class="night-card-media">
+              {i % 2 === 0 ? (
+                t.covers[0] && <Image src={t.covers[0]} alt={`${ui.typologies[t.key][L]}: ${ui.imageTypes.immagine[L].toLowerCase()}`} width={Math.min(t.covers[0].width, 640)} loading="lazy" class="night-single" />
+              ) : (
+                <div class="mosaic">
+                  {t.covers.slice(0, 5).map((c) => <Image src={c} alt="" aria-hidden="true" width={240} height={240} fit="cover" loading="lazy" />)}
+                </div>
+              )}
+            </div>
+            <div>
+              <p class="text-[1rem] leading-snug max-w-[34ch]">{h.typologyText[t.key][L]}</p>
+              <a class="t-data inline-block mt-4 border-b border-current pb-0.5" href={`${path(L, 'works')}?t=${t.key}`}>
+                {h.seeTypology[L]} · {t.count} {t.count === 1 ? h.work[L] : h.works[L]}
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Cifre ============ -->
+  <section class="frame numbers" data-numbers aria-labelledby="numbers-title">
+    <div class="numbers-pin" data-numbers-pin>
+      <div class="grid-plan pt-[clamp(5rem,10vw,8rem)]">
+        <div class="col-span-4 md:col-span-4 md:col-start-5 lg:col-span-6 lg:col-start-7">
+          <p class="t-tag">{h.numbersTag[L]}</p>
+          <h2 id="numbers-title" class="t-display text-[clamp(2.6rem,1.6rem+3.2vw,4.6rem)] mt-4" data-reveal-chars>{h.numbersTitle[L]}</h2>
+        </div>
+      </div>
+      <ul class="numbers-grid mt-10">
+        {numbers.map((n, i) => (
+          <li class="num-card" data-num-card data-active={i === 0 ? '' : undefined}>
+            <Image src={n.img} alt="" aria-hidden="true" width={Math.min(n.img.width, 640)} loading="lazy" class="num-img" />
+            <span class="num-label">{n.label}</span>
+            <span class="num-value t-display" data-count-to={n.value}>{n.value}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="grid-plan pt-10 pb-[clamp(4rem,8vw,7rem)]">
+        <div class="col-span-4 md:col-span-4 md:col-start-5 lg:col-span-4 lg:col-start-7">
+          <p class="t-body" data-reveal-lines>{h.bioShort[L]}</p>
+          <p class="t-body mt-4" data-reveal-lines>{h.bioShort2[L]}</p>
+          <a href={path(L, 'studio')} class="btn mt-8">{h.theStudio[L]}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Pubblicazioni ============ -->
+  <section class="pubs border-t border-linea py-[clamp(3rem,6vw,5rem)]" aria-labelledby="pubs-title">
+    <h2 id="pubs-title" class="frame t-display text-[clamp(2rem,1.4rem+1.8vw,3rem)]" data-reveal-chars>{h.publishedIn[L]}</h2>
+    <div class="marquee mt-8" aria-hidden="true">
+      <div class="marquee-track">
+        {[0, 1].map(() => pubs.map((p) => <span class="marquee-item t-display">{p}</span>))}
+      </div>
+    </div>
+    <ul class="sr-only">{pubs.map((p) => <li>{p}</li>)}</ul>
+  </section>
+
+  <!-- ============ Premi ============ -->
+  <section class="awards bg-calce-2" aria-labelledby="awards-title">
+    <div class="frame grid-plan gap-y-10 py-[clamp(5rem,10vw,8rem)]">
+      <div class="col-span-4 md:col-span-8 lg:col-span-12">
+        <p class="t-tag">{h.awardsTag[L]}</p>
+        <h2 id="awards-title" class="t-display text-[clamp(2.6rem,1.6rem+3.2vw,4.6rem)] mt-4" data-reveal-chars>{h.awardsTitle[L]}</h2>
+      </div>
+      <figure class="col-span-4 md:col-span-4 lg:col-span-4">
+        <a href={path(L, 'works', 'centro-formazione-baza')} class="block overflow-hidden group">
+          <Image src={bazaFront} alt={h.awardsFeaturedAlt[L]} width={bazaFront.width} loading="lazy" class="w-full h-auto transition-transform duration-[1.2s] ease-out-quint group-hover:scale-[1.03]" />
+        </a>
+        <figcaption class="mt-4 text-[1.1rem] leading-snug text-carbone/80">{h.awardsFeatured[L]}</figcaption>
+      </figure>
+      <ol class="col-span-4 md:col-span-4 lg:col-span-7 lg:col-start-6 border-t border-carbone/15">
+        {honours.map((a) => (
+          <li class="grid grid-cols-[4.5rem_1fr] gap-4 py-4 border-b border-carbone/15">
+            <span class="t-display text-[1.6rem] leading-none">{a.year || '·'}</span>
+            <span class="text-[1rem] leading-snug text-pretty">{a.text[L]}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ Concorsi ============ -->
+  <section class="frame py-[clamp(5rem,10vw,8rem)]" aria-labelledby="comp-title">
+    <div class="text-center">
+      <p class="t-tag">{h.compTag[L]}</p>
+      <h2 id="comp-title" class="t-display text-[clamp(2.6rem,1.6rem+3.2vw,4.6rem)] mt-4" data-reveal-chars>{h.compTitle[L]}</h2>
+    </div>
+    <ul class="max-w-[66rem] mx-auto mt-12 border-t border-linea">
+      {recent.map((r) => {
+        const inner = (
+          <>
+            <span class="comp-title t-title text-[clamp(1.3rem,1.05rem+0.8vw,1.75rem)]">{r.title}<span class="text-grigio">, {r.place}</span></span>
+            <span class="t-data text-grigio whitespace-nowrap">{r.year} · {r.result?.[L]}</span>
+          </>
+        );
+        return (
+          <li class="border-b border-linea">
+            {r.href
+              ? <a href={r.href} class="comp-row">{inner}<span class="comp-arrow" aria-hidden="true">→</span></a>
+              : <div class="comp-row">{inner}<span class="comp-arrow opacity-0" aria-hidden="true">→</span></div>}
+          </li>
+        );
+      })}
+    </ul>
+    <p class="text-center mt-8"><a href={path(L, 'competitions')} class="btn btn-ghost !text-carbone">{h.showAll[L]}</a></p>
+  </section>
+
+  <!-- ============ Citazione ============ -->
+  <section class="frame pb-[clamp(5rem,10vw,8rem)]" aria-labelledby="quote-title">
+    <div class="quote-grid">
+      <figure class="quote-portrait">
+        <Image src={portrait} alt={ui.portraitAlt[L]} width={portrait.width} loading="lazy" class="w-full h-full object-cover grayscale" />
+      </figure>
+      <blockquote class="quote-card" id="quote-title">
+        <p class="quote-hand" lang="it">«{h.quote[L]}»</p>
+        <cite class="t-data text-grigio not-italic">{h.quoteSource[L]}</cite>
+      </blockquote>
+      <div class="quote-dark">
+        <p class="text-calce/75 leading-snug">{h.quoteCard[L]}</p>
+        <dl class="mt-8 space-y-4">
+          <div><dt class="t-data text-calce/55">{h.studioLabel[L]}</dt><dd class="mt-1">{studio.street[L]}</dd></div>
+          <div><dt class="t-data text-calce/55">{h.cityLabel[L]}</dt><dd class="mt-1">{studio.postal} {studio.city[L]}</dd></div>
+        </dl>
+        <div class="flex flex-wrap gap-2 mt-8">
+          <a class="btn btn-light" href={path(L, 'studio')}>{h.theStudio[L]}</a>
+          <a class="btn btn-ghost" href={`tel:${studio.phoneIntl}`}>{studio.phoneDisplay}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ---------------- caricamento ---------------- */
+  .loader { display: none; position: fixed; inset: 0; z-index: 60; background: var(--color-sabbia); color: var(--color-carbone); overflow: hidden; cursor: progress; }
+  :global(html.is-loading) .loader { display: block; }
+  :global(html.is-loading) { overflow: hidden; }
+  /* fondo da tavolo da disegno: colonne sottili e un asse orizzontale, non le fasce di un colonnato */
+  .ld-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(6, 1fr); padding-inline: var(--margin); }
+  .ld-grid span { border-left: 1px solid color-mix(in oklch, var(--color-carbone) 9%, transparent); }
+  .ld-grid span:last-child { border-right: 1px solid color-mix(in oklch, var(--color-carbone) 9%, transparent); }
+  .ld-axis { position: absolute; left: 0; right: 0; top: 50%; border-top: 1px dashed color-mix(in oklch, var(--color-carbone) 16%, transparent); }
+  .ld-tiles { position: absolute; inset: 0; }
+  .ld-tile { position: absolute; left: 50%; top: 50%; width: var(--tile); height: var(--tile); margin: calc(var(--tile) / -2) 0 0 calc(var(--tile) / -2); overflow: hidden; opacity: 0; }
+  .ld-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ld-media { position: absolute; left: 50%; top: 50%; width: var(--tile); height: var(--tile); overflow: hidden; opacity: 0; background: var(--color-carbone); }
+  .ld-media .hero-shade { opacity: 0; }
+  .ld-name {
+    position: absolute; left: 50%; top: 50%; margin: 0;
+    display: flex; align-items: center; white-space: nowrap;
+    font-family: var(--font-serif); text-transform: uppercase; letter-spacing: 0.01em; line-height: 1;
+    font-size: clamp(2.3rem, 8.6vw, 9.5rem);
+    visibility: hidden;
+  }
+  .ld-word { display: inline-flex; align-items: center; overflow: hidden; padding-block: 0.06em; }
+  .ld-word + .ld-word { margin-left: 0.26em; }
+  .ld-sign { width: 0.62em; height: 0.62em; margin-right: 0.3em; border: 0.05em solid currentColor; box-shadow: inset 0 0 0 0.2em currentColor; flex: none; }
+  .ld-foot { position: absolute; left: 0; right: 0; bottom: clamp(1rem, 3vh, 2rem); display: flex; justify-content: space-between; align-items: end; }
+  .ld-count { font-size: clamp(2rem, 1.4rem + 2vw, 3.4rem); font-style: italic; line-height: 0.8; font-variant-numeric: tabular-nums; }
+
+  /* ---------------- hero ---------------- */
+  .hero { position: relative; height: 100svh; min-height: 32rem; overflow: hidden; background: var(--color-carbone); color: var(--color-calce); --tile: clamp(42px, 4vw, 58px); }
+  @media (max-width: 767px) { .hero, .loader { --tile: min(40px, (100vw - 32px) / 12.6); } }
+  .loader { --tile: clamp(42px, 4vw, 58px); }
+  .hero-media { position: absolute; inset: 0; }
+  .hero-shade { position: absolute; inset: 0; background: linear-gradient(to top, oklch(0.15 0.01 60 / 0.62), oklch(0.15 0.01 60 / 0.18) 55%, oklch(0.15 0.01 60 / 0.3)); }
+  .hero-copy { position: absolute; inset: auto 0 0 0; padding-bottom: clamp(2.5rem, 8vh, 5rem); }
+  .hero-line { display: block; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+  .hero-caption { border-top: 1px solid color-mix(in oklch, var(--color-calce) 45%, transparent); padding-top: 0.8rem; transition: opacity 0.5s; }
+  .hero-caption:hover { opacity: 0.75; }
+  .hero-scroll { position: absolute; right: var(--margin); top: calc(-1 * clamp(8rem, 30vh, 16rem)); display: none; writing-mode: vertical-rl; align-items: center; gap: 0.8rem; }
+  .hero-scroll i { display: block; width: 1px; height: 3.5rem; background: currentColor; transform-origin: top; animation: scroll-line 2.4s var(--ease-out-quint) infinite; }
+  @keyframes scroll-line { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+  @media (min-width: 1100px) { .hero-scroll { display: flex; } }
+  :global(html.is-loading) [data-hero-line] { transform: translateY(105%); }
+  :global(html.is-loading) [data-hero-fade] { opacity: 0; }
+
+  /* ---------------- metodo ---------------- */
+  .compose { position: relative; }
+  .compose-lines { position: absolute; inset: 0; pointer-events: none; }
+  .compose-lines > div { height: 100%; display: grid; grid-template-columns: 1fr 1fr 1fr; }
+  .compose-lines span { border-left: 1px solid var(--color-linea); }
+  .compose-lines span:last-child { display: none; }
+  .compose-lines > div { border-right: 1px solid var(--color-linea); }
+  .compose-pin { position: relative; z-index: 2; padding-top: clamp(5rem, 12vh, 8rem); display: grid; gap: 2.5rem; pointer-events: none; }
+  .compose-pin a, .compose-pin p { pointer-events: auto; }
+  /* su telefono le immagini stanno in una fila da scorrere col dito, sfalsate come sul tavolo */
+  .compose-float { position: relative; display: flex; align-items: center; gap: 0.75rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-block: 2.5rem 4.5rem; }
+  .compose-float::-webkit-scrollbar { display: none; }
+  .float-img { display: block; overflow: hidden; flex: none; width: 56vw; scroll-snap-align: center; }
+  .float-img:nth-child(even) { margin-top: 3.5rem; }
+  .float-img:nth-child(odd) { margin-bottom: 3.5rem; }
+  .float-img img { width: 100%; height: auto; display: block; transition: transform 1.2s var(--ease-out-quint); }
+  .float-img:hover img { transform: scale(1.04); }
+  @media (min-width: 1100px) {
+    .compose { height: 190svh; }
+    .compose-pin { position: sticky; top: 0; height: 100svh; display: block; }
+    .compose-head { position: absolute; left: 0; right: 0; top: clamp(5rem, 13vh, 9rem); }
+    .compose-left { position: absolute; left: var(--margin); top: 36vh; max-width: 25rem; }
+    .compose-right { position: absolute; right: var(--margin); top: 25vh; max-width: 25rem; }
+    .compose-float { position: absolute; inset: 0; display: block; padding: 0; z-index: 1; overflow: visible; }
+    .float-img { position: absolute; margin: 0 !important; }
+    .f1 { left: 16%; top: 24%; width: 13.5vw; }
+    .f2 { right: 1.5%; top: 5%; width: 14vw; }
+    .f3 { left: 57%; top: 40%; width: 14vw; }
+    .f4 { left: 1.5%; top: 58%; width: 15vw; }
+    .f5 { left: 74%; top: 64%; width: 16vw; }
+    .f6 { left: 9%; top: 84%; width: 17vw; }
+    .f7 { left: 52%; top: 90%; width: 13vw; }
+  }
+
+  /* ---------------- opere in evidenza ---------------- */
+  .feature { position: relative; background: var(--color-porfido); color: var(--color-calce); }
+  .feature-pin { position: relative; height: 100svh; overflow: hidden; }
+  .feature-media { position: absolute; inset: 0; clip-path: inset(0); }
+  .feature-slide { position: absolute; inset: 0; transition: opacity 1.2s var(--ease-out-quint); }
+  .feature-shade { position: absolute; inset: 0; background: oklch(0.15 0.01 85 / 0.32); }
+  .feature-ui { position: absolute; inset: 0; pointer-events: none; }
+  .feature-ui a, .feature-ui button { pointer-events: auto; }
+  .feature-counter { position: absolute; left: var(--margin); top: 36%; display: flex; align-items: end; gap: 1.5rem; }
+  .feature-nav { display: flex; gap: 0.25rem; }
+  .feature-nav button { width: 2.2rem; height: 2.2rem; border: 1px solid color-mix(in oklch, var(--color-calce) 45%, transparent); transition: background-color 0.4s, color 0.4s; }
+  .feature-nav button:hover { background: var(--color-calce); color: var(--color-carbone); }
+  .feature-bar { position: absolute; left: var(--margin); right: var(--margin); top: calc(36% + 3.6rem); height: 1px; background: color-mix(in oklch, var(--color-calce) 30%, transparent); }
+  .feature-bar span { display: block; height: 3px; margin-top: -1px; width: 0; background: var(--color-calce); }
+  .feature-titles { position: absolute; left: var(--margin); top: 56%; max-width: min(30rem, 60vw); }
+  .feature-meta { position: absolute; right: var(--margin); top: 54%; }
+  @media (min-width: 1100px) {
+    /* nei margini lasciati liberi dalla foto ancora chiusa */
+    .feature-titles { max-width: calc(17.5vw - var(--margin) - 1rem); }
+    .feature-title { font-size: clamp(1.7rem, 0.6rem + 1.9vw, 2.7rem); }
+  }
+  .feature-actions { position: absolute; left: 0; right: 0; bottom: clamp(1.5rem, 5vh, 3rem); display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding-inline: var(--margin); }
+  .feature.is-anim { height: 260svh; }
+  .feature.is-anim .feature-pin { position: sticky; top: 0; }
+  @media (max-width: 767px) {
+    .feature-titles { top: auto; bottom: 9.5rem; max-width: none; right: var(--margin); }
+    .feature-meta { top: calc(36% + 5rem); bottom: auto; left: var(--margin); right: auto; }
+    .feature-meta dl { text-align: left; }
+    .feature-counter { top: 18%; }
+    .feature-bar { top: calc(18% + 3.6rem); }
+  }
+
+  /* ---------------- processo ---------------- */
+  .process-img { overflow: hidden; aspect-ratio: 1; background: var(--color-calce-2); }
+  .process-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+  /* i disegni restano interi, appoggiati sul piano come una tavola */
+  .process-img.is-drawing { padding: clamp(1rem, 3vw, 2.5rem); }
+  .process-img.is-drawing img { object-fit: contain; mix-blend-mode: multiply; }
+  @media (max-width: 767px) { .process-img { aspect-ratio: 4 / 3; margin-top: 1rem; } }
+
+  /* ---------------- notte ---------------- */
+  .night { position: relative; color: var(--color-calce); background: linear-gradient(to bottom, var(--color-notte), var(--color-notte-2)); }
+  .night-pin { position: relative; overflow: hidden; padding-block: clamp(6rem, 12vw, 10rem); background: linear-gradient(to bottom, var(--color-notte), var(--color-notte-2)); }
+  .night-sketches .ns { position: absolute; height: auto; filter: grayscale(1) invert(1) contrast(1.6); mix-blend-mode: screen; opacity: 0.85; pointer-events: none; }
+  .ns1 { right: 2%; top: 6%; width: min(30vw, 22rem); }
+  .ns2 { left: 2%; top: 48%; width: min(26vw, 18rem); }
+  .ns3 { display: none; }
+  .night-head { position: relative; z-index: 1; }
+  .night-track { position: relative; z-index: 2; display: flex; gap: 0; margin-top: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-inline: var(--margin); }
+  .night-hint { position: relative; z-index: 2; display: flex; justify-content: flex-end; gap: 0.5rem; padding-inline: var(--margin); margin-top: clamp(3rem, 8vw, 5rem); opacity: 0.75; }
+  .night-hint span { animation: hint 1.8s var(--ease-out-quint) infinite; }
+  @keyframes hint { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(0.4rem); } }
+  .night-track { scrollbar-width: none; }
+  .night-track::-webkit-scrollbar { display: none; }
+  .night.is-anim .night-hint { display: none; }
+  .night-card { flex: none; width: min(84vw, 36rem); height: min(115vw, 46rem); display: flex; flex-direction: column; justify-content: space-between; padding: clamp(1.5rem, 3vw, 2.75rem); scroll-snap-align: start; }
+  .night-card.is-light { background: var(--color-calce); color: var(--color-carbone); }
+  .night-card.is-dark { background: linear-gradient(to bottom, var(--color-notte), var(--color-notte-2)); color: var(--color-calce); }
+  .night-card-media { flex: 1; display: grid; place-items: center; padding-block: 2rem; min-height: 0; }
+  .night-single { max-height: 100%; width: auto; max-width: 100%; object-fit: contain; }
+  .mosaic { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(2, auto); width: 100%; max-width: 26rem; }
+  .mosaic img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .mosaic img:nth-child(1) { grid-column: 2; grid-row: 1; }
+  .mosaic img:nth-child(2) { grid-column: 4; grid-row: 1; }
+  .mosaic img:nth-child(3) { grid-column: 1; grid-row: 2; }
+  .mosaic img:nth-child(4) { grid-column: 3; grid-row: 2; }
+  .mosaic img:nth-child(5) { grid-column: 5; grid-row: 2; }
+  .night.is-anim .night-pin { position: sticky; top: 0; height: 100svh; padding: 0; }
+  .night.is-anim .night-head { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); }
+  .night.is-anim .night-track { position: absolute; left: 0; top: 0; bottom: 0; margin: 0; overflow: visible; padding: 0; scroll-snap-type: none; }
+  .night.is-anim .night-card { width: min(45vw, 36rem); height: 100svh; }
+  .night.is-anim .ns3 { display: block; left: 34%; bottom: -6%; width: 30vw; opacity: 0.35; }
+
+  /* ---------------- cifre ---------------- */
+  .numbers-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem; }
+  @media (min-width: 1100px) { .numbers-grid { grid-template-columns: repeat(4, 1fr); } }
+  .num-card { position: relative; aspect-ratio: 307 / 360; background: var(--color-calce-2); overflow: hidden; color: color-mix(in oklch, var(--color-carbone) 30%, var(--color-calce-2)); }
+  .num-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity 0.9s var(--ease-out-quint), transform 1.4s var(--ease-out-quint); }
+  .num-card::after { content: ''; position: absolute; inset: 0; background: oklch(0.15 0.01 85 / 0.38); opacity: 0; transition: opacity 0.9s var(--ease-out-quint); }
+  .num-label { position: absolute; left: 1.2rem; top: 1rem; z-index: 1; font-size: 1.15rem; transition: color 0.6s; }
+  .num-value { position: absolute; left: 1.2rem; bottom: 0.4rem; z-index: 1; font-style: italic; font-size: clamp(4rem, 2.4rem + 4.4vw, 7.2rem); line-height: 1; transition: color 0.6s; }
+  .num-card[data-active] { color: var(--color-calce); }
+  .num-card[data-active] .num-img { opacity: 1; transform: scale(1); }
+  .num-card[data-active]::after { opacity: 1; }
+  .numbers.is-anim { height: 300svh; }
+  .numbers.is-anim .numbers-pin { position: sticky; top: 0; min-height: 100svh; }
+
+  /* ---------------- pubblicazioni ---------------- */
+  .marquee { overflow: hidden; mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); }
+  .marquee-track { display: flex; width: max-content; gap: clamp(2.5rem, 5vw, 5rem); animation: marquee 48s linear infinite; }
+  .marquee-item { font-size: clamp(2rem, 1.4rem + 2.2vw, 3.6rem); color: var(--color-pietra); white-space: nowrap; font-style: italic; }
+  @keyframes marquee { to { transform: translateX(calc(-50% - clamp(2.5rem, 5vw, 5rem) / 2)); } }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; width: auto; padding-inline: var(--margin); } }
+
+  /* ---------------- concorsi ---------------- */
+  .comp-row { display: grid; grid-template-columns: 1fr auto auto; align-items: baseline; gap: 1.5rem; padding-block: 1.2rem; }
+  .comp-title { transition: transform 0.6s var(--ease-out-quint); }
+  .comp-arrow { transition: transform 0.6s var(--ease-out-quint); }
+  a.comp-row:hover .comp-title { transform: translateX(0.4rem); }
+  a.comp-row:hover .comp-arrow { transform: translateX(0.3rem); }
+  @media (max-width: 767px) { .comp-row { grid-template-columns: 1fr auto; } .comp-row .t-data { grid-column: 1; } .comp-arrow { grid-row: 1; grid-column: 2; } }
+
+  /* ---------------- citazione ---------------- */
+  .quote-grid { display: grid; gap: 0.5rem; grid-template-columns: 1fr; }
+  @media (min-width: 768px) { .quote-grid { grid-template-columns: 1fr 2fr; } .quote-dark { grid-column: 1 / -1; } }
+  @media (min-width: 1100px) { .quote-grid { grid-template-columns: 1fr 2fr 1fr; } .quote-dark { grid-column: auto; } }
+  .quote-portrait { aspect-ratio: 3 / 4; overflow: hidden; background: var(--color-calce-2); }
+  .quote-card { border: 1px solid var(--color-linea); padding: clamp(1.25rem, 2.5vw, 2rem); display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; min-height: 18rem; }
+  .quote-hand { font-family: var(--font-hand); font-size: clamp(2rem, 1.3rem + 2.4vw, 3.4rem); line-height: 1.25; color: var(--color-carbone); }
+  .quote-dark { background: var(--color-carbone); color: var(--color-calce); padding: clamp(1.25rem, 2.5vw, 2rem); display: flex; flex-direction: column; }
+</style>
+
+<script>
+  import { initHome } from '../scripts/home';
+  initHome();
+</script>

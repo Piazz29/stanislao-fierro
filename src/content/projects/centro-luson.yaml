@@ -1,0 +1,117 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=42&lang=it, https://www.stanislaofierro.com/index.php?p=20&lang=it, https://www.stanislaofierro.com/index.php?p=32&lang=it
+title:
+  it: Riqualificazione del centro storico
+  de: Neugestaltung des Ortskerns
+  en: Redesign of the historic centre
+year: 2010
+place:
+  it: Luson
+  de: Lüsen
+  en: Luson
+typology: spazi-pubblici
+status: realizzato
+international: false
+featured: false
+order: 9
+competition:
+  year: 2008
+  result:
+    it: 1° premio
+    de: 1. Preis
+    en: 1st prize
+built: 2009–2010
+client:
+  it: Comune di Luson
+  de: Gemeinde Lüsen
+  en: Municipality of Luson
+partners:
+  - Wolfgang Simmerle
+collaborators:
+  - Nadine Saul
+  - Irmgard Brunner
+text:
+  it:
+    - "Un intervento di superficie sull’intero paese: una piazza ritrovata, un giardino incorporato nel disegno urbano, una distinzione chiara tra strada e percorsi pedonali."
+    - "Sono stati ridisegnati gli accessi degli edifici principali: scale, gradini, piattaforme."
+  de:
+    - "Ein Eingriff an der Oberfläche des ganzen Dorfes: ein wiedergewonnener Platz, ein Garten als Teil der Ortsgestaltung, eine klare Trennung von Straße und Fußwegen."
+    - "Neu gestaltet wurden die Zugänge der wichtigsten Gebäude: Treppen, Stufen, Podeste."
+  en:
+    - "A surface intervention across the whole village: a recovered square, a garden drawn into the street plan, a clear distinction between road and footpaths."
+    - "The entrances of the main buildings were redesigned: stairs, steps, landings."
+excerpt:
+  lang: de
+  text: Der bestehende Grünbereich ist gekennzeichnet durch die alten Apfelbäume, welche eine sehr angenehme und sinnliche Stimmung vermitteln. Dieser Bereich bildet einen Kontrast zum dicht verbauten Ortskern und befindet sich inmitten des Dorfkerns von Lüsen. Zwei Wege durchschneiden diagonal den Grünbereich und bilden eine direkte Verbindung von beiden Richtungen her zum Ortskern. Dieses Konzept soll das Vorbild der neuen Grünraumgestaltung des neu zu gestaltenden Areals bilden, das von seiner Lage einen sehr sensiblen Umgang mit Gelände und Gebäuden verlangt.
+  source: https://www.stanislaofierro.com/index.php?p=42&lang=it
+cover: ../../assets/originali/pagine/foto/94_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/176_immagine.jpg
+reveal:
+  sketch: ../../assets/originali/pagine/foto/89_immagine.jpg
+  sketchAlt:
+    it: Schizzi a mano dei gradini e delle piattaforme d’ingresso
+    de: Handskizzen der Eingangsstufen und Podeste
+    en: Hand sketches of the entrance steps and landings
+  photo: ../../assets/originali/pagine/foto/102_immagine.jpg
+  photoAlt:
+    it: I gradini in pietra davanti a un ingresso, sul selciato del paese
+    de: Die Steinstufen vor einem Eingang, auf dem Pflaster des Dorfes
+    en: The stone steps in front of an entrance, on the village paving
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=42&lang=it
+  - https://www.stanislaofierro.com/index.php?p=20&lang=it
+  - https://www.stanislaofierro.com/index.php?p=32&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/176_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/177_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/181_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/186_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/187_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/188_immagine.jpg
+    type: tavola
+  - image: ../../assets/originali/pagine/foto/189_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/82_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/103_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/84_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/85_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/86_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/87_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/89_immagine.jpg
+    type: schizzo
+    alt:
+      it: Schizzi a mano dei gradini e delle piattaforme d’ingresso
+      de: Handskizzen der Eingangsstufen und Podeste
+      en: Hand sketches of the entrance steps and landings
+  - image: ../../assets/originali/pagine/foto/90_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/91_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/92_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/94_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/100_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/102_immagine.jpg
+    type: foto
+    alt:
+      it: I gradini in pietra davanti a un ingresso, sul selciato del paese
+      de: Die Steinstufen vor einem Eingang, auf dem Pflaster des Dorfes
+      en: The stone steps in front of an entrance, on the village paving
+  - image: ../../assets/originali/pagine/foto/101_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/96_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/144_immagine.jpg
+    type: schizzo

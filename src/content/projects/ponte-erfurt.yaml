@@ -1,0 +1,41 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=52&lang=it
+title:
+  it: Riqualificazione urbana e nuovo ponte
+  de: Stadtraum und neue Brücke
+  en: Urban redesign and new bridge
+year: 2008
+place:
+  it: Erfurt, Germania
+  de: Erfurt, Deutschland
+  en: Erfurt, Germany
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2008
+  result:
+    it: Finalista
+    de: Finalist
+    en: Finalist
+partners:
+  - Nadine Saul
+excerpt:
+  lang: de
+  text: Die Rathausbrücke und die Breitstrominsel in ihrer aktuellen Situation stellen ein urbanistisches Problem in einem historischen Kontext dar. Die historische Krämerbrücke wird komplett von der Rauthausbrücke und dem Baumbestand der Breitstrominsel verdeckt und tritt somit komplett in den Hintergrund. Lediglich von der Nordseite kann man dieses historische Bauwerk bewundern, jedoch nicht geniessen, da auch die Situation der Freiflächen sehr ungepflegt ist.
+  source: https://www.stanislaofierro.com/index.php?p=52&lang=it
+cover: ../../assets/originali/pagine/foto/230_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=52&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/229_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/230_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/231_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/232_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/233_immagine.jpg
+    type: disegno

@@ -1,0 +1,132 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=75&lang=it
+title:
+  it: Piazza Tribunale e parcheggio interrato
+  de: Gerichtsplatz und Tiefgarage
+  en: Piazza Tribunale and underground car park
+year: 2004
+place:
+  it: Bolzano
+  de: Bozen
+  en: Bolzano
+typology: spazi-pubblici
+status: realizzato
+international: false
+featured: true
+order: 3
+competition:
+  year: 2001
+  result:
+    it: 1° premio
+    de: 1. Preis
+    en: 1st prize
+built: "2004"
+area: 30.000 m²
+client:
+  it: Comune di Bolzano
+  de: Gemeinde Bozen
+  en: Municipality of Bolzano
+collaborators:
+  - Orazio Basso
+awards:
+  - it: IV Premio Architettura Alto Adige 2007, vincitore
+    de: IV. Architekturpreis Südtirol 2007, Preisträger
+    en: 4th South Tyrol Architecture Award 2007, winner
+  - it: Premio Gubbio 2009, segnalazione
+    de: Premio Gubbio 2009, Auszeichnung
+    en: Gubbio Prize 2009, commendation
+text:
+  it:
+    - Concorso nazionale vinto nel 2001. Sotto la piazza, un parcheggio su più livelli; in superficie, uno spazio aperto davanti al Palazzo di Giustizia.
+    - La luce naturale scende nei piani interrati attraverso tagli e lucernari.
+  de:
+    - Nationaler Wettbewerb, 2001 gewonnen. Unter dem Platz liegt eine mehrgeschossige Tiefgarage, darüber ein offener Platz vor dem Gerichtsgebäude.
+    - Tageslicht fällt durch Einschnitte und Oberlichter bis in die unteren Geschosse.
+  en:
+    - National competition, won in 2001. Beneath the square lies a car park on several levels; above it, an open space in front of the courthouse.
+    - Daylight reaches the lower floors through cuts and rooflights.
+cover: ../../assets/originali/pagine/foto/449_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/430_immagine.jpg
+reveal:
+  sketch: ../../assets/originali/pagine/foto/440_immagine.jpg
+  sketchAlt:
+    it: "Schizzo di sezione del parcheggio: un raggio di luce gialla scende fino ai piani interrati"
+    de: "Schnittskizze der Tiefgarage: ein gelber Lichtstrahl fällt bis in die unteren Geschosse"
+    en: "Section sketch of the car park: a yellow ray of light falls to the lower floors"
+  photo: ../../assets/originali/pagine/foto/449_immagine.jpg
+  photoAlt:
+    it: "Un livello del parcheggio: luce dall’alto, parete gialla, calcestruzzo"
+    de: "Eine Garagenebene: Licht von oben, gelbe Wand, Beton"
+    en: "A car park level: light from above, a yellow wall, concrete"
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=75&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/430_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/431_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/432_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/433_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/434_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/438_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/435_immagine.jpg
+    type: disegno
+    caption:
+      it: Sezione
+      de: Schnitt
+      en: Section
+  - image: ../../assets/originali/pagine/foto/439_immagine.jpg
+    type: foto
+    alt:
+      it: Il parcheggio interrato al livello -2, luce naturale dall’alto
+      de: Die Tiefgarage auf Ebene -2, Tageslicht von oben
+      en: The underground car park at level -2, daylight from above
+  - image: ../../assets/originali/pagine/foto/440_immagine.jpg
+    type: schizzo
+    alt:
+      it: "Schizzo di sezione del parcheggio: un raggio di luce gialla scende fino ai piani interrati"
+      de: "Schnittskizze der Tiefgarage: ein gelber Lichtstrahl fällt bis in die unteren Geschosse"
+      en: "Section sketch of the car park: a yellow ray of light falls to the lower floors"
+  - image: ../../assets/originali/pagine/foto/441_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/442_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/443_immagine.jpg
+    type: foto
+    alt:
+      it: Tagli di luce lungo le pareti in calcestruzzo
+      de: Lichtschlitze entlang der Betonwände
+      en: Slits of light along the concrete walls
+  - image: ../../assets/originali/pagine/foto/444_immagine.jpg
+    type: foto
+    alt:
+      it: La scala in calcestruzzo, una lama di luce dalla feritoia alta
+      de: Die Betontreppe, ein Lichtstreif aus dem hohen Schlitz
+      en: The concrete stair, a blade of light from the high slot
+  - image: ../../assets/originali/pagine/foto/445_immagine.jpg
+    type: foto
+    alt:
+      it: Un pozzo di luce sopra la scala
+      de: Ein Lichtschacht über der Treppe
+      en: A light well above the stair
+  - image: ../../assets/originali/pagine/foto/446_immagine.jpg
+    type: foto
+    alt:
+      it: Il lucernario visto dal basso
+      de: Das Oberlicht von unten gesehen
+      en: The rooflight seen from below
+  - image: ../../assets/originali/pagine/foto/449_immagine.jpg
+    type: foto
+    alt:
+      it: "Un livello del parcheggio: luce dall’alto, parete gialla, calcestruzzo"
+      de: "Eine Garagenebene: Licht von oben, gelbe Wand, Beton"
+      en: "A car park level: light from above, a yellow wall, concrete"
+  - image: ../../assets/originali/pagine/foto/450_immagine.jpg
+    type: foto
+    alt:
+      it: Pareti gialle e parete di roccia nel parcheggio
+      de: Gelbe Wände und Felswand in der Garage
+      en: Yellow walls and a rock face in the car park

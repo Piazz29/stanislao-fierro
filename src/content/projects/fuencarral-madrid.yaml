@@ -1,0 +1,43 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=58&lang=it
+title:
+  it: Edificio sportivo nel parco di Fuencarral
+  de: Sportgebäude im Park von Fuencarral
+  en: Sports building in Fuencarral park
+year: 2007
+place:
+  it: Madrid, Spagna
+  de: Madrid, Spanien
+  en: Madrid, Spain
+typology: edifici-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2007
+client:
+  it: Comune di Madrid
+  de: Stadt Madrid
+  en: City of Madrid
+partners:
+  - Nadine Saul
+excerpt:
+  lang: it
+  text: Un nuovo solido, che nasce dall’ esistente e si innalza a vista del parco, va a completare ed enfatizzare quella geometria pura di base che tanto caratterizza l’ edificio. Dal lato esposto a Nord nasce una corte che rimane a cielo aperto. Essa sfrutta le forme deteriorate dal tempo che diventano cornice al panorama. Allo stesso tempo fa da fulcro-nodo dell’ intero progetto; da essa parte infatti una promenade architettonica che accarezza l’ intero edificio per riportare lo sguardo a questo spazio comune d’ entrata.
+  source: https://www.stanislaofierro.com/index.php?p=58&lang=it
+cover: ../../assets/originali/pagine/foto/285_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=58&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/285_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/286_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/288_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/289_immagine.jpg
+    type: disegno
+    caption:
+      it: Piante
+      de: Grundrisse
+      en: Plans

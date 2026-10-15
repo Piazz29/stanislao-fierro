@@ -1,0 +1,51 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=63&lang=it
+title:
+  it: Piazza Marienhof
+  de: Marienhof
+  en: Marienhof square
+year: 2006
+place:
+  it: Monaco di Baviera, Germania
+  de: München, Deutschland
+  en: Munich, Germany
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2006
+  result:
+    it: Finalista
+    de: Finalist
+    en: Finalist
+client:
+  it: Città di Monaco di Baviera
+  de: Landeshauptstadt München
+  en: City of Munich
+partners:
+  - Nadine Saul
+excerpt:
+  lang: de
+  text: "Beim neuen Entwurf des Marienhofes spielt die städtebauliche Historie eine tragende Rolle. Fogende Punkte bilden die Grundlage des Entwurfes: 1)die Geometrie des gesamten Platzes basiert auf den geschichtlichen Spuren des Ortes. Der Verlauf der mittelalterlichen Stadtmauer wird auf dem neuem Platz durch zwei breite Streifen aus weissem Naturkalkstein mit einer Entwässeungsrinne, die den gesamten Platz durchlaufen, wieder aufgenommen."
+  source: https://www.stanislaofierro.com/index.php?p=63&lang=it
+cover: ../../assets/originali/pagine/foto/312_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=63&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/311_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/312_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/313_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/314_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/315_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/316_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/317_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/318_immagine.jpg
+    type: immagine

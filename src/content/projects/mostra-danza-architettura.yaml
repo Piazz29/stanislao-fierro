@@ -1,0 +1,40 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=70&lang=it
+title:
+  it: Mostra «Danza Architettura»
+  de: Ausstellung „Tanz Architektur“
+  en: “Dance Architecture” exhibition
+year: 2005
+place:
+  it: Bolzano
+  de: Bozen
+  en: Bolzano
+typology: allestimenti
+status: realizzato
+international: false
+featured: false
+order: 100
+client:
+  it: Ordine degli Architetti di Bolzano
+  de: Architektenkammer Bozen
+  en: Bolzano Order of Architects
+cover: ../../assets/originali/pagine/foto/385_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/382_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=70&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/382_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/383_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/384_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/385_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/386_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/388_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/389_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/390_immagine.jpg
+    type: foto

@@ -1,0 +1,83 @@
+---
+// Lightbox su <dialog> nativo: focus intrappolato dal browser, Esc chiude, frecce scorrono.
+// Gli elementi apribili hanno [data-lb] con data-src, data-w, data-h, data-caption, data-alt.
+import { ui, type Lang } from '../i18n';
+interface Props { lang: Lang; label: string; blend?: boolean }
+const { lang, label, blend = false } = Astro.props;
+---
+<dialog class="lightbox" aria-label={label} data-lightbox data-blend={blend ? '1' : undefined}>
+  <div class="lb-inner">
+    <figure class="lb-figure">
+      <img alt="" data-lb-img />
+      <figcaption class="lb-caption" data-lb-caption></figcaption>
+    </figure>
+    <div class="lb-bar t-data">
+      <span class="tabular-nums text-grigio" data-lb-count></span>
+      <div class="flex gap-1">
+        <button type="button" class="lb-btn" data-lb-prev>{ui.prev[lang]}</button>
+        <button type="button" class="lb-btn" data-lb-next>{ui.next[lang]}</button>
+        <button type="button" class="lb-btn" data-lb-close autofocus>{ui.close[lang]}</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<style is:global>
+  .lightbox {
+    max-width: none; max-height: none; width: 100vw; height: 100dvh;
+    margin: 0; padding: 0; border: 0;
+    background: var(--color-calce); color: var(--color-carbone);
+  }
+  .lightbox::backdrop { background: var(--color-calce); }
+  .lightbox[open] { animation: lb-in 0.6s var(--ease-out-quint); }
+  @keyframes lb-in { from { opacity: 0; } to { opacity: 1; } }
+  .lb-inner { height: 100%; display: grid; grid-template-rows: 1fr auto; padding: var(--margin); padding-bottom: 0; }
+  .lb-figure { min-height: 0; display: grid; grid-template-rows: 1fr auto; place-items: center; gap: 0.9rem; }
+  .lb-figure img { max-width: min(100%, var(--native-w, 100%)); max-height: 100%; width: auto; height: auto; object-fit: contain; min-height: 0; }
+  .lightbox[data-blend] .lb-figure img { mix-blend-mode: multiply; }
+  .lb-caption { font-size: 0.95rem; text-align: center; max-width: 60ch; }
+  .lb-bar { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-linea); margin-top: 1rem; padding-block: 0.5rem; }
+  .lb-btn { padding: 0.75rem 0.9rem; min-height: 2.75rem; }
+  .lb-btn:hover { color: var(--color-porfido); }
+  @media (prefers-reduced-motion: reduce) { .lightbox[open] { animation: none; } }
+</style>
+
+<script>
+  const dlg = document.querySelector<HTMLDialogElement>('[data-lightbox]');
+  if (dlg) {
+    const items = [...document.querySelectorAll<HTMLElement>('[data-lb]')];
+    const img = dlg.querySelector<HTMLImageElement>('[data-lb-img]')!;
+    const cap = dlg.querySelector<HTMLElement>('[data-lb-caption]')!;
+    const cnt = dlg.querySelector<HTMLElement>('[data-lb-count]')!;
+    let i = 0;
+    let opener: HTMLElement | null = null;
+    const show = (n: number) => {
+      i = (n + items.length) % items.length;
+      const it = items[i].dataset;
+      img.src = it.src!;
+      img.width = Number(it.w); img.height = Number(it.h);
+      img.alt = it.alt ?? '';
+      img.style.setProperty('--native-w', `${it.w}px`);
+      cap.textContent = it.caption ?? '';
+      cnt.textContent = `${String(i + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')}`;
+      // precarica la successiva
+      const nx = items[(i + 1) % items.length]?.dataset.src;
+      if (nx) { const p = new Image(); p.src = nx; }
+    };
+    items.forEach((el, k) => el.addEventListener('click', (e) => {
+      e.preventDefault(); opener = el; show(k); dlg.showModal();
+      (window as unknown as { lenis?: { stop(): void } }).lenis?.stop();
+    }));
+    dlg.querySelector('[data-lb-prev]')!.addEventListener('click', () => show(i - 1));
+    dlg.querySelector('[data-lb-next]')!.addEventListener('click', () => show(i + 1));
+    dlg.querySelector('[data-lb-close]')!.addEventListener('click', () => dlg.close());
+    dlg.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') show(i + 1);
+      if (e.key === 'ArrowLeft') show(i - 1);
+    });
+    dlg.addEventListener('close', () => {
+      (window as unknown as { lenis?: { start(): void } }).lenis?.start();
+      opener?.focus();
+    });
+  }
+</script>

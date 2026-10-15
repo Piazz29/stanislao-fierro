@@ -1,0 +1,46 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=21&lang=it, https://www.stanislaofierro.com/index.php?p=33&lang=it
+title:
+  it: Area nord del Molo di Levante
+  de: Nordbereich der Mole Levante
+  en: North area of the Levante pier
+year: 2010
+place:
+  it: Huelva, Spagna
+  de: Huelva, Spanien
+  en: Huelva, Spain
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2010
+area: 55.000 m²
+client:
+  it: Ayuntamiento de Huelva
+  de: Ayuntamiento de Huelva
+  en: Ayuntamiento de Huelva
+partners:
+  - José Luís Daroca Bruño
+excerpt:
+  lang: es
+  text: Entendemos que las construcciones actuales de los cuartos de exportadores son un símbolo para la imagen de la ciudad, y de buena factura, por lo que se propone una rehabilitación integral de los mismos, que consistirá fundamentalmente en:_ Nueva distribución interior de las naves, reduciendo el número actual de cuartos en un 50%, por lo que contaríamos con un mínimo de 63 cuartos de exportadores. Cada uno de ellos contará con una superficie interior de 145m2, divididos en 100m2 en planta baja y 45m2 en una entreplanta central bajo los lucernarios.
+  source: https://www.stanislaofierro.com/index.php?p=21&lang=it
+cover: ../../assets/originali/pagine/foto/105_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/105_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=21&lang=it
+  - https://www.stanislaofierro.com/index.php?p=33&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/105_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/106_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/107_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/108_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/109_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/110_immagine.jpg
+    type: schizzo

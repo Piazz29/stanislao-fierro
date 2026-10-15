@@ -1,0 +1,173 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { getImage } from 'astro:assets';
+import { path, ui, type Lang } from '../i18n';
+import { getProjects, recognition, previewOf } from '../lib/projects';
+import sketch from '../assets/originali/pagine/foto/135_immagine.jpg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const projects = await getProjects();
+const typologies = Object.keys(ui.typologies) as (keyof typeof ui.typologies)[];
+const statuses = Object.keys(ui.statuses) as (keyof typeof ui.statuses)[];
+
+// anteprime piccole per l'hover (webp, mai oltre l'originale)
+const previews = await Promise.all(projects.map(async (p) => {
+  const img = previewOf(p);
+  if (!img) return null;
+  const r = await getImage({ src: img, width: Math.min(img.width, 560), format: 'webp', quality: 72 });
+  const isSketch = !p.data.cover;
+  return { src: r.src, w: r.attributes.width as number, h: r.attributes.height as number, isSketch };
+}));
+const years = projects.map((p) => p.data.year);
+const [y0, y1] = [Math.min(...years), Math.max(...years)];
+const lead = {
+  it: `${projects.length} opere e progetti, dal ${y0} al ${y1}. Piazze e spazi pubblici, edifici, residenze, scuole, allestimenti.`,
+  de: `${projects.length} Werke und Projekte, ${y0} bis ${y1}. Plätze und öffentliche Räume, Bauten, Wohnbau, Schulen, Ausstellungen.`,
+  en: `${projects.length} works and projects, ${y0} to ${y1}. Squares and public spaces, buildings, housing, schools, exhibitions.`,
+}[lang];
+const counts = Object.fromEntries(typologies.map((t) => [t, projects.filter((p) => p.data.typology === t).length]));
+---
+<Base lang={lang} title={ui.worksTitle[lang]} description={ui.worksDescription[lang]} route="works">
+  <PageHead lang={lang} title={ui.worksTitle[lang]} sketch={sketch}
+    lead={lead} />
+
+  <section class="frame" data-works>
+    <!-- Filtri -->
+    <div class="grid-plan gap-y-4 pb-8">
+      <fieldset class="col-span-4 md:col-span-8 lg:col-span-7">
+        <legend class="t-data text-grigio mb-3">{ui.filterTypology[lang]}</legend>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" class="chip" data-filter="t" data-value="" aria-pressed="true">{ui.all[lang]}</button>
+          {typologies.map((t) => (
+            <button type="button" class="chip" data-filter="t" data-value={t} aria-pressed="false">{ui.typologies[t][lang]} <span class="text-grigio tabular-nums">{counts[t]}</span></button>
+          ))}
+        </div>
+      </fieldset>
+      <fieldset class="col-span-4 md:col-span-8 lg:col-span-4 lg:col-start-9">
+        <legend class="t-data text-grigio mb-3">{ui.filterStatus[lang]}</legend>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" class="chip" data-filter="s" data-value="" aria-pressed="true">{ui.allStatus[lang]}</button>
+          {statuses.map((s) => (
+            <button type="button" class="chip" data-filter="s" data-value={s} aria-pressed="false">{ui.statuses[s][lang]}</button>
+          ))}
+        </div>
+      </fieldset>
+    </div>
+
+    <p class="t-data text-grigio pb-3" aria-live="polite"><span data-count>{projects.length}</span> {ui.shown[lang]}</p>
+
+    <!-- Indice tipografico -->
+    <table class="w-full border-collapse text-left works-table">
+      <caption class="sr-only">{ui.worksTitle[lang]}</caption>
+      <thead>
+        <tr class="border-y border-carbone/80 t-data text-grigio">
+          <th scope="col" class="py-2.5 pr-4 font-[500] w-[4.5rem]">{ui.colYear[lang]}</th>
+          <th scope="col" class="py-2.5 pr-4 font-[500]">{ui.colWork[lang]}</th>
+          <th scope="col" class="py-2.5 pr-4 font-[500] hidden md:table-cell">{ui.colPlace[lang]}</th>
+          <th scope="col" class="py-2.5 pr-4 font-[500] hidden lg:table-cell">{ui.colType[lang]}</th>
+          <th scope="col" class="py-2.5 font-[500] hidden lg:table-cell">{ui.colAward[lang]}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {projects.map((p, i) => {
+          const pv = previews[i];
+          return (
+            <tr class="border-b border-linea group row" data-t={p.data.typology} data-s={p.data.status}
+              data-preview={pv?.src} data-pw={pv?.w} data-ph={pv?.h} data-sketch={pv?.isSketch ? '1' : undefined}>
+              <td class="py-3.5 pr-4 align-top t-data-plain tabular-nums text-grigio">{p.data.year}</td>
+              <td class="py-3.5 pr-4 align-top">
+                <a href={path(lang, 'works', p.id)} class="row-link block text-[1.05rem] md:text-[1.12rem] leading-snug font-[440] group-hover:text-porfido transition-colors duration-300">
+                  {p.data.title[lang]}
+                </a>
+                <span class="md:hidden t-data text-grigio block mt-1">{p.data.place[lang]}</span>
+                {recognition(p, lang) && <span class="lg:hidden t-data text-porfido block mt-1">{recognition(p, lang)}</span>}
+              </td>
+              <td class="py-3.5 pr-4 align-top hidden md:table-cell t-data-plain text-[0.95rem]">{p.data.place[lang]}</td>
+              <td class="py-3.5 pr-4 align-top hidden lg:table-cell t-data text-grigio pt-[1.1rem]">{ui.typologies[p.data.typology][lang]}</td>
+              <td class="py-3.5 align-top hidden lg:table-cell t-data-plain text-[0.95rem]">{recognition(p, lang)}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+    <div class="py-10 hidden" data-empty>
+      <p class="t-lead">{ui.noResults[lang]}</p>
+      <button type="button" class="chip mt-5" data-reset>{ui.resetFilters[lang]}</button>
+    </div>
+
+    <!-- Anteprima all'hover (solo puntatore preciso) -->
+    <div class="preview fixed z-30 pointer-events-none hidden" aria-hidden="true" data-preview-box>
+      <img alt="" class="block w-full h-auto bg-calce" data-preview-img />
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  .works-table tr.row:focus-within { background: var(--color-calce-2); }
+  .preview { width: min(28vw, 420px); }
+  .preview.is-sketch img { mix-blend-mode: multiply; background: transparent; }
+  .preview img { transition: opacity 0.5s var(--ease-out-quint); }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-works]');
+  if (root) {
+    const rows = [...root.querySelectorAll<HTMLTableRowElement>('tr.row')];
+    const chips = [...root.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+    const count = root.querySelector('[data-count]')!;
+    const empty = root.querySelector<HTMLElement>('[data-empty]')!;
+    const table = root.querySelector('table')!;
+    const state = { t: '', s: '' };
+    const params = new URLSearchParams(location.search);
+    state.t = params.get('t') ?? '';
+    state.s = params.get('s') ?? '';
+
+    const apply = () => {
+      let n = 0;
+      rows.forEach((r) => {
+        const ok = (!state.t || r.dataset.t === state.t) && (!state.s || r.dataset.s === state.s);
+        r.hidden = !ok;
+        if (ok) n++;
+      });
+      count.textContent = String(n);
+      empty.classList.toggle('hidden', n > 0);
+      table.classList.toggle('hidden', n === 0);
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(state[c.dataset.filter as 't' | 's'] === c.dataset.value)));
+      const q = new URLSearchParams();
+      if (state.t) q.set('t', state.t);
+      if (state.s) q.set('s', state.s);
+      history.replaceState(null, '', q.toString() ? `?${q}` : location.pathname);
+    };
+    chips.forEach((c) => c.addEventListener('click', () => { state[c.dataset.filter as 't' | 's'] = c.dataset.value ?? ''; apply(); }));
+    root.querySelector('[data-reset]')!.addEventListener('click', () => { state.t = ''; state.s = ''; apply(); });
+    apply();
+
+    // anteprima foto all'hover
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1100px)');
+    const box = root.querySelector<HTMLElement>('[data-preview-box]')!;
+    const img = root.querySelector<HTMLImageElement>('[data-preview-img]')!;
+    let y = 0;
+    const place = () => {
+      const h = box.offsetHeight;
+      const top = Math.min(Math.max(y - h / 2, 96), window.innerHeight - h - 24);
+      box.style.top = `${top}px`;
+      box.style.right = 'var(--margin)';
+    };
+    rows.forEach((r) => {
+      const showPreview = () => {
+        if (!fine.matches || !r.dataset.preview) { box.classList.add('hidden'); return; }
+        img.src = r.dataset.preview;
+        img.width = Number(r.dataset.pw); img.height = Number(r.dataset.ph);
+        box.style.maxWidth = `${r.dataset.pw}px`;
+        box.classList.toggle('is-sketch', r.dataset.sketch === '1');
+        box.classList.remove('hidden');
+        place();
+      };
+      r.addEventListener('mouseenter', (e) => { y = e.clientY; showPreview(); });
+      r.addEventListener('mousemove', (e) => { y = e.clientY; place(); });
+      r.addEventListener('mouseleave', () => box.classList.add('hidden'));
+    });
+  }
+</script>

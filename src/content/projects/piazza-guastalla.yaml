@@ -1,0 +1,51 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=40&lang=it
+title:
+  it: Piazza della Repubblica
+  de: Piazza della Repubblica
+  en: Piazza della Repubblica
+year: 2009
+place:
+  it: Guastalla (RE)
+  de: Guastalla (RE)
+  en: Guastalla (RE)
+typology: spazi-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2009
+  result:
+    it: 3° premio
+    de: 3. Preis
+    en: 3rd prize
+client:
+  it: Comune di Guastalla
+  de: Gemeinde Guastalla
+  en: Municipality of Guastalla
+partners:
+  - Nadine Saul
+excerpt:
+  lang: it
+  text: Il nuovo progetto è finalizzato , in prima istanza ad una ricucitura urbana, che prende le mosse proprio dai caratteri consolidati ma anche dagli aspetti più frammentati . Importante , ai fini dell’idea, è stato considerare la Piazza della Repubblica , come spazio concluso, naturale punto di unione tra Via Gonzaga e Via Cesarea. La nuova Piazza , attraverso una nuova pavimentazione incorporerà anche Via Passerini. Questo semplice prolungamento oltre ad ottenere una figura trapezia decisamente più regolare , dona un attacco a terra più adeguato sia agli edifici esistenti che a quelli di nuova costruzione.
+  source: https://www.stanislaofierro.com/index.php?p=40&lang=it
+cover: ../../assets/originali/pagine/foto/167_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=40&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/166_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/167_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/168_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/169_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/170_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/171_immagine.jpg
+    type: immagine
+    caption:
+      it: Vista
+      de: Ansicht
+      en: View

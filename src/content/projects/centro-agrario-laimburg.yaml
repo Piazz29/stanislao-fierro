@@ -1,0 +1,39 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=72&lang=it
+title:
+  it: Nuovo centro agrario
+  de: Neues Landwirtschaftszentrum
+  en: New agricultural centre
+year: 2004
+place:
+  it: Laimburg, Vadena
+  de: Laimburg, Pfatten
+  en: Laimburg, Vadena
+typology: scuole
+status: progetto
+international: false
+featured: false
+order: 100
+cover: ../../assets/originali/pagine/foto/402_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=72&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/401_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/402_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/403_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/404_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/405_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/406_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/407_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/408_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/409_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/410_immagine.jpg
+    type: immagine

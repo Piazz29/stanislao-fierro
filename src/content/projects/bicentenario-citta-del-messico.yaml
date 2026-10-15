@@ -1,0 +1,31 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=46&lang=it
+title:
+  it: Piazza e simbolo del Bicentenario
+  de: Platz und Symbol der Zweihundertjahrfeier
+  en: Bicentennial square and monument
+year: 2008
+place:
+  it: Città del Messico
+  de: Mexiko-Stadt
+  en: Mexico City
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2008
+partners:
+  - Nadine Saul
+excerpt:
+  lang: es
+  text: "La finalidad del proyecto es de construir un nuevo espacio con un caràcter unitario y reconocible, que tiene una clara fruiciòn urbana, y que potencia, simultaneamente, la fragmentaciòn de las preexistencias. La nueva articulaciòn tiene que aclarar la relaciòn entre recorridos peatonales y de viabilidad, entre espacios vierdes y pavimentados, regenerando la relaciòn con los edificios circunstantes. Los nuevos espacios tienen que esser complejos y flexibles, ser capaz de ser usado por varios finalidades. El nuevo proyecto quere poner en acto con fuerza algunos temas: el Zòcalo; el Erosiòn; la Luz."
+  source: https://www.stanislaofierro.com/index.php?p=46&lang=it
+cover: ../../assets/originali/pagine/foto/200_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=46&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/199_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/200_immagine.jpg
+    type: immagine

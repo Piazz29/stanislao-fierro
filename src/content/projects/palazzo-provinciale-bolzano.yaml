@@ -1,0 +1,48 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=15&lang=it, https://www.stanislaofierro.com/index.php?p=28&lang=it
+title:
+  it: Palazzo Provinciale
+  de: Landhaus
+  en: Provincial government building
+year: 2011
+place:
+  it: Bolzano
+  de: Bozen
+  en: Bolzano
+typology: edifici-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2011
+area: 4.100 m²
+client:
+  it: Provincia autonoma di Bolzano
+  de: Autonome Provinz Bozen
+  en: Autonomous Province of Bolzano
+partners:
+  - Nadine Saul
+excerpt:
+  lang: it
+  text: Il progetto occupa tutto il lotto a disposizione e sviluppa per 9 piani in altezza. L’idea si fonda si di un edificio molto compatto, a cui si contrappone una regolare orizzontalità ed una modulazione apparentemente libera delle forature. La parte basamentale, piena monomaterica e leggermente rientrante , risolve l’attacco a terra oltre che dare soluzione agli accessi. La monotonia degli elementi orizzontali è interrotta in maniera puntuale con particolari punti di vista verso il paesaggio. Al piano terra si trovano la hall e gli elementi di distribuzione.
+  source: https://www.stanislaofierro.com/index.php?p=15&lang=it
+cover: ../../assets/originali/pagine/foto/57_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/53_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=15&lang=it
+  - https://www.stanislaofierro.com/index.php?p=28&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/53_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/54_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/55_immagine.jpg
+    type: disegno
+    caption:
+      it: Piante
+      de: Grundrisse
+      en: Plans
+  - image: ../../assets/originali/pagine/foto/56_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/57_immagine.jpg
+    type: immagine

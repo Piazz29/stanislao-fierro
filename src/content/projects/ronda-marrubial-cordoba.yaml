@@ -1,0 +1,41 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=57&lang=it
+title:
+  it: Ronda del Marrubial
+  de: Ronda del Marrubial
+  en: Ronda del Marrubial
+year: 2007
+place:
+  it: Cordova, Spagna
+  de: Córdoba, Spanien
+  en: Córdoba, Spain
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2007
+  result:
+    it: Finalista
+    de: Finalist
+    en: Finalist
+client:
+  it: EPSA, Siviglia
+  de: EPSA, Sevilla
+  en: EPSA, Seville
+partners:
+  - Nadine Saul
+excerpt:
+  lang: es
+  text: El nuevo dibujo de los espacios abiertos, que gravitan alrededor a la Muralla, es puesto a conferir un caracter unitario a la intervienciòn. Es una respuesta projectual a una preexistentia tan compleja y rica, como framentada. El projecto intenta de sacar sus propria fuerza desde la lectura y el saque de los “fragmentos”. La Muralla hoy se presenta como una larga spina dorsal, a quien falta una “Cabeza“ y una “Cola”. Ademàs, los pocos puntos de atravesamiento no aprovechan la ocasiòn de far percibir el aspero pasaje entre el casco antiguo y la nueva urbanizaciòn a Northe.
+  source: https://www.stanislaofierro.com/index.php?p=57&lang=it
+cover: ../../assets/originali/pagine/foto/283_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=57&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/282_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/283_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/284_immagine.jpg
+    type: immagine

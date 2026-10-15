@@ -1,0 +1,43 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=39&lang=it
+title:
+  it: Riqualificazione del centro
+  de: Neugestaltung des Ortskerns
+  en: Village centre redesign
+year: 2009
+place:
+  it: Nova Levante
+  de: Welschnofen
+  en: Nova Levante
+typology: spazi-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2009
+  result:
+    it: 2° premio
+    de: 2. Preis
+    en: 2nd prize
+client:
+  it: Comune di Nova Levante
+  de: Gemeinde Welschnofen
+  en: Municipality of Nova Levante
+partners:
+  - Wolfgang Simmerle
+excerpt:
+  lang: de
+  text: Das neue Projekt erstreckt sich über die ganze Romstrasse mit dem Schwerpunkt der Sanierung des Kirchplatzes. Der neue Eingriff fängt ungefähr beim Caffè Panorama an, und erstreckt sich über das gesamte Gebiet bis zur neuen Grundschule in der Nähe des Bodner Baches. Die Romstrasse gleicht in seiner momentanen Situation einer Achse , wo sich links und rechts kleine Plätze, Strassenerweiterungen und mehrere Parkmöglichkeiten befinden, die keinen bestimmten Prinzip oder Anordnung folgen.
+  source: https://www.stanislaofierro.com/index.php?p=39&lang=it
+cover: ../../assets/originali/pagine/foto/162_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=39&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/162_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/163_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/164_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/165_immagine.jpg
+    type: disegno

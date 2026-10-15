@@ -1,0 +1,38 @@
+# Fonte: brief del cliente (nessuna scheda sul sito attuale)
+title:
+  it: Piazza Libertà
+  de: Piazza Libertà
+  en: Piazza Libertà
+year: 2007
+place:
+  it: Trieste
+  de: Triest
+  en: Trieste
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 10
+competition:
+  year: 2007
+  result:
+    it: 1° premio
+    de: 1. Preis
+    en: 1st prize
+  name:
+    it: Concorso europeo
+    de: Europäischer Wettbewerb
+    en: European competition
+client:
+  it: Comune di Trieste
+  de: Gemeinde Triest
+  en: Municipality of Trieste
+text:
+  it:
+    - Concorso europeo per la riqualificazione di Piazza Libertà, primo premio nel 2007. Il progetto definitivo è stato approvato dall’Amministrazione comunale.
+  de:
+    - Europäischer Wettbewerb für die Neugestaltung der Piazza Libertà, 2007 mit dem ersten Preis ausgezeichnet. Das Ausführungsprojekt wurde von der Stadtverwaltung genehmigt.
+  en:
+    - European competition for the redesign of Piazza Libertà, first prize in 2007. The final design was approved by the municipal administration.
+sourcePages: []
+gallery: []

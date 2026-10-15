@@ -1,0 +1,42 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=13&lang=it
+title:
+  it: Scuola materna
+  de: Kindergarten
+  en: Nursery school
+year: 2012
+place:
+  it: Sluderno
+  de: Schluderns
+  en: Sluderno
+typology: scuole
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2012
+area: 5.500 m²
+client:
+  it: Comune di Sluderno
+  de: Gemeinde Schluderns
+  en: Municipality of Sluderno
+partners:
+  - Nadine Saul
+excerpt:
+  lang: it
+  text: L’idea di progetto intende generare un forte legame con l’esistente. Decisione importante è stata quella di posizionare la nuova scuola Materna ad un piano inferiore rispetto al piano di calpestio attuale. Questo nuovo posizionamento ha innescato interessanti relazioni pedonali ed ha permesso di ridurre notevolmente l’edificio fuori terra. La relazione della nuova volumetria nell’assetto urbanistico esistente desidera essere sobrio ma al contempo riconoscibile. Il nuovo edificio permette di ricavare maggiori spazi aperti verso il cortile e l’attuale frutteto parrocchiale .
+  source: https://www.stanislaofierro.com/index.php?p=13&lang=it
+cover: ../../assets/originali/pagine/foto/30_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=13&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/30_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/31_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/32_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/33_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/34_immagine.jpg
+    type: immagine

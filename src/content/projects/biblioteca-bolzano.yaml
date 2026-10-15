@@ -1,0 +1,39 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=74&lang=it
+title:
+  it: Biblioteca
+  de: Bibliothek
+  en: Library
+year: 2004
+place:
+  it: Bolzano
+  de: Bozen
+  en: Bolzano
+typology: edifici-pubblici
+status: progetto
+international: false
+featured: false
+order: 100
+cover: ../../assets/originali/pagine/foto/421_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=74&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/420_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/421_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/422_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/423_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/424_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/425_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/426_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/427_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/428_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/429_immagine.jpg
+    type: immagine

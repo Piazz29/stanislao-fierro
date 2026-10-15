@@ -1,0 +1,47 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=67&lang=it
+title:
+  it: Riqualificazione del centro storico
+  de: Neugestaltung der Altstadt
+  en: Historic centre redesign
+year: 2005
+place:
+  it: Chiari (BS)
+  de: Chiari (BS)
+  en: Chiari (BS)
+typology: spazi-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2005
+  result:
+    it: 3° premio
+    de: 3. Preis
+    en: 3rd prize
+client:
+  it: Comune di Chiari
+  de: Gemeinde Chiari
+  en: Municipality of Chiari
+partners:
+  - Nadine Saul
+cover: ../../assets/originali/pagine/foto/355_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=67&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/353_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/354_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/355_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/356_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/357_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/359_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/360_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/361_immagine.jpg
+    type: immagine

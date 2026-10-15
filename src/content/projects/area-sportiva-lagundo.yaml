@@ -1,0 +1,58 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=19&lang=it, https://www.stanislaofierro.com/index.php?p=31&lang=it
+title:
+  it: Area sportiva e ricreativa
+  de: Sport- und Freizeitzone
+  en: Sports and recreation area
+year: 2010
+place:
+  it: Lagundo
+  de: Algund
+  en: Lagundo
+typology: spazi-pubblici
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2010
+  result:
+    it: 2° premio
+    de: 2. Preis
+    en: 2nd prize
+area: 39.000 m²
+client:
+  it: Comune di Lagundo
+  de: Gemeinde Algund
+  en: Municipality of Lagundo
+partners:
+  - Wolfgang Simmerle
+cover: ../../assets/originali/pagine/foto/75_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/74_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=19&lang=it
+  - https://www.stanislaofierro.com/index.php?p=31&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/74_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/75_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/76_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/81_immagine.jpg
+    type: disegno
+    caption:
+      it: Planimetria
+      de: Lageplan
+      en: Site plan
+  - image: ../../assets/originali/pagine/foto/80_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/79_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/78_immagine.jpg
+    type: immagine
+    caption:
+      it: Vista
+      de: Ansicht
+      en: View
+  - image: ../../assets/originali/pagine/foto/77_immagine.jpg
+    type: immagine

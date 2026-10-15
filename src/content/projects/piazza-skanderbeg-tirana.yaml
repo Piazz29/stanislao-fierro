@@ -1,0 +1,37 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=48&lang=it
+title:
+  it: Piazza Scanderbeg
+  de: Skanderbeg-Platz
+  en: Skanderbeg Square
+year: 2008
+place:
+  it: Tirana, Albania
+  de: Tirana, Albanien
+  en: Tirana, Albania
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2008
+partners:
+  - Nadine Saul
+excerpt:
+  lang: it
+  text: Il progetto di una nuova Piazza con uno studio urbanistico complesso con nuovi edifici di rappresentanza che vanno a delimitare e caratterizzare il nuovo vuoto. L’idea di una piazza, ribassata è il pretesto di ripensare a tutti i collegamenti pedonali con la città e con i nuovi edifici.
+  source: https://www.stanislaofierro.com/index.php?p=48&lang=it
+cover: ../../assets/originali/pagine/foto/205_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=48&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/204_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/205_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/206_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/207_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/208_immagine.jpg
+    type: immagine

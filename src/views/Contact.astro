@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Photo from '../components/Photo.astro';
+import { ui, type Lang } from '../i18n';
+import { studio } from '../data/site';
+import map from '../assets/mappa-via-montello.jpg';
+import mapData from '../data/map.json';
+import sketch from '../assets/originali/pagine/foto/144_immagine.jpg';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const osm = `https://www.openstreetmap.org/?mlat=${studio.geo.lat}&mlon=${studio.geo.lon}#map=18/${studio.geo.lat}/${studio.geo.lon}`;
+const rows = [
+  { label: ui.address[lang], value: [`${studio.street[lang]}`, `${studio.postal} ${studio.city[lang]}`, `${studio.region[lang]}, ${studio.country[lang]}`] },
+  { label: ui.phone[lang], value: studio.phoneDisplay, href: `tel:${studio.phoneIntl}` },
+  { label: ui.email[lang], value: studio.email, href: `mailto:${studio.email}` },
+  { label: ui.pec[lang], value: studio.pec, href: `mailto:${studio.pec}` },
+  { label: ui.vat[lang], value: studio.vat },
+];
+---
+<Base lang={lang} title={ui.contactTitle[lang]} description={ui.contactDescription[lang]} route="contact" ogImage={map} ogAlt={ui.mapAlt[lang]}>
+  <PageHead lang={lang} title={ui.contactTitle[lang]} sketch={sketch} />
+
+  <section class="frame">
+    <div class="grid-plan gap-y-12">
+      <address class="not-italic col-span-4 md:col-span-4 lg:col-span-4">
+        <p class="text-[1.06rem] font-[520]">Stanislao Fierro · Nadine Saul</p>
+        <dl class="mt-6 border-t border-carbone/80">
+          {rows.map((r) => (
+            <div class="py-4 border-b border-linea">
+              <dt class="t-data text-grigio">{r.label}</dt>
+              <dd class="mt-1.5 text-[1.12rem] leading-snug break-words">
+                {Array.isArray(r.value)
+                  ? r.value.map((v) => <span class="block">{v}</span>)
+                  : r.href ? <a class="link" href={r.href}>{r.value}</a> : <span class="t-data-plain">{r.value}</span>}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </address>
+
+      <figure class="col-span-4 md:col-span-8 lg:col-span-7 lg:col-start-6">
+        <div class="relative border border-pietra/70">
+          <Photo src={map} alt={ui.mapAlt[lang]} sizes="(min-width: 1100px) 58vw, calc(100vw - 2rem)" imgClass="!max-w-full" />
+          <span class="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-none" style={`left:${mapData.marker.x * 100}%; top:${mapData.marker.y * 100}%`} aria-hidden="true">
+            <span class="block size-4 bg-porfido ring-4 ring-calce"></span>
+          </span>
+          <span class="absolute pointer-events-none t-data bg-calce border border-pietra/70 px-2 py-1 translate-x-3 -translate-y-1/2" style={`left:${mapData.marker.x * 100}%; top:${mapData.marker.y * 100}%`} aria-hidden="true">
+            {studio.street[lang]}
+          </span>
+        </div>
+        <figcaption class="mt-3 flex flex-wrap justify-between gap-x-6 gap-y-2 t-data text-grigio">
+          <span>© <a class="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</span>
+          <a class="link" href={osm}>{ui.openMap[lang]}</a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { path } from '../i18n';
+---
+<Base lang="it" title="Pagina non trovata" description="La pagina richiesta non esiste. Torna all’indice delle opere di Stanislao Fierro." route="home" noindex>
+  <section class="frame">
+    <div class="grid-plan py-[clamp(5rem,14vw,12rem)] gap-y-8">
+      <p class="col-span-4 md:col-span-8 lg:col-span-12 t-data text-grigio">404</p>
+      <h1 class="col-span-4 md:col-span-8 lg:col-span-9 t-display text-[clamp(2.6rem,1.4rem+5vw,6rem)]">Pagina non trovata</h1>
+      <ul class="col-span-4 md:col-span-6 lg:col-span-5 lg:col-start-4 space-y-3 t-lead">
+        <li><a class="link" href={path('it', 'works')}>Indice delle opere</a></li>
+        <li lang="de"><a class="link" href={path('de', 'works')}>Seite nicht gefunden · Werkverzeichnis</a></li>
+        <li lang="en"><a class="link" href={path('en', 'works')}>Page not found · Index of works</a></li>
+      </ul>
+    </div>
+  </section>
+</Base>

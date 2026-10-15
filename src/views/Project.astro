@@ -1,0 +1,210 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import Cartiglio from '../components/Cartiglio.astro';
+import Lightbox from '../components/Lightbox.astro';
+import SketchReveal from '../components/SketchReveal.astro';
+import { Image, getImage } from 'astro:assets';
+import { path, ui, type Lang } from '../i18n';
+import { getProjects, altFor, type Project } from '../lib/projects';
+
+interface Props { lang: Lang; project: Project }
+const { lang, project } = Astro.props;
+const d = project.data;
+const all = await getProjects();
+const idx = all.findIndex((p) => p.id === project.id);
+const prev = all[(idx - 1 + all.length) % all.length];
+const next = all[(idx + 1) % all.length];
+
+const site = Astro.site!;
+const credit = { it: 'Foto', de: 'Foto', en: 'Photo' }[lang];
+const pad = (n: number) => String(n).padStart(2, '0');
+
+// galleria: la copertina in testa, poi le immagini nell'ordine della scheda originale
+const gallery = [...d.gallery];
+if (d.cover) {
+  const ci = gallery.findIndex((g) => g.image.src === d.cover!.src);
+  if (ci > 0) gallery.unshift(...gallery.splice(ci, 1));
+}
+// dopo la copertina: foto, rendering, plastici, schizzi, disegni, tavole (ordine stabile nel tipo)
+const ORDER = ['foto', 'rendering', 'plastico', 'schizzo', 'disegno', 'tavola', 'immagine'];
+const ordered = gallery.length ? [gallery[0], ...gallery.slice(1).sort((a, b) => ORDER.indexOf(a.type) - ORDER.indexOf(b.type))] : [];
+const items = await Promise.all(ordered.map(async (g, i) => {
+  const full = await getImage({ src: g.image, width: g.image.width, format: 'webp', quality: 82 });
+  const caption = g.caption?.[lang];
+  const alt = g.alt?.[lang] ?? altFor(project, g.type, lang, caption);
+  const label = [`${ui.sheet[lang]} ${pad(i + 1)}`, g.credit ? `${credit} ${g.credit}` : caption ?? ui.imageTypes[g.type][lang]].join(' · ');
+  return { ...g, full, alt, label };
+}));
+const [lead, ...rest] = items;
+
+// impaginazione a tavole: ogni immagine prende le colonne che la sua misura nativa sostiene
+function layout(w: number) {
+  if (w >= 1000) return { cls: 'md:col-span-8 lg:col-span-9', sizes: `(min-width: 1100px) min(${w}px, 74vw), (min-width: 768px) 92vw, calc(100vw - 2rem)` };
+  if (w >= 600) return { cls: 'md:col-span-8 lg:col-span-6', sizes: `(min-width: 1100px) min(${w}px, 48vw), (min-width: 768px) min(${w}px, 92vw), calc(100vw - 2rem)` };
+  return { cls: 'md:col-span-4 lg:col-span-4', sizes: `(min-width: 1100px) min(${w}px, 31vw), (min-width: 768px) min(${w}px, 46vw), calc(100vw - 2rem)` };
+}
+
+const rows = [
+  { label: ui.place[lang], value: d.place[lang] },
+  d.competition ? { label: ui.competition[lang], value: [d.competition.name?.[lang], `${d.competition.year}${d.competition.result ? `, ${d.competition.result[lang]}` : ''}`].filter(Boolean) as string[] } : null,
+  d.built ? { label: ui.built[lang], value: d.built } : { label: ui.year[lang], value: String(d.year) },
+  d.area ? { label: ui.area[lang], value: d.area } : null,
+  d.client ? { label: ui.client[lang], value: d.client[lang] } : null,
+  d.partners ? { label: ui.with[lang], value: d.partners } : null,
+  d.collaborators ? { label: ui.collaborators[lang], value: d.collaborators } : null,
+  d.awards ? { label: ui.awards[lang], value: d.awards.map((a) => a[lang]) } : null,
+  d.photographer ? { label: ui.photos[lang], value: d.photographer } : null,
+  { label: ui.typology[lang], value: `${ui.typologies[d.typology][lang]} · ${ui.statusOne[d.status][lang]}` },
+].filter(Boolean) as { label: string; value: string | string[] }[];
+
+const description = [
+  `${d.title[lang]}, ${d.place[lang]}, ${d.built ?? d.year}.`,
+  d.competition?.result ? `${ui.competition[lang]} ${d.competition.year}: ${d.competition.result[lang]}.` : '',
+  d.awards?.length ? `${d.awards.map((a) => a[lang]).join('; ')}.` : '',
+  d.partners?.length ? `${ui.with[lang]} ${d.partners.join(', ')}.` : '',
+].filter(Boolean).join(' ').slice(0, 300);
+
+const jsonld = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: d.title[lang],
+    about: ui.typologies[d.typology][lang],
+    dateCreated: String(d.competition?.year ?? d.year),
+    ...(d.built ? { datePublished: d.built.slice(-4) } : {}),
+    locationCreated: { '@type': 'Place', name: d.place[lang] },
+    creator: [{ '@id': `${site.href}#stanislao-fierro` }, ...(d.partners ?? []).map((n) => ({ '@type': 'Person', name: n }))],
+    ...(d.awards?.length ? { award: d.awards.map((a) => a[lang]) } : {}),
+    ...(d.client ? { sourceOrganization: { '@type': 'Organization', name: d.client[lang] } } : {}),
+    ...(lead ? { image: new URL(lead.full.src, site).href } : {}),
+    url: new URL(path(lang, 'works', project.id), site).href,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: ui.studioName[lang], item: new URL(path(lang, 'home'), site).href },
+      { '@type': 'ListItem', position: 2, name: ui.worksTitle[lang], item: new URL(path(lang, 'works'), site).href },
+      { '@type': 'ListItem', position: 3, name: d.title[lang] },
+    ],
+  },
+];
+const excerptLang = d.excerpt ? (d.excerpt.lang === 'es' ? 'es' : d.excerpt.lang) : null;
+---
+<Base lang={lang} title={`${d.title[lang]}, ${d.place[lang]}`} description={description} route="works" slug={project.id}
+  ogImage={d.cover ?? lead?.image} ogAlt={lead?.alt} jsonld={jsonld}>
+
+  <!-- Testata: titolo e cartiglio -->
+  <section class="frame">
+    <div class="grid-plan pt-[clamp(1.5rem,3vw,2.5rem)]">
+      <nav aria-label="Breadcrumb" class="col-span-4 md:col-span-8 lg:col-span-12">
+        <a href={path(lang, 'works')} class="t-data text-grigio hover:text-carbone transition-colors duration-500">← {ui.backToWorks[lang]}</a>
+      </nav>
+    </div>
+    <div class="grid-plan gap-y-8 pt-[clamp(2.5rem,6vw,5rem)] pb-[clamp(2.5rem,5vw,4rem)] items-end">
+      <header class="col-span-4 md:col-span-8 lg:col-span-7">
+        <p class="t-data text-grigio">{ui.typologies[d.typology][lang]} · {d.built ?? d.year}</p>
+        <h1 class="t-title text-[clamp(2.4rem,1.3rem+4.6vw,5.6rem)] mt-4 text-balance">{d.title[lang]}</h1>
+        {d.subtitle && <p class="t-lead mt-4 text-grigio">{d.subtitle[lang]}</p>}
+        <p class="t-lead mt-3">{d.place[lang]}</p>
+      </header>
+      <Cartiglio class="col-span-4 md:col-span-6 lg:col-span-4 lg:col-start-9" rows={rows}
+        heading="Stanislao Fierro" code={items.length ? `${ui.sheet[lang]} ${pad(items.length)}` : undefined} />
+    </div>
+  </section>
+
+  <!-- Immagine guida -->
+  {lead && (
+    <section class="frame">
+      <figure class="grid-plan gap-y-3">
+        <button type="button" class="col-span-4 md:col-span-8 lg:col-span-12 block text-left cursor-zoom-in" data-lb
+          data-src={lead.full.src} data-w={lead.full.attributes.width} data-h={lead.full.attributes.height} data-alt={lead.alt} data-caption={lead.label}
+          aria-label={`${ui.enlarge[lang]}: ${lead.alt}`}>
+          <Photo src={lead.image} alt={lead.alt} priority sizes={`(min-width: ${lead.image.width + 160}px) ${lead.image.width}px, calc(100vw - 2rem)`} />
+        </button>
+        <figcaption class="col-span-4 md:col-span-8 lg:col-span-12 t-data text-grigio">{lead.label}</figcaption>
+      </figure>
+    </section>
+  )}
+
+  <!-- Testo -->
+  {(d.text || d.excerpt || !items.length) && (
+    <section class="frame">
+      <div class="grid-plan py-[clamp(3.5rem,8vw,7rem)] gap-y-10">
+        {d.text && (
+          <div class="col-span-4 md:col-span-6 lg:col-span-6 lg:col-start-4 space-y-5">
+            {d.text[lang].map((para, i) => <p class:list={[i === 0 ? 't-lead' : 'text-[1.08rem] leading-relaxed', 'text-pretty']}>{para}</p>)}
+          </div>
+        )}
+        {!items.length && (
+          <p class="col-span-4 md:col-span-6 lg:col-span-5 lg:col-start-4 t-data text-grigio border-t border-linea pt-4">{ui.noImages[lang]}</p>
+        )}
+        {d.excerpt && (
+          <aside class="col-span-4 md:col-span-6 lg:col-span-5 lg:col-start-4 border-t border-linea pt-4" lang={excerptLang ?? undefined}>
+            <p class="t-data text-grigio" lang={lang}>{ui.fromReport[lang]} · {ui.originalLanguage[d.excerpt.lang][lang]}</p>
+            <p class="mt-4 text-[0.98rem] leading-relaxed text-grigio text-pretty">{d.excerpt.text}</p>
+          </aside>
+        )}
+      </div>
+    </section>
+  )}
+
+  <!-- Dallo schizzo alla costruzione -->
+  {d.reveal && (
+    <section class="frame" aria-labelledby="schizzo-costruzione">
+      <div class="grid-plan gap-y-6 pb-[clamp(3rem,7vw,6rem)]">
+        <div class="col-span-4 md:col-span-8 lg:col-span-3">
+          <h2 id="schizzo-costruzione" class="t-data">{ui.revealTitle[lang]}</h2>
+          <p class="mt-3 text-[0.98rem] leading-relaxed text-grigio text-pretty max-w-[34ch]">{ui.revealLead[lang]}</p>
+        </div>
+        <div class="col-span-4 md:col-span-8 lg:col-span-9">
+          <SketchReveal lang={lang} sketch={d.reveal.sketch} photo={d.reveal.photo} sketchAlt={d.reveal.sketchAlt[lang]} photoAlt={d.reveal.photoAlt[lang]}
+            built={d.built} credit={d.reveal.credit} title={d.title[lang]} />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Galleria -->
+  {rest.length > 0 && (
+    <section class="frame" aria-label={`${items.length} ${ui.images[lang]}`}>
+      <div class="grid-plan grid-flow-row-dense items-start gap-y-[clamp(2.25rem,4.5vw,4rem)] pt-[clamp(2rem,5vw,4rem)]">
+        {rest.map((g) => {
+          const l = layout(g.image.width);
+          return (
+            <figure class:list={['col-span-4 flex flex-col gap-3', l.cls]}>
+              <button type="button" class="block text-left cursor-zoom-in" data-lb
+                data-src={g.full.src} data-w={g.full.attributes.width} data-h={g.full.attributes.height} data-alt={g.alt} data-caption={g.label}
+                aria-label={`${ui.enlarge[lang]}: ${g.alt}`}>
+                <Photo src={g.image} alt={g.alt} sizes={l.sizes}
+                  imgClass={g.type === 'schizzo' || g.type === 'disegno' ? 'mix-blend-multiply' : undefined} />
+              </button>
+              <figcaption class="t-data text-grigio">{g.label}</figcaption>
+            </figure>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <!-- Opera precedente / successiva -->
+  <nav class="frame mt-[clamp(5rem,10vw,9rem)]" aria-label={`${ui.prevWork[lang]} / ${ui.nextWork[lang]}`}>
+    <div class="grid-plan border-t border-carbone/80">
+      {[{ p: prev, label: ui.prevWork[lang], align: 'text-left', col: 'lg:col-span-6', arrow: '←' }, { p: next, label: ui.nextWork[lang], align: 'text-right', col: 'lg:col-span-6', arrow: '→' }].map((n) => (
+        <a href={path(lang, 'works', n.p.id)} rel={n.arrow === '←' ? 'prev' : 'next'}
+          class:list={['group relative col-span-2 md:col-span-4 py-6 overflow-hidden', n.col, n.align]}>
+          {n.p.data.sketch && (
+            <Image src={n.p.data.sketch} alt="" width={Math.min(n.p.data.sketch.width, 480)} aria-hidden="true" loading="lazy"
+              class:list={['sketch-mark absolute top-2 w-[min(70%,320px)] h-auto opacity-0 group-hover:opacity-25 transition-opacity duration-700', n.arrow === '←' ? 'right-4' : 'left-4']} />
+          )}
+          <span class="relative t-data text-grigio">{n.arrow === '←' ? `${n.arrow} ${n.label}` : `${n.label} ${n.arrow}`}</span>
+          <span class="relative block mt-3 text-[clamp(1.15rem,0.9rem+1vw,1.7rem)] t-title group-hover:text-porfido transition-colors duration-500">{n.p.data.title[lang]}</span>
+          <span class="relative t-data text-grigio block mt-2">{n.p.data.place[lang]} · {n.p.data.year}</span>
+        </a>
+      ))}
+    </div>
+  </nav>
+
+  {items.length > 0 && <Lightbox lang={lang} label={d.title[lang]} />}
+</Base>

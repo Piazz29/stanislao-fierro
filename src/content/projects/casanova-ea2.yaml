@@ -1,0 +1,47 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=66&lang=it
+title:
+  it: Edifici residenziali CasaNova, isolato EA2
+  de: Wohnbau CasaNova, Baulos EA2
+  en: CasaNova housing, block EA2
+year: 2005
+place:
+  it: Bolzano
+  de: Bozen
+  en: Bolzano
+typology: residenziale
+status: progetto
+international: false
+featured: false
+order: 7
+competition:
+  year: 2005
+client:
+  it: IPES Bolzano
+  de: WOBI Bozen
+  en: IPES Bolzano
+partners:
+  - Nadine Saul
+text:
+  it:
+    - Quattro edifici intorno a una corte nel quartiere CasaNova. Verso nord le facciate hanno finestre, verso sud logge. Quasi tutti gli alloggi hanno accesso diretto al giardino.
+  de:
+    - Vier Gebäude um einen Hof im Stadtviertel CasaNova. Nach Norden haben die Fassaden Fenster, nach Süden Loggien. Fast alle Wohnungen haben direkten Zugang zum Garten.
+  en:
+    - Four buildings around a courtyard in the CasaNova district. The north façades have windows, the south façades loggias. Almost every flat has direct access to the garden.
+excerpt:
+  lang: de
+  text: Aufgrund der problematischen Bautiefe der Baukörper, wurden diese, ohne Kubatureinbussen, in ihrer Tiefe reduziert. Die schlankeren Baukörper und die perspektivische Aufweitung schaffen einen geräumigen, gut durchlichteten Hofraum. Laut Durchführungsplan sollen Blockaussenseite und Hofseite differenziert werden, dieses führte jedoch bei der Entwurfsfase zu einem Konflikt mit dem funktionellen Anspruch einer Nord-Südorientierung der Wohnungen.
+  source: https://www.stanislaofierro.com/index.php?p=66&lang=it
+cover: ../../assets/originali/pagine/foto/352_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/349_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=66&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/349_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/350_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/351_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/352_immagine.jpg
+    type: rendering

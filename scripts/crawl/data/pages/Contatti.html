@@ -1,0 +1,145 @@
+
+<html>
+    <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <script src="jquery-1.10.2.min.js"></script>
+        
+        <!-- Includo il link al css -->
+        <link rel="stylesheet" href="style.css" />
+        
+        <script>
+            $(window).resize(function() {
+                width = $(window).width();
+                if (width < 1100) {
+                    $("#pagina").css("left", "0px");
+                    $("#pagina").css("margin-left", "10px");
+                } else {
+                    $("#pagina").css("left", "50%");
+                    $("#pagina").css("margin-left", "-525px");
+                }
+
+                height = $(window).height();
+                if (height < 750) {
+                    $("#pagina").css("top", "0px");
+                    $("#pagina").css("margin-top", "10px");
+                } else {
+                    $("#pagina").css("top", "50%");
+                    $("#pagina").css("margin-top", "-375px");
+                }
+            });
+
+            $(document).ready(function() {
+
+                width = $(window).width();
+                if (width < 1100) {
+                    $("#pagina").css("left", "0px");
+                    $("#pagina").css("margin-left", "10px");
+                } else {
+                    $("#pagina").css("left", "50%");
+                    $("#pagina").css("margin-left", "-525px");
+                }
+
+                height = $(window).height();
+                if (height < 750) {
+                    $("#pagina").css("top", "0px");
+                    $("#pagina").css("margin-top", "10px");
+                } else {
+                    $("#pagina").css("top", "50%");
+                    $("#pagina").css("margin-top", "-375px");
+                }
+
+                $("#menu a").hover(function() {
+                    color = $(this).css("color");
+                    $(this).css("color", "#111");
+                }, function() {
+                    $(this).css("color", color);
+                });
+            });
+        </script>
+        
+        
+        <!-- Script per analytics -->
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-46289673-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </head>
+    <body onselectstart="return(false);">
+        <div id="pagina">
+
+            <!--TITOLO-->
+            <div id="titolo">
+                STANISLAO FIERRO ARCHITETTO
+            </div>
+
+            <!--MENU-->
+            <div id="menu">
+                <div id="lingua">
+                    <a style="color: #111" href="/index.php?p=Contatti&lang=it&lang=it">it</a> |
+                    <a style="color: #888" href="/index.php?p=Contatti&lang=it&lang=en">en</a> |
+                    <a style="color: #888" href="/index.php?p=Contatti&lang=it&lang=de">de</a>
+                </div>
+                <div id="menu1">
+                    <ul>
+                        <li><a href="?p=Home" style="color: #888;">Home</a></li>
+                        <li><a href="?p=News" style="color: #888;">News</a></li>
+                        <li><a href="?p=Lista" style="color: #888;">Progetti</a></li>
+                        <li><a href="?p=Studio" style="color: #888;">Studio</a></li>
+                        <li><a href="?p=Contatti" style="color: #111;">Contatti</a></li>
+                        <li><a href="?p=Biografia" style="color: #888;">Info</a></li>
+                    </ul>
+                </div>
+                <div id="menu2">
+                    <ul class="progetti"  style="display: none;">
+                        <li><a href="?p=Lista" style="color: #888;">Lista</a></li>
+                        <li><a href="?p=Opere selezionate" style="color: #888;">Opere selezionate</a></li>
+                        <li><a href="?p=In corso" style="color: #888;">In corso</a></li>
+                        <li><a href="?p=Allestimenti" style="color: #888;">Tipo</a></li>
+                        <li><a href="?p=Regesto Schizzi" style="color: #888;">Regesto Schizzi</a></li>
+                    </ul>
+                    <ul class="info"  style="display: none;">
+                        <li><a href="?p=Biografia" style="color: #888;">Biografia</a></li>
+                        <li><a href="?p=Pubblicazioni" style="color: #888;">Pubblicazioni</a></li>
+                        <li><a href="?p=Premi" style="color: #888;">Premi</a></li>
+                        <li><a href="?p=Conferenze" style="color: #888;">Conferenze</a></li>
+                    </ul>
+                </div>
+                <div id="menu3"  style="display: none;">
+                    <ul>
+                        <li><a href="?p=Allestimenti" style="color: #888;">Allestimenti</a></li>
+                        <li><a href="?p=Riqualificazione Urbana" style="color: #888;">Riqualificazione Urbana</a></li>
+                        <li><a href="?p=Edifici Pubblici" style="color: #888;">Edifici Pubblici</a></li>
+                        <li><a href="?p=Residenziali" style="color: #888;">Residenziali</a></li>
+                        <li><a href="?p=Scolastici" style="color: #888;">Scolastici</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--CONTENUTO-->
+            <div id="contenuto">
+                <div id="immagini">    <img id="immagine" src="public/altro/contatti.jpg"></div><div id="descrizione" onselectstart="return(true);">    <div id="titoletto">    </div>    <div class="des" style="display: block"><p>Via Montello, 3</p><p>
+39100 Bolzano</p><p>
+stanislao.fierro@libero.it</p><p>
+tel.fax. 0471/973896</p><p>
+cell.    340.3408675</p></div></div><style>    #immagini{        position: absolute;        top: 30px;        left: 0px;        bottom: 20px;        width: 750px;        text-align: center;    }        #immagine{        max-width: 100%;        max-height: 100%;    }    #descrizione{        position: absolute;        top: 40px;        right: 0px;        bottom: 20px;        width: 300px;    }    #titoletto {        position: absolute;        top: 10px;        left: 0px;        right: 0px;        height: 40px;        padding-left: 10px;        font-family: Arial;        font-size: 13px;        color: #888;        font-weight: 600;    }    #descrizione div.des{        position: absolute;        top: 60px;        left: 0px;        right: 0px;        bottom: 0px;        padding-left: 10px;        font-family: Arial;        font-size: 12px;        color: #888;        display: none;        overflow: auto;    }    #categoria{        position: absolute;        bottom: 30px;        left: 0px;        right: 0px;        text-align: center;    }    #categoria a{        text-decoration: none;        font-family: Arial;        font-size: 13px;        color: #888;    }    #categoria a:hover{        color: #222;    }</style>            </div>
+
+            <!--PIE DI PAGINA-->
+            <div id="pie">
+                &copy; Stanislao Fierro Architetto - P.iva: 01639010212
+            </div>
+        </div>
+    </body>
+</html>
+

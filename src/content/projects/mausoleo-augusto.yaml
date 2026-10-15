@@ -1,0 +1,88 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=64&lang=it
+title:
+  it: Mausoleo di Augusto e Piazza Augusto Imperatore
+  de: Augustusmausoleum und Piazza Augusto Imperatore
+  en: Mausoleum of Augustus and Piazza Augusto Imperatore
+year: 2006
+place:
+  it: Roma
+  de: Rom
+  en: Rome
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 8
+competition:
+  year: 2006
+  result:
+    it: Finalista
+    de: Finalist
+    en: Finalist
+  name:
+    it: Concorso internazionale
+    de: Internationaler Wettbewerb
+    en: International competition
+client:
+  it: Comune di Roma
+  de: Stadt Rom
+  en: City of Rome
+partners:
+  - José Ignacio Linazasoro
+collaborators:
+  - Nadine Saul
+  - Ricardo Sánchez González
+text:
+  it:
+    - Concorso internazionale, finalista nel 2006, con José Ignacio Linazasoro. Il progetto unisce i due livelli della piazza e il Mausoleo in un solo spazio urbano, compatibile con gli scavi archeologici previsti.
+  de:
+    - Internationaler Wettbewerb, Finalist 2006, gemeinsam mit José Ignacio Linazasoro. Das Projekt verbindet die beiden Ebenen des Platzes und das Mausoleum zu einem einzigen Stadtraum, vereinbar mit den geplanten archäologischen Grabungen.
+  en:
+    - International competition, finalist in 2006, with José Ignacio Linazasoro. The design joins the two levels of the square and the Mausoleum into a single urban space, compatible with the planned archaeological excavations.
+excerpt:
+  lang: it
+  text: Le seguenze e le prospettive che caratterizzano gli spazi di Roma sono sempre con sapienza interrotte da elementi monumentali (fontane, obelisci, colonne ecc.), formando richiami ottici, che hanno lo scopo di tenere uniti spazi a volte molto distanti tra loro. Questa strategia consolidata, è giunta fino ai nostri giorni con forza e chiarezza. Questo principio urbanistico che inizia all’epoca di Sisto V con il suo Architetto Carlo Fontana, lo troviamo con evidenza anche in Campo Marzio. La Piazza di Augusto Imperatore, invece, sembra uno spazio isolato ai margini, e non influenzato da questa strategia urbanistica.
+  source: https://www.stanislaofierro.com/index.php?p=64&lang=it
+cover: ../../assets/originali/pagine/foto/324_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/319_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=64&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/319_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/320_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/321_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/322_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/323_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/324_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/325_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/326_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/327_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/328_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/329_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/330_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/332_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/333_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/334_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/335_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/336_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/337_immagine.jpg
+    type: rendering
+  - image: ../../assets/originali/pagine/foto/338_immagine.jpg
+    type: rendering

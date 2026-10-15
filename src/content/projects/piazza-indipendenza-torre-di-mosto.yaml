@@ -1,0 +1,93 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=59&lang=it, https://www.stanislaofierro.com/index.php?p=54&lang=it
+title:
+  it: Piazza Indipendenza
+  de: Piazza Indipendenza
+  en: Piazza Indipendenza
+year: 2009
+place:
+  it: Torre di Mosto (VE)
+  de: Torre di Mosto (VE)
+  en: Torre di Mosto (VE)
+typology: spazi-pubblici
+status: realizzato
+international: false
+featured: false
+order: 11
+competition:
+  year: 2007
+  result:
+    it: 1° premio
+    de: 1. Preis
+    en: 1st prize
+built: "2009"
+client:
+  it: Comune di Torre di Mosto
+  de: Gemeinde Torre di Mosto
+  en: Municipality of Torre di Mosto
+partners:
+  - Nadine Saul
+  - C&P Architetti
+text:
+  it:
+    - Il progetto ricuce gli spazi residui intorno al Municipio e al Centro culturale e riapre il centro verso l’argine del Livenza.
+    - La parte centrale della piazza diventa pedonale. Il monumento ai caduti resta al suo posto.
+  de:
+    - Das Projekt verbindet die Restflächen um Rathaus und Kulturzentrum und öffnet das Zentrum wieder zum Damm der Livenza.
+    - Der mittlere Teil des Platzes wird Fußgängerzone. Das Kriegerdenkmal bleibt an seinem Ort.
+  en:
+    - The project knits together the leftover spaces around the town hall and the cultural centre, and reopens the centre towards the Livenza embankment.
+    - The middle of the square becomes pedestrian. The war memorial stays where it stands.
+excerpt:
+  lang: it
+  text: "La ricerca di unitarietà, attraverso il ridisegno degli spazi residui esistenti, è il punto di partenza per la nuova Piazza di Torre di Mosto. Il superamento dell'attuale collisione di frammenti di costruito, avviene attraverso la ricerca di un nuovo collante tra resti di spazi aperti e risignificazione dei retri degli edifici realizzati in epoche diverse. Il nuovo spazio pubblico rimetterà in una scena comune, elementi esistenti che rappresentano l'essenza della vita civica della città: il Municipio, il Centro Cultutrale e lo spazio aperto verso il fiume Livenza."
+  source: https://www.stanislaofierro.com/index.php?p=59&lang=it
+cover: ../../assets/originali/pagine/foto/256_immagine.jpg
+sketch: ../../assets/originali/pagine/foto/290_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=59&lang=it
+  - https://www.stanislaofierro.com/index.php?p=54&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/290_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/291_immagine.jpg
+    type: tavola
+  - image: ../../assets/originali/pagine/foto/292_immagine.jpg
+    type: tavola
+  - image: ../../assets/originali/pagine/foto/249_immagine.jpg
+    type: schizzo
+  - image: ../../assets/originali/pagine/foto/250_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/251_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/252_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/253_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/254_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/255_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/256_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/257_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/258_immagine.jpg
+    type: tavola
+  - image: ../../assets/originali/pagine/foto/259_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/260_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/261_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/262_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/263_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/264_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/265_immagine.jpg
+    type: foto
+  - image: ../../assets/originali/pagine/foto/266_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/267_immagine.jpg
+    type: foto

@@ -1,0 +1,49 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=68&lang=it
+title:
+  it: Plaza del Salón
+  de: Plaza del Salón
+  en: Plaza del Salón
+year: 2005
+place:
+  it: Écija, Spagna
+  de: Écija, Spanien
+  en: Écija, Spain
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2005
+  result:
+    it: 2° premio
+    de: 2. Preis
+    en: 2nd prize
+client:
+  it: EPSA, Siviglia
+  de: EPSA, Sevilla
+  en: EPSA, Seville
+partners:
+  - Nadine Saul
+cover: ../../assets/originali/pagine/foto/363_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=68&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/362_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/363_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/364_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/365_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/366_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/367_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/368_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/369_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/391_immagine.jpg
+    type: immagine

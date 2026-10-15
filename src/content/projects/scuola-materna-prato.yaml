@@ -1,0 +1,51 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=47&lang=it
+title:
+  it: Nuova scuola materna
+  de: Neuer Kindergarten
+  en: New nursery school
+year: 2008
+place:
+  it: Gancetello, Prato
+  de: Gancetello, Prato
+  en: Gancetello, Prato
+typology: scuole
+status: concorso
+international: false
+featured: false
+order: 100
+competition:
+  year: 2008
+partners:
+  - Nadine Saul
+excerpt:
+  lang: it
+  text: L’ ASILO Si è scelto un progetto educativo che preveda lo spazio–mensa e lo svolgimento delle attività a tavolino e speciali in un unico ambiente, la sezione. Ogni sezione è divisa in una zona per le attività pratiche, ove sono previsti i lavabi, i servizi igienici, un fasciatoio, un pilozzo, e armadietti personali da usare come deposito, e una zona a doppia altezza per lo svolgimento delle attività comuni. Questo spazio presenta una sezione che si apre a cono verso il giardino; questa particolare forma ha permesso uno studio attento dell’ illuminazione.
+  source: https://www.stanislaofierro.com/index.php?p=47&lang=it
+cover: ../../assets/originali/pagine/foto/203_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=47&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/202_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/201_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/203_immagine.jpg
+    type: immagine
+  - image: ../../assets/originali/pagine/foto/398_immagine.jpg
+    type: immagine
+    caption:
+      it: Vista
+      de: Ansicht
+      en: View
+  - image: ../../assets/originali/pagine/foto/399_immagine.jpg
+    type: immagine
+    caption:
+      it: Vista
+      de: Ansicht
+      en: View
+  - image: ../../assets/originali/pagine/foto/400_immagine.jpg
+    type: immagine
+    caption:
+      it: Vista
+      de: Ansicht
+      en: View

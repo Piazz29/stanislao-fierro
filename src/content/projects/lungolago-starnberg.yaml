@@ -1,0 +1,41 @@
+# Fonte: https://www.stanislaofierro.com/index.php?p=60&lang=it
+title:
+  it: Lungolago
+  de: Seeufer
+  en: Lakefront
+year: 2006
+place:
+  it: Starnberg, Germania
+  de: Starnberg, Deutschland
+  en: Starnberg, Germany
+typology: spazi-pubblici
+status: concorso
+international: true
+featured: false
+order: 100
+competition:
+  year: 2006
+  result:
+    it: Finalista
+    de: Finalist
+    en: Finalist
+partners:
+  - José Ignacio Linazasoro
+excerpt:
+  lang: de
+  text: 'Der Ausgangspunkt dieses staedtebaulichen Ideenwettbewerbs ist eine komplexe und recht komplizierte Stadtstruktur. In dieser ersten Phase haben wir versucht dem Uferbereich ein umfassendes und ganzheitliches Leitbild zu vermitteln. Folgende Punkte bilden die "Idee" unseres Projektes: 1)die Bahntrasse'
+  source: https://www.stanislaofierro.com/index.php?p=60&lang=it
+cover: ../../assets/originali/pagine/foto/297_immagine.jpg
+sourcePages:
+  - https://www.stanislaofierro.com/index.php?p=60&lang=it
+gallery:
+  - image: ../../assets/originali/pagine/foto/293_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/294_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/295_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/296_immagine.jpg
+    type: disegno
+  - image: ../../assets/originali/pagine/foto/297_immagine.jpg
+    type: immagine
