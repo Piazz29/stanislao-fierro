@@ -9,7 +9,11 @@ const { slot, alt, class: cls, eager = false, sizes = '100vw' } = Astro.props;
 const { poster, video } = slot;
 const steps = [480, 750, 1040, 1240, 1640, 2048].filter((w) => w < poster.width);
 const widths = [...steps, poster.width];
-const imgs = await Promise.all(widths.map((w) => getImage({ src: poster, width: w, format: 'webp', quality: 80 })));
+// alcuni originali hanno un filetto chiaro sui bordi alto e basso: si rifilano pochi pixel
+// (ritaglio centrato), così l'immagine riempie lo spazio senza righe
+const trim = Math.min(10, Math.round(poster.height * 0.012));
+const ratio = (poster.height - trim * 2) / poster.width;
+const imgs = await Promise.all(widths.map((w) => getImage({ src: poster, width: w, height: Math.round(w * ratio), fit: 'cover', position: 'center', format: 'webp', quality: 80 })));
 const srcset = imgs.map((im, i) => `${im.src} ${widths[i]}w`).join(', ');
 const fallback = imgs[imgs.length - 1].src;
 ---
@@ -19,7 +23,7 @@ const fallback = imgs[imgs.length - 1].src;
   </video>
 ) : (
   <img class:list={['slot-media', cls]} src={fallback} srcset={srcset} sizes={sizes} alt={alt}
-    width={poster.width} height={poster.height} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" data-video-placeholder />
+    width={poster.width} height={Math.round(poster.width * ratio)} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" data-video-placeholder />
 )}
 
 <style>

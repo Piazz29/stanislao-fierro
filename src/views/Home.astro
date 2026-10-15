@@ -148,7 +148,7 @@ const pubs = [...new Set(publishedIn.flatMap((p) => (p.title === 'ArchDaily, Dez
     </div>
     <div class="compose-float frame">
       {floating.map((f) => (
-        <a href={path(L, 'works', f.href)} class:list={['float-img', f.cls]} data-speed={f.speed}>
+        <a href={path(L, 'works', f.href)} class:list={['float-img', f.cls]} data-speed={f.speed} data-parallax>
           <Image src={f.img} alt={f.alt[L]} width={Math.min(f.img.width, 640)} loading="lazy" decoding="async" />
         </a>
       ))}
@@ -226,7 +226,7 @@ const pubs = [...new Set(publishedIn.flatMap((p) => (p.title === 'ArchDaily, Dez
     <ol class="border-t border-linea">
       {h.steps.map((s, i) => (
         <li class="process-row grid-plan border-b border-linea">
-          <div class:list={['col-span-4 md:col-span-3 lg:col-span-4 process-img', i < 3 && 'is-drawing']}>
+          <div class:list={['col-span-4 md:col-span-3 lg:col-span-4 process-img', i < 3 && 'is-drawing']} data-parallax>
             <Image src={stepImgs[i].img} alt={stepImgs[i].alt[L]} width={Math.min(stepImgs[i].img.width, 640)} loading="lazy" decoding="async" />
           </div>
           <div class="col-span-4 md:col-span-5 lg:col-span-5 lg:col-start-7 grid grid-cols-[auto_1fr] gap-x-5 py-6 lg:py-8 content-start">
@@ -329,8 +329,8 @@ const pubs = [...new Set(publishedIn.flatMap((p) => (p.title === 'ArchDaily, Dez
         <h2 id="awards-title" class="t-display text-[clamp(2.6rem,1.6rem+3.2vw,4.6rem)] mt-4" data-reveal-chars>{h.awardsTitle[L]}</h2>
       </div>
       <figure class="col-span-4 md:col-span-4 lg:col-span-4">
-        <a href={path(L, 'works', 'centro-formazione-baza')} class="block overflow-hidden group">
-          <Image src={bazaFront} alt={h.awardsFeaturedAlt[L]} width={bazaFront.width} loading="lazy" class="w-full h-auto transition-transform duration-[1.2s] ease-out-quint group-hover:scale-[1.03]" />
+        <a href={path(L, 'works', 'centro-formazione-baza')} class="block overflow-hidden" data-parallax>
+          <Image src={bazaFront} alt={h.awardsFeaturedAlt[L]} width={bazaFront.width} loading="lazy" class="w-full h-auto" />
         </a>
         <figcaption class="mt-4 text-[1.1rem] leading-snug text-carbone/80">{h.awardsFeatured[L]}</figcaption>
       </figure>
@@ -374,7 +374,7 @@ const pubs = [...new Set(publishedIn.flatMap((p) => (p.title === 'ArchDaily, Dez
   <!-- ============ Citazione ============ -->
   <section class="frame pb-[clamp(5rem,10vw,8rem)]" aria-labelledby="quote-title">
     <div class="quote-grid">
-      <figure class="quote-portrait">
+      <figure class="quote-portrait" data-parallax>
         <Image src={portrait} alt={ui.portraitAlt[L]} width={portrait.width} loading="lazy" class="w-full h-full object-cover grayscale" />
       </figure>
       <blockquote class="quote-card" id="quote-title">
@@ -442,7 +442,8 @@ const pubs = [...new Set(publishedIn.flatMap((p) => (p.title === 'ArchDaily, Dez
   :global(html.is-loading) [data-hero-fade] { opacity: 0; }
 
   /* ---------------- metodo ---------------- */
-  .compose { position: relative; }
+  /* le immagini che salgono restano dentro la sezione: niente sconfinamenti sulla hero */
+  .compose { position: relative; overflow: clip; }
   .compose-lines { position: absolute; inset: 0; pointer-events: none; }
   .compose-lines > div { height: 100%; display: grid; grid-template-columns: 1fr 1fr 1fr; }
   .compose-lines span { border-left: 1px solid var(--color-linea); }
@@ -456,8 +457,7 @@ const pubs = [...new Set(publishedIn.flatMap((p) => (p.title === 'ArchDaily, Dez
   .float-img { display: block; overflow: hidden; flex: none; width: 56vw; scroll-snap-align: center; }
   .float-img:nth-child(even) { margin-top: 3.5rem; }
   .float-img:nth-child(odd) { margin-bottom: 3.5rem; }
-  .float-img img { width: 100%; height: auto; display: block; transition: transform 1.2s var(--ease-out-quint); }
-  .float-img:hover img { transform: scale(1.04); }
+  .float-img img { width: 100%; height: auto; display: block; }
   @media (min-width: 1100px) {
     .compose { height: 190svh; }
     .compose-pin { position: sticky; top: 0; height: 100svh; display: block; }
@@ -467,7 +467,7 @@ const pubs = [...new Set(publishedIn.flatMap((p) => (p.title === 'ArchDaily, Dez
     .compose-float { position: absolute; inset: 0; display: block; padding: 0; z-index: 1; overflow: visible; }
     .float-img { position: absolute; margin: 0 !important; }
     .f1 { left: 16%; top: 24%; width: 13.5vw; }
-    .f2 { right: 1.5%; top: 5%; width: 14vw; }
+    .f2 { right: 1.5%; top: 11%; width: 14vw; }
     .f3 { left: 57%; top: 40%; width: 14vw; }
     .f4 { left: 1.5%; top: 58%; width: 15vw; }
     .f5 { left: 74%; top: 64%; width: 16vw; }

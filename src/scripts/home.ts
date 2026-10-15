@@ -28,6 +28,7 @@ export function initHome() {
   initFeature();
   initNight();
   initNumbers();
+  initParallax();
   document.fonts.ready.then(() => { initReveals(); ScrollTrigger.refresh(); });
 }
 
@@ -318,6 +319,18 @@ function initNumbers() {
       v: to, duration: 1.6, delay: i * 0.12, ease: 'power2.out',
       onUpdate: () => (el.textContent = String(Math.round(n.v))),
       scrollTrigger: { trigger: sec.querySelector('.numbers-grid'), start: 'top 85%', once: true },
+    });
+  });
+}
+
+/* ---------------- parallax interno: l'immagine scorre dentro la sua cornice ---------------- */
+function initParallax() {
+  document.querySelectorAll<HTMLElement>('[data-parallax]').forEach((frame) => {
+    const img = frame.querySelector<HTMLElement>('img');
+    if (!img) return;
+    gsap.fromTo(img, { yPercent: -7, scale: 1.16 }, {
+      yPercent: 7, scale: 1.16, ease: 'none',
+      scrollTrigger: { trigger: frame, start: 'top bottom', end: 'bottom top', scrub: true },
     });
   });
 }
