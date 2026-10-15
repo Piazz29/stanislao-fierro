@@ -89,7 +89,8 @@ const pubs = [...new Set(publishedIn.flatMap((p) => (p.title === 'ArchDaily, Dez
 
   <!-- ============ Caricamento: il nome si apre, le miniature passano, la prima diventa la hero ============ -->
   <div class="loader" data-loader aria-hidden="true">
-    <script is:inline>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('is-loading');if('scrollRestoration' in history)history.scrollRestoration='manual';scrollTo(0,0);}</script>
+    <!-- se lo script della pagina non arriva, dopo 14 s il caricamento si toglie comunque -->
+    <script is:inline>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var d=document.documentElement;d.classList.add('is-loading');if('scrollRestoration' in history)history.scrollRestoration='manual';scrollTo(0,0);setTimeout(function(){if(d.classList.contains('is-loading')){d.classList.remove('is-loading');var h=document.querySelector('[data-header]');if(h)h.removeAttribute('data-intro');}},14000);}</script>
     <div class="ld-grid"><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <div class="ld-axis"></div>
     <div class="ld-tiles">
