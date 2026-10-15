@@ -449,15 +449,33 @@ const pubs = [...new Set(publishedIn.flatMap((p) => (p.title === 'ArchDaily, Dez
   .compose-lines span { border-left: 1px solid var(--color-linea); }
   .compose-lines span:last-child { display: none; }
   .compose-lines > div { border-right: 1px solid var(--color-linea); }
-  .compose-pin { position: relative; z-index: 2; padding-top: clamp(5rem, 12vh, 8rem); display: grid; gap: 2.5rem; pointer-events: none; }
+  .compose-pin { position: relative; z-index: 2; padding-top: clamp(4.5rem, 12vh, 8rem); display: grid; gap: 1.5rem; pointer-events: none; }
   .compose-pin a, .compose-pin p { pointer-events: auto; }
-  /* su telefono le immagini stanno in una fila da scorrere col dito, sfalsate come sul tavolo */
-  .compose-float { position: relative; display: flex; align-items: center; gap: 0.75rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-block: 2.5rem 4.5rem; }
-  .compose-float::-webkit-scrollbar { display: none; }
-  .float-img { display: block; overflow: hidden; flex: none; width: 56vw; scroll-snap-align: center; }
-  .float-img:nth-child(even) { margin-top: 3.5rem; }
-  .float-img:nth-child(odd) { margin-bottom: 3.5rem; }
+  .float-img { display: block; overflow: hidden; }
   .float-img img { width: 100%; height: auto; display: block; }
+
+  /* telefono e tablet: titolo, i due testi, poi un collage di sei immagini su due colonne sfalsate,
+     cornici di proporzioni fisse e l'immagine che scorre dentro (parallax interno) */
+  @media (max-width: 1099px) {
+    .compose-lines { display: none; }
+    .compose-head { margin-bottom: 0.5rem; }
+    .compose-left, .compose-right { font-size: 1.02rem; }
+    .compose-float {
+      position: relative;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+      padding-block: 2.5rem clamp(4rem, 12vw, 6rem);
+    }
+    .float-img { aspect-ratio: 4 / 5; background: var(--color-calce-2); }
+    .float-img:nth-child(4n + 2), .float-img:nth-child(4n + 3) { aspect-ratio: 1; }
+    .float-img:nth-child(even) { transform: translateY(2.5rem); }
+    .float-img img { height: 100%; object-fit: cover; }
+    .float-img:nth-child(n + 7) { display: none; }
+  }
+  @media (min-width: 768px) and (max-width: 1099px) {
+    .compose-float { grid-template-columns: repeat(3, 1fr); }
+    .float-img:nth-child(even) { transform: none; }
+    .float-img:nth-child(3n + 2) { transform: translateY(3rem); }
+  }
   @media (min-width: 1100px) {
     .compose { height: 190svh; }
     .compose-pin { position: sticky; top: 0; height: 100svh; display: block; }
